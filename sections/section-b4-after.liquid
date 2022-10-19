@@ -1,0 +1,35 @@
+<div class='twentytwenty-container'>
+
+    <img class="lazy2" data-src='https://cdn.shopify.com/s/files/1/0573/0061/5202/files/1-before_2d4c1e91-602b-4e5a-acb2-ba4273349a6e.png?v=1660567058' />
+
+    <img class="lazy2" data-src='https://cdn.shopify.com/s/files/1/0573/0061/5202/files/3-after_bc82e2b7-16eb-43e0-93bc-a0f2d7ad9702.png?v=1660567058' />
+
+</div>
+{%- for block in section.blocks -%}
+  <div>{{ block.settings.ft_img_1 }}</div>
+{% endfor %}  
+{% schema %}
+  {
+    "name": "befor_after",
+    "settings": [
+      {
+      "type": "header",
+      "content": "Style"
+      }
+    ],
+    "blocks": [
+      {
+      "name": "Text",
+      "type": "text",
+      "settings": [
+          {
+          "type": "image_picker",
+          "id": "ft_img_1",
+          "label": "Image"
+          }
+      ]
+      }
+    ]
+  }
+{% endschema %}
+

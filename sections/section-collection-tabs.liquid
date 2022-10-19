@@ -1,0 +1,331 @@
+<style>  
+
+  button.tab-link:active {
+    border: 1px solid black !important;
+}
+  
+  .tabs--pill > .tab-link{
+    width:140px;
+  }
+  
+.vh {
+    border: 1px solid;
+    width: 100%;
+    align-items: center;
+    margin-left: 20px;
+}
+
+  .Collection__Header {
+    margin-bottom: 0.5rem;
+}
+
+  .containerVH {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+  
+  .customContainer{
+    margin-left:15px;
+    margin-right:15px;
+  }
+  
+  .customAddToCard{
+  padding: 10px 40px 8px 40px;
+    border: 2px solid;
+    transition: 0.3s;
+}
+
+  .customAddToCard:hover{
+    background-color:black;
+    color:white;
+    
+  }
+
+  .tabs.tabs--center.tabs--pill {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+/*     background: red; */
+    margin-right: 70px;
+    margin-top: 50px;
+}
+
+  .tab--collections{
+    display: flex;
+    flex-direction: row;
+  }
+
+  @media only screen and (max-width: 900px) {
+.collection-tabs.tab--collections {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs.tabs--center.tabs--pill {
+    display: flex;
+    flex-direction: revert;
+    margin-top: unset;
+    margin-right: unset;
+    margin-left: 40px;
+}
+    .collection-tabs .tab-content {
+    margin-left: unset;
+    margin-right: unset;
+    width: auto;
+}
+    
+
+}
+  
+  
+</style>
+{%- for block in section.blocks -%}
+  {%- assign featured_collection = collections[block.settings.collection] -%}
+  {%- assign featured_collection_title = block.settings.title | default: featured_collection.title | default: 'Collection' -%}
+
+  {%- capture tabs_navigation -%}
+    {{ tabs_navigation }}
+    <button type="button" class="tab-link tab-link-{{ forloop.index0 }}"
+      data-focus-element
+      data-tab="{{ forloop.index0 }}"
+      data-block-id="{{ block.id }}"
+      tabindex="0"
+      {{ block.shopify_attributes }}>
+      <span>{{ featured_collection_title }}</span>
+    </button>
+  {%- endcapture -%}
+          
+  {%- capture tabs -%}
+
+    {{ tabs }}
+
+
+    <div class="tab-content tab-content-{{ forloop.index0 }} current">
+      <div class="containerVH"> 
+        <div class="Collection__Header">
+          <h3>{{ featured_collection_title | capitalize }}</h3>
+        </div>
+      <div class="vh"></div>
+      </div>
+      <div class="js-grid" data-grid-large="4" data-grid-small="2">
+        <!-- /snippets/product-grid-item.liquid -->
+        {% for product in featured_collection.products %}
+          <div class="product-grid-slide">
+            {% render 'product-grid-item', product: product %}
+<!-- Added the Add To Cart Form -->
+          <form action="/cart/add" method="post" id="product-form- {{ product.id }}">
+            <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+            <div>
+              <button class="customAddToCard" type="submit" name="add">Add to cart</button>
+            </div>
+            </form>
+<!--End Of Add To Cart Form-->
+          </div>
+        {% else %}
+          {% render 'onboarding-product-grid-item' %}
+        {% endfor %}
+      </div>
+    </div>
+
+  {%- endcapture -%}
+{%- endfor -%}
+
+<div class="homepage-collection-tabs {{ section.settings.bg }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="collection-tabs">
+  <div class="wrapper" data-tabs-holder>
+    <div class="collection-tabs tab--collections">
+      {% if section.settings.title != blank %}
+        <h2 class="home__subtitle">{{ section.settings.title | escape }}</h2>
+      {% endif %}
+      <div class="tab__scroll">
+        <div class="tabs tabs--center tabs--pill" data-scrollbar data-scrollbar-slider>
+          {{ tabs_navigation }}
+        </div>
+  
+        <button type="button" class="tabs__arrow tabs__arrow--prev tabs-collections__arrow tabs-collections__arrow--prev is-hidden" data-scrollbar-arrow-prev>
+          <span class="visually-hidden">{{ 'general.accessibility.see_all' | t }}</span>
+        </button>
+  
+        <button type="button" class="tabs__arrow tabs__arrow--next tabs-collections__arrow tabs-collections__arrow--next is-hidden" data-scrollbar-arrow-next>
+          <span class="visually-hidden">{{ 'general.accessibility.see_all' | t }}</span>
+        </button>
+      </div>
+  <div>
+    
+      {{ tabs }}
+
+    </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Tab collections",
+  "settings": [
+    {
+      "type": "select",
+      "id": "bg",
+      "label": "Background color",
+      "default": "palette--light bg--neutral",
+      "options": [
+        { "value": "palette--light bg--neutral", "label": "Default"},
+        { "value": "palette--light bg--accent", "label": "Light"},
+        { "value": "palette--dark bg--invert", "label": "Dark"},
+        { "value": "palette--dark bg--invert--accent", "label": "Dark accent"}
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Tab collections",
+      "settings": [
+        {
+          "label": "Collection",
+          "id": "collection",
+          "type": "collection"
+        },
+        {
+          "label": "Tab heading",
+          "id": "title",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Collection",
+      "name": "Tab collections",
+      "blocks": [
+        {
+          "type": "collection",
+          "settings": {
+            "title": "First collection"
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "title": "Second collection"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  window.onload = (event) => {
+      var index = document.querySelectorAll(".tab-content");
+
+    
+    var index0 = document.querySelector(".tab-content.tab-content-0.current");
+    index0.classList.remove("current");
+
+    //ghost
+  var indexClick1 = document.querySelector(".tab-link.tab-link-1");
+  var indexStart1 = document.querySelector(".tab-content-1");
+  indexClick1.addEventListener("click", function() {
+        index.forEach(function (ele, index) {        
+          ele.classList.remove('current');          
+      });
+    indexStart1.classList.add("current");
+  });
+
+    //hydrate
+    var indexClick2 = document.querySelector(".tab-link.tab-link-2");
+  var indexStart2 = document.querySelector(".tab-content-2");
+  indexClick2.addEventListener("click", function() {
+        index.forEach(function (ele, index) {        
+          ele.classList.remove('current');          
+      });
+    indexStart2.classList.add("current");
+  });
+
+    //curl
+    var indexClick3 = document.querySelector(".tab-link.tab-link-3");
+  var indexStart3 = document.querySelector(".tab-content-3");
+  indexClick3.addEventListener("click", function() {
+        index.forEach(function (ele, index) {        
+          ele.classList.remove('current');          
+      });
+    indexStart3.classList.add("current");
+  });
+
+    //volume
+    var indexClick4 = document.querySelector(".tab-link.tab-link-4");
+  var indexStart4 = document.querySelector(".tab-content-4");
+  indexClick4.addEventListener("click", function() {
+        index.forEach(function (ele, index) {        
+          ele.classList.remove('current');          
+      });
+    indexStart4.classList.add("current");
+  });
+
+    //glossy
+    var indexClick5 = document.querySelector(".tab-link.tab-link-5");
+  var indexStart5 = document.querySelector(".tab-content-5");
+  indexClick5.addEventListener("click", function() {
+        index.forEach(function (ele, index) {        
+          ele.classList.remove('current');          
+      });
+    indexStart5.classList.add("current");
+  });
+
+        //sea
+    var indexClick6 = document.querySelector(".tab-link.tab-link-6");
+  var indexStart6 = document.querySelector(".tab-content-6");
+  indexClick6.addEventListener("click", function() {
+        index.forEach(function (ele, index) {        
+          ele.classList.remove('current');          
+      });
+    indexStart6.classList.add("current");
+  });
+
+        //reset
+    var indexClick7 = document.querySelector(".tab-link.tab-link-7");
+  var indexStart7 = document.querySelector(".tab-content-7");
+  indexClick7.addEventListener("click", function() {
+        index.forEach(function (ele, index) {        
+          ele.classList.remove('current');          
+      });
+    indexStart7.classList.add("current");
+  });
+
+        //purple
+    var indexClick8 = document.querySelector(".tab-link.tab-link-8");
+  var indexStart8 = document.querySelector(".tab-content-8");
+  indexClick8.addEventListener("click", function() {
+        index.forEach(function (ele, index) {        
+          ele.classList.remove('current');          
+      });
+    indexStart8.classList.add("current");
+  });
+
+    
+    var newindex = document.querySelector(".tab-link.tab-link-0.current");
+    newindex.addEventListener("click", function() {
+      index.forEach(function(ele, index){
+        ele.classList.add("current");
+        
+      });
+      index0.classList.remove("current");
+  });
+
+    
+};
+
+
+
+  
+
+</script>
+
+
+

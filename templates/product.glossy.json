@@ -1,0 +1,703 @@
+{
+  "sections": {
+    "shogun-helper": {
+      "type": "shogun-helper",
+      "settings": {
+      }
+    },
+    "shogun-above": {
+      "type": "shogun-above",
+      "settings": {
+      }
+    },
+    "1656969662d5c2286c": {
+      "type": "section-html",
+      "settings": {
+        "html": "<style>\n.product-page {\npadding-top: 0;\npadding-bottom: 0;\n}\n.product__media__wrapper { margin-bottom:0;\n}\n\n\n.flickity-slider{\nwidth: 100%;\nposition: absolute;\nbottom: 0rem;\n}\n.btn--outline{\nbackground-color:currentColor;\nborder-radius: 3em;\nfont-weight: bold;\n}\n.btn--outline>span{\ncolor:white;\n}\n\n\n .product-single{\n  display: flex;\n  align-items: center;\n  width:100vw;\n  margin-inline-start:50%;\n  transform:translateX(-50%);\n}\n@media(max-width:475px){\nbody{\noverflow-x:hidden;\n}\n.product-single{\n  display: block;\n}\n.product__media__wrapper ~.grid__item {\n padding:1rem;\n    \n}\n}\n.product__media__wrapper{\n padding-left:0; \n\n}\nsection[data-section-id=\"template--14808346787874__1655893936ceda3ef1\"] > .brick__block:first-of-type >.brick__block__text{\n background-image: url(https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/pablo-merchan-montes-O-sNTavXbmE-unsplash_2_256x256_crop_center.png?v=1656577239);\n    background-size: contain;\n    background-position: 85%;\n    background-color: #008cbb;\n    background-repeat: no-repeat;\n}\n.product-hr{\n    width: 95%;\n  \tmax-width:70rem;\n    border-top: 1px solid #333;\n      margin: auto;\n}\n\n.media__thumb__wrapper{\nposition: absolute;\nwidth: 30rem;\nheight: 100%;\nleft: -9rem;\nbottom: 2rem;\n}\n.media__thumb__wrapper>.flickity-viewport{\n height: 100% !important;\n}\n.flickity-slider{\ndisplay: flex;\nflex-direction: column;\njustify-content: flex-end;\n\n}\n.media__thumb{\nposition: relative !important;\ntransform: translate(290%,-200%)\n!important;\n}\n.media__thumb>img\n{border-radius: 50%;}\n@media(max-width:475px){\n.media__thumb__wrapper{\nwidth: auto;\nheight: 65%;\n    left: 1rem;\n    bottom: 0rem;\n}\n.media__thumb {\ntransform: translateX(0%) !important;\n}\n}\n\n<\/style>",
+        "full_width": true
+      }
+    },
+    "main": {
+      "type": "product",
+      "blocks": {
+        "777df467-a1f1-4b79-a70f-8990c4627661": {
+          "type": "title",
+          "settings": {
+            "product_show_vendor": false,
+            "show_rating": true,
+            "show_rating_count": true
+          }
+        },
+        "e4f1e8e6-b18d-4c6d-ab7b-1778ea419bf9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "<p>{{ product.title }}<\/p>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "read_more": false,
+            "enable_description": true,
+            "icon_description": "",
+            "style": "none",
+            "title_1": "",
+            "icon_name_1": "",
+            "raw_content_1": "",
+            "title_2": "",
+            "icon_name_2": "",
+            "raw_content_2": "",
+            "title_3": "",
+            "icon_name_3": "",
+            "raw_content_3": "",
+            "title_4": "",
+            "icon_name_4": "",
+            "raw_content_4": "",
+            "title_5": "",
+            "icon_name_5": "",
+            "raw_content_5": ""
+          }
+        },
+        "77a6da3a-772e-437c-9e0c-1118a631b164": {
+          "type": "image",
+          "settings": {
+            "image": "{{ product.metafields.custom.four_icons_.value }}",
+            "image_max_limit": 325,
+            "alignment": "product__image--left"
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "variant_form": "auto",
+            "bg-cart": "{{ product.metafields.custom.button_color.value }}",
+            "show_quantity": false,
+            "enable_payment_button": false,
+            "subscriptions_enable_selectors": false,
+            "show_remaining": false,
+            "show_remaining_style": "low",
+            "countdown": 10,
+            "info_page": ""
+          }
+        },
+        "15b10a3e-a100-42f4-85f6-d1515a3d9dee": {
+          "type": "shopify:\/\/apps\/ordergroove-subscriptions\/blocks\/pdp-offer-block\/cf69fc68-e893-4d33-87e3-4e71e2f5822f",
+          "settings": {
+            "location": "459609bac87c44d9de9534a83389a0795b62d6f2"
+          }
+        },
+        "pickup": {
+          "type": "pickup",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "sharing": {
+          "type": "sharing",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "df546664-43b5-4411-993b-9cc2cfb98b96": {
+          "type": "upsell",
+          "disabled": true,
+          "settings": {
+            "product": "ghost-duo"
+          }
+        },
+        "49820a15-5db5-4024-a196-765b8ce916b1": {
+          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "disabled": true,
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "bf64744b-eda0-47ac-8bfb-11e5dd026ec1": {
+          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "disabled": true,
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "777df467-a1f1-4b79-a70f-8990c4627661",
+        "e4f1e8e6-b18d-4c6d-ab7b-1778ea419bf9",
+        "description",
+        "77a6da3a-772e-437c-9e0c-1118a631b164",
+        "form",
+        "15b10a3e-a100-42f4-85f6-d1515a3d9dee",
+        "pickup",
+        "sharing",
+        "df546664-43b5-4411-993b-9cc2cfb98b96",
+        "49820a15-5db5-4024-a196-765b8ce916b1",
+        "bf64744b-eda0-47ac-8bfb-11e5dd026ec1"
+      ],
+      "settings": {
+        "image_width": "half",
+        "align": "left",
+        "product_breadcrumbs": false,
+        "enable_video_looping": true,
+        "zoom_enable": true,
+        "bg": "palette--light bg--accent"
+      }
+    },
+    "1656999735fdea1b2b": {
+      "type": "section-announcement",
+      "blocks": {
+        "1656999735d6ba392b-0": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sulfate free<\/p>"
+          }
+        },
+        "5eabc410-3cd0-42b1-a898-7707eae33680": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Color Safe<\/p>"
+          }
+        },
+        "bc42cd7a-4bce-4149-8c94-39b33068ed2b": {
+          "type": "text",
+          "settings": {
+            "text": "<p>VEGAN<\/p>"
+          }
+        },
+        "bacc884c-32cd-4a8b-8c01-cf7538c05ab2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cruelty Free<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1656999735d6ba392b-0",
+        "5eabc410-3cd0-42b1-a898-7707eae33680",
+        "bc42cd7a-4bce-4149-8c94-39b33068ed2b",
+        "bacc884c-32cd-4a8b-8c01-cf7538c05ab2"
+      ],
+      "settings": {
+        "bg_color": "{{ product.metafields.custom.color.value }}",
+        "color": "#ffffff",
+        "text_size": 7
+      }
+    },
+    "custom-tabs": {
+      "type": "Custom_Tabs",
+      "blocks": {
+        "e224bf50-aeb4-4235-a91b-f83fa84d6914": {
+          "type": "text",
+          "settings": {
+            "title": "Product Details\/How to use",
+            "text_1": "<p><strong>Who’s It For<br\/><\/strong>{{ product.metafields.custom.who_is_it_for_text | metafield_tag }}<\/p><p><\/p><p><strong>How to use<br\/><\/strong>{{ product.metafields.custom.how_to_use_tab | metafield_tag }}<\/p><p><\/p><p><strong>Tips & Tricks<\/strong><\/p><p>{{ product.metafields.custom.tips_and_tricks | metafield_tag }}<\/p><p><\/p>",
+            "text_2": "<p><strong>What It Does<br\/><\/strong>{{ product.metafields.custom.what_it_does_text | metafield_tag }}<\/p><p><strong>Only Good Stuf<br\/><\/strong>{{ product.metafields.custom.only_good_stuf | metafield_tag }}<\/p><p><\/p>",
+            "text_3": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "text_4": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "text_5": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "text_6": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "tap_type": "Columns"
+          }
+        },
+        "42852e5b-7348-485c-8ee6-8c3d9dafaf56": {
+          "type": "text",
+          "settings": {
+            "title": "Ingredients",
+            "text_1": "<p><strong>Key Ingredients<\/strong><\/p><p><strong><br\/><\/strong>{{ product.metafields.custom.key_ingredients_tab | metafield_tag }}<\/p>",
+            "text_2": "<p><strong>Ingredients<\/strong><\/p><p><br\/>{{ product.metafields.custom.ingredients_tab | metafield_tag }}<\/p>",
+            "text_3": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "text_4": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "text_5": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "text_6": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "tap_type": "Columns"
+          }
+        },
+        "45a7fde5-1f15-42b4-8111-eaf6ead6e984": {
+          "type": "text",
+          "settings": {
+            "title": "Editor's note",
+            "text_1": "<p>{{ product.metafields.custom.press_quote | metafield_tag }}<\/p>",
+            "text_2": "<p>{{ product.metafields.custom.press_quote_2 | metafield_tag }}<\/p>",
+            "text_3": "<p>{{ product.metafields.custom.press_quote_3 | metafield_tag }}<\/p>",
+            "text_4": "",
+            "text_5": "",
+            "text_6": "",
+            "tap_type": "tabs",
+            "ft_img_1": "{{ product.metafields.custom.press_logo.value }}",
+            "ft_img_2": "{{ product.metafields.custom.press_logo_2.value }}",
+            "ft_img_3": "{{ product.metafields.custom.press_logo_3.value }}"
+          }
+        },
+        "356b2d7d-6fa0-4321-8eae-2319def6b434": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "Editor's note",
+            "text_1": "<p>This sulfate-free shampoo and conditioner set is cult-loved for a reason. It's designed with all hair types in mind and D ringa oil, quinoa protein, and sunflow I DDxtract to prevent strand breakage. Bonus: it's also color-safe.\" WHO WHAT WEAR<\/p><p><\/p><p><\/p>",
+            "text_2": "",
+            "text_3": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "text_4": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "text_5": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "text_6": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "tap_type": "tabs"
+          }
+        },
+        "754cba6d-a97a-4f59-b4e7-88e35080c125": {
+          "type": "text",
+          "settings": {
+            "title": "FAQs",
+            "text_1": "<p>{{ product.metafields.custom.faqs_text | metafield_tag }}<\/p>",
+            "text_2": "<p>{{ product.metafields.custom.faqs_text_2 | metafield_tag }}<\/p>",
+            "text_3": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "text_4": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "text_5": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "text_6": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "tap_type": "Columns"
+          }
+        }
+      },
+      "block_order": [
+        "e224bf50-aeb4-4235-a91b-f83fa84d6914",
+        "42852e5b-7348-485c-8ee6-8c3d9dafaf56",
+        "45a7fde5-1f15-42b4-8111-eaf6ead6e984",
+        "356b2d7d-6fa0-4321-8eae-2319def6b434",
+        "754cba6d-a97a-4f59-b4e7-88e35080c125"
+      ],
+      "settings": {
+        "height": "margin--zero",
+        "width": "wrapper--full",
+        "color_bg": "palette--light bg--accent"
+      }
+    },
+    "166056089733bd98e7": {
+      "type": "section-double-product",
+      "blocks": {
+        "1660560897c73b7a22-0": {
+          "type": "text",
+          "settings": {
+            "kicker": "{{ product.metafields.custom.above_heading_first_section.value }}",
+            "title": "{{ product.metafields.custom.heading_first_section.value }}",
+            "text": "<p>{{ product.metafields.custom.text_first_section | metafield_tag }}<\/p>",
+            "text-bottom": "<p>{{ product.metafields.custom.text_bottom_first_section | metafield_tag }}<\/p>",
+            "text_size": 3,
+            "text_columns": 1,
+            "align_text": "text-center",
+            "button_text": "",
+            "button_url": "",
+            "button_color": "btn--white",
+            "button_style": "caps--link",
+            "text_color": "text--white",
+            "bg_color": "#64b4d9"
+          }
+        },
+        "1660560897c73b7a22-1": {
+          "type": "image",
+          "settings": {
+            "image": "{{ product.metafields.custom.first_image_section.value }}",
+            "bg_position": "center-center",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        }
+      },
+      "block_order": [
+        "1660560897c73b7a22-0",
+        "1660560897c73b7a22-1"
+      ],
+      "settings": {
+        "bg_color": "{{ product.metafields.custom.color.value }}",
+        "height": "image-height",
+        "padding": false,
+        "borders": false,
+        "wrapper": false
+      }
+    },
+    "1659376185bb59a691": {
+      "type": "section-html",
+      "disabled": true,
+      "settings": {
+        "html": "<style>\n.container {\nposition: relative;\nwidth: 17.5rem;\naspect-ratio: 1;\nborder: 2px solid white;\n}\n.container .img {\nposition: absolute;\ntop: 0;\nleft: 0;\nwidth: 100%;\nheight: 100%;\nbackground-size: 17.5rem 100%;\nbackground-repeat: no-repeat;\n}\n.container .img::after {\nposition: absolute;\nbackground-color: #64b4d9;\ncolor: white;\ndisplay: inline-block;\nbottom: 2rem;\npadding: 0.5rem;\n}\n.container .background-img {\nbackground-image: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_BA_2000x2000_Glossy_Model4.jpg?v=1658427295\");\n}\n.container .background-img::after {\ncontent: \"After\";\nright: 10%;\n}\n.container .foreground-img {\nbackground-image: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_BA_2000x2000_Glossy_Model4_1.jpg?v=1658427295\");\nbackground-position-y: 0px;\nwidth: 50%;\n}\n.container .foreground-img::after {\ncontent: \"Befor\";\nleft: 10%;\n}\n\n.slider {\nposition: absolute;\n-webkit-appearance: none;\n-moz-appearance: none;\n      appearance: none;\nwidth: 100%;\nheight: 100%;\nbackground: rgba(242, 242, 242, 0.3);\noutline: none;\nmargin: 0;\ntransition: all 0;\ndisplay: flex;\njustify-content: center;\nalign-items: center;\n}\n.slider:hover {\nbackground: rgba(242, 242, 242, 0.1);\n}\n.slider::-webkit-slider-thumb {\n-webkit-appearance: none;\nappearance: none;\nwidth: 2px;\nheight: 17.5rem;\nbackground: white;\ncursor: pointer;\n}\n\n.media-images {\ndisplay: flex;\njustify-content: space-around;\nbackground-color:#00A0CD;\npadding: 20px;\n}\n@media(max-width:470px){\n.media-images {\npadding:2em 0;\ngap:2em;\nflex-direction: column;\njustify-content: center; align-items: center;\n}\n}\n<\/style>\n\n<div class=\"media-images\">\n<div class='container'>\n\n<!-- image 1 -->\n<div class='img background-img'\nstyle=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/0004_Model_After_096_copy.jpg?v=1659499929');\nbackground-position-y: 0px;\"\n><\/div>\n<div class='img foreground-img'\nstyle=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/0005_Model_Before_115_copy.jpg?v=1659499929');\nbackground-position-y: 2px;\"\n><\/div>\n\n<input type=\"range\" min=\"1\" max=\"100\" value=\"50\" class=\"slider\" name='slider' id=\"slider\">\n<\/div>\n\n<!-- image 2 -->\n<div class='container'>\n<div class='img background-img'\nstyle=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/0002_Model_After_136_copy.jpg?v=1659499929');\nbackground-position-y: 0px;\"\n><\/div>\n<div class='img foreground-img'\nstyle=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/0003_Model_Before_089_copy.jpg?v=1659499929');\nbackground-position-y: 5px;\"\n><\/div>\n\n<input type=\"range\" min=\"1\" max=\"100\" value=\"50\" class=\"slider\" name='slider' id=\"slider\">\n<\/div>\n\n\n<!-- image 3 -->\n<div class='container'>\n<div class='img background-img'\nstyle=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/0000_Model_After_169_copy.jpg?v=1659499929');\nbackground-position-y: 0px;\"\n><\/div>\n<div class='img foreground-img'\nstyle=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_BA_2000x2000_Glossy_Model3.jpg?v=1658427295');\nbackground-position-y: -10px;\"\n><\/div>\n\n<input type=\"range\" min=\"1\" max=\"100\" value=\"50\" class=\"slider\" name='slider' id=\"slider\">\n<\/div>\n<\/div>\n\n\n<script>\ndocument.querySelectorAll('.slider')\n.forEach((slider) => {\nslider.addEventListener('change', (e) => {\nconst sliderPos = e.target.value;\n\/\/ Update the width of the foreground image\nslider.previousElementSibling.style.width = `${sliderPos}%`;\n})\n})\n<\/script>",
+        "full_width": true
+      }
+    },
+    "16579602720f5ca014": {
+      "type": "section-html",
+      "disabled": true,
+      "settings": {
+        "html": "<section class=\"VT-container\">\n<div class=\"VT-text\" \n\n>\n<h2 style=\"font-family: 'Eames Century Modern Thin';\"><i>how to use<\/i> <\/h2>\n<ul>\n<li>Massage small amount into wet hair<\/li>\n<li>Lather well and rinse<\/li>\n<\/ul>\n<\/div>\n<div class=\"VT-Vid\"\nstyle=\"background-image:url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_Glossy_Collection_Lifestyle_3_720x.jpg?v=1658416119');\nbackground-size: cover;\nbackground-position: center;\"\n\n>\n\n<\/div>\n<\/section>",
+        "full_width": true
+      }
+    },
+    "16562275959c6c0d0a": {
+      "type": "section-html",
+      "disabled": true,
+      "settings": {
+        "html": "<section class=\"BA-container\">\n<div class=\"BA-img content-b4\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/ecd39cdb640edbba27ed33cf3eedf7d9_540x.jpg?v=1656190059\" alt=\"\">\n<\/div>\n<div class=\"BA-img content-b4\">\n    <img \nstyle=\"object-position: center 25%;\"\nsrc=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_BA_2000x2000_Glossy_Model3_720x.jpg?v=1658427295\" alt=\"\">\n<\/div>\n<div class=\"BA-img content-b4\">\n    <img \nstyle=\"object-position: center 10%;\"\nsrc=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_BA_2000x2000_Glossy_Model4_1_720x.jpg?v=1658427295\" alt=\"\">\n<\/div>\n<\/section>",
+        "full_width": true
+      }
+    },
+    "1657963663f1a93474": {
+      "type": "section-html",
+      "disabled": true,
+      "settings": {
+        "html": "<section class=\"BA-container\">\n<div class=\"BA-img content-after\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/35db4a0609998ed86238938927475ef7_540x.jpg?v=1656190059\" alt=\"\">\n<\/div>\n<div class=\"BA-img content-after\">\n    <img \nstyle=\"object-position: center 30%;\"\nsrc=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_BA_2000x2000_Glossy_Model3_1_720x.jpg?v=16584272957\" alt=\"\">\n<\/div>\n<div class=\"BA-img content-after\">\n    <img \nstyle=\"object-position: center 10%;\"\nsrc=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_BA_2000x2000_Glossy_Model4_720x.jpg?v=1658427295\" alt=\"\">\n<\/div>\n<\/section>",
+        "full_width": true
+      }
+    },
+    "reviews": {
+      "type": "reviews",
+      "disabled": true,
+      "settings": {
+        "product_reviews_enable": false,
+        "bg": "palette--light bg--accent"
+      }
+    },
+    "related": {
+      "type": "related",
+      "disabled": true,
+      "settings": {
+        "heading": "You might also like",
+        "bg": "palette--light bg--neutral",
+        "grid": 3,
+        "related_products_enable": true,
+        "limit": 6,
+        "product_recommendations_heading": "Related products",
+        "show_recently_viewed": true,
+        "product_recently_limit": 6,
+        "product_recently_minimum": 4,
+        "product_recently_heading": "Recently viewed"
+      }
+    },
+    "shogun-below": {
+      "type": "shogun-below",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "16610900422c501f8b": {
+      "type": "section-ba",
+      "blocks": {
+        "54718457-b73d-4e1c-9ff5-67b48f309c0f": {
+          "type": "image",
+          "settings": {
+            "image-before": "{{ product.metafields.custom.before_image_1.value }}",
+            "image-after": "{{ product.metafields.custom.after_image_1.value }}"
+          }
+        },
+        "1030ead7-367c-49eb-be16-72a68113da14": {
+          "type": "image",
+          "settings": {
+            "image-before": "{{ product.metafields.custom.before_image_2_.value }}",
+            "image-after": "{{ product.metafields.custom.after_image_2.value }}"
+          }
+        },
+        "f9f08db9-4de3-4d24-aeee-c2c5084d7aeb": {
+          "type": "image",
+          "settings": {
+            "image-before": "{{ product.metafields.custom.before_image_3.value }}",
+            "image-after": "{{ product.metafields.custom.after_image_3.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "54718457-b73d-4e1c-9ff5-67b48f309c0f",
+        "1030ead7-367c-49eb-be16-72a68113da14",
+        "f9f08db9-4de3-4d24-aeee-c2c5084d7aeb"
+      ],
+      "settings": {
+        "bg_color": "{{ product.metafields.custom.background_color_b_a.value }}"
+      }
+    },
+    "16605701365a3c47a5": {
+      "type": "section-doubleproduct-details",
+      "blocks": {
+        "1660570136f1093da3-1": {
+          "type": "image",
+          "settings": {
+            "image": "{{ product.metafields.custom.key_ingredients_image.value }}",
+            "bg_position": "center-center",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        },
+        "1660570136f1093da3-0": {
+          "type": "text",
+          "settings": {
+            "kicker": "",
+            "title": "<style>\n @media screen and (max-width: 767px) {\n.svg-m2{ width: 310px;} }\n<\/style>\n<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"369\" height=\"51\" viewbox=\"0 0 369 51\" fill=\"none\">\n<path d=\"M25.804 13.688H16.756L7.916 23.204V1.624H1V39.272H7.916V32.512L10.776 29.496L17.536 39.272H26.012L15.56 24.452L25.804 13.688ZM33.9229 23.568C34.0789 21.228 36.0549 18.524 39.6429 18.524C43.5949 18.524 45.2589 21.02 45.3629 23.568H33.9229ZM46.0389 30.224C45.2069 32.512 43.4389 34.124 40.2149 34.124C36.7829 34.124 33.9229 31.68 33.7669 28.3H52.0709C52.0709 28.196 52.1749 27.156 52.1749 26.168C52.1749 17.952 47.4429 12.908 39.5389 12.908C32.9869 12.908 26.9549 18.212 26.9549 26.376C26.9549 35.008 33.1429 40.052 40.1629 40.052C46.4549 40.052 50.5109 36.36 51.8109 31.94L46.0389 30.224ZM66.1056 49.36L82.1736 13.688H74.7896L68.4976 28.664L61.6856 13.688H53.9376L64.8056 36.048L58.7736 49.36H66.1056ZM106.127 39.272V13.688H99.2109V39.272H106.127ZM98.3789 5.316C98.3789 7.604 100.303 9.528 102.643 9.528C105.035 9.528 106.907 7.604 106.907 5.316C106.907 2.924 105.035 1 102.643 1C100.303 1 98.3789 2.924 98.3789 5.316ZM120.447 24.556C120.447 21.592 122.215 19.252 125.231 19.252C128.559 19.252 129.963 21.488 129.963 24.348V39.272H136.879V23.152C136.879 17.536 133.967 13.012 127.623 13.012C124.867 13.012 121.799 14.208 120.239 16.86V13.688H113.531V39.272H120.447V24.556ZM142.078 40.676C142.806 45.564 147.486 49.932 154.506 49.932C164.126 49.932 167.922 43.536 167.922 36.516V13.688H161.266V16.704C160.382 14.988 158.042 13.22 153.986 13.22C146.966 13.22 142.078 18.94 142.078 25.7C142.078 32.876 147.174 38.128 153.986 38.128C157.678 38.128 160.07 36.516 161.11 34.852V36.724C161.11 41.664 158.666 43.848 154.298 43.848C151.022 43.848 148.786 41.82 148.318 39.012L142.078 40.676ZM155.182 32.2C151.594 32.2 149.046 29.704 149.046 25.7C149.046 21.748 151.75 19.252 155.182 19.252C158.51 19.252 161.214 21.748 161.214 25.7C161.214 29.652 158.718 32.2 155.182 32.2ZM190.526 13.584C190.006 13.532 189.486 13.48 188.914 13.48C186.73 13.48 183.194 14.104 181.634 17.484V13.688H174.926V39.272H181.842V27.572C181.842 22.06 184.91 20.344 188.446 20.344C189.07 20.344 189.746 20.396 190.526 20.552V13.584ZM200.181 23.568C200.337 21.228 202.313 18.524 205.901 18.524C209.853 18.524 211.517 21.02 211.621 23.568H200.181ZM212.297 30.224C211.465 32.512 209.697 34.124 206.473 34.124C203.041 34.124 200.181 31.68 200.025 28.3H218.329C218.329 28.196 218.433 27.156 218.433 26.168C218.433 17.952 213.701 12.908 205.797 12.908C199.245 12.908 193.213 18.212 193.213 26.376C193.213 35.008 199.401 40.052 206.421 40.052C212.713 40.052 216.769 36.36 218.069 31.94L212.297 30.224ZM248.267 1.624H241.455V16.236C240.727 14.884 238.647 13.064 234.227 13.064C226.999 13.064 221.955 18.94 221.955 26.428C221.955 34.176 227.155 39.896 234.435 39.896C237.867 39.896 240.467 38.336 241.611 36.308C241.611 37.504 241.767 38.752 241.871 39.272H248.475C248.371 38.232 248.267 36.36 248.267 34.644V1.624ZM228.923 26.428C228.923 21.852 231.731 19.252 235.267 19.252C238.803 19.252 241.559 21.8 241.559 26.376C241.559 31.004 238.803 33.708 235.267 33.708C231.627 33.708 228.923 31.004 228.923 26.428ZM262.686 39.272V13.688H255.77V39.272H262.686ZM254.938 5.316C254.938 7.604 256.862 9.528 259.202 9.528C261.594 9.528 263.466 7.604 263.466 5.316C263.466 2.924 261.594 1 259.202 1C256.862 1 254.938 2.924 254.938 5.316ZM275.134 23.568C275.29 21.228 277.266 18.524 280.854 18.524C284.806 18.524 286.47 21.02 286.574 23.568H275.134ZM287.25 30.224C286.418 32.512 284.65 34.124 281.426 34.124C277.994 34.124 275.134 31.68 274.978 28.3H293.282C293.282 28.196 293.386 27.156 293.386 26.168C293.386 17.952 288.654 12.908 280.75 12.908C274.198 12.908 268.166 18.212 268.166 26.376C268.166 35.008 274.354 40.052 281.374 40.052C287.666 40.052 291.722 36.36 293.022 31.94L287.25 30.224ZM305.748 24.556C305.748 21.592 307.516 19.252 310.532 19.252C313.86 19.252 315.264 21.488 315.264 24.348V39.272H322.18V23.152C322.18 17.536 319.268 13.012 312.924 13.012C310.168 13.012 307.1 14.208 305.54 16.86V13.688H298.832V39.272H305.748V24.556ZM337.727 6.044H331.487V9.632C331.487 11.92 330.239 13.688 327.535 13.688H326.235V19.824H330.863V31.732C330.863 36.672 333.983 39.636 338.975 39.636C341.003 39.636 342.251 39.272 342.875 39.012V33.292C342.511 33.396 341.575 33.5 340.743 33.5C338.767 33.5 337.727 32.772 337.727 30.536V19.824H342.875V13.688H337.727V6.044ZM347.125 32.148C347.437 35.06 350.089 40.052 357.785 40.052C364.493 40.052 367.717 35.788 367.717 31.628C367.717 27.884 365.169 24.816 360.125 23.776L356.485 22.996C355.081 22.736 354.145 21.956 354.145 20.708C354.145 19.252 355.601 18.16 357.421 18.16C360.333 18.16 361.425 20.084 361.633 21.592L367.405 20.292C367.093 17.536 364.649 12.908 357.369 12.908C351.857 12.908 347.801 16.704 347.801 21.28C347.801 24.868 350.037 27.832 354.977 28.924L358.357 29.704C360.333 30.12 361.113 31.056 361.113 32.2C361.113 33.552 360.021 34.748 357.733 34.748C354.717 34.748 353.209 32.876 353.053 30.848L347.125 32.148Z\" stroke=\"white\" stroke-width=\"1.5\"><\/path>\n<\/svg>",
+            "text": "<p>{{ product.metafields.custom.test | metafield_tag }}<\/p>",
+            "text_size": 2,
+            "text_columns": 1,
+            "align_text": "text-center",
+            "button_text": "",
+            "button_url": "",
+            "button_color": "btn--neutral",
+            "button_style": "caps--link",
+            "text_color": "text--white",
+            "bg_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "1660570136f1093da3-1",
+        "1660570136f1093da3-0"
+      ],
+      "settings": {
+        "bg_color": "{{ product.metafields.custom.color.value }}",
+        "height": "image-height",
+        "padding": false,
+        "borders": false,
+        "wrapper": false
+      }
+    },
+    "16606466207ce05502": {
+      "type": "section-double-how-to-use",
+      "blocks": {
+        "16606466201c295006-0": {
+          "type": "text",
+          "settings": {
+            "kicker": "",
+            "title": "<style>\n @media screen and (max-width: 767px) {\n.svg-m3{ width: 230px;} }\n<\/style>\n<svg class=\"svg-m3\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"259\" height=\"41\" viewbox=\"0 0 259 41\" fill=\"none\">\n<path d=\"M7.916 23.9721C8.072 21.1641 9.788 18.9801 12.7 18.9801C16.028 18.9801 17.432 21.2161 17.432 24.0761V39.0001H24.348V22.8801C24.348 17.2641 21.332 12.7401 14.832 12.7401C12.388 12.7401 9.58 13.5721 7.916 15.5481V1.35205H1V39.0001H7.916V23.9721ZM42.8592 33.4881C39.4792 33.4881 36.3592 30.9921 36.3592 26.2081C36.3592 21.3721 39.4792 18.9281 42.8592 18.9281C46.2392 18.9281 49.3592 21.3721 49.3592 26.2081C49.3592 31.0441 46.2392 33.4881 42.8592 33.4881ZM42.8592 12.6361C35.2152 12.6361 29.4432 18.3041 29.4432 26.2081C29.4432 34.0601 35.2152 39.7801 42.8592 39.7801C50.5032 39.7801 56.2752 34.0601 56.2752 26.2081C56.2752 18.3041 50.5032 12.6361 42.8592 12.6361ZM75.5822 13.4161L70.0182 29.8481L65.2862 13.4161H58.0062L66.1702 39.0001H73.1902L79.0662 21.5281L85.0462 39.0001H91.9622L99.9702 13.4161H93.1062L88.3742 29.9001L82.8622 13.4161H75.5822ZM125.665 5.77205H119.425V9.36005C119.425 11.6481 118.177 13.4161 115.473 13.4161H114.173V19.5521H118.801V31.4601C118.801 36.4001 121.921 39.3641 126.913 39.3641C128.941 39.3641 130.189 39.0001 130.813 38.7401V33.0201C130.449 33.1241 129.513 33.2281 128.681 33.2281C126.705 33.2281 125.665 32.5001 125.665 30.2641V19.5521H130.813V13.4161H125.665V5.77205ZM147.926 33.4881C144.546 33.4881 141.426 30.9921 141.426 26.2081C141.426 21.3721 144.546 18.9281 147.926 18.9281C151.306 18.9281 154.426 21.3721 154.426 26.2081C154.426 31.0441 151.306 33.4881 147.926 33.4881ZM147.926 12.6361C140.282 12.6361 134.51 18.3041 134.51 26.2081C134.51 34.0601 140.282 39.7801 147.926 39.7801C155.57 39.7801 161.342 34.0601 161.342 26.2081C161.342 18.3041 155.57 12.6361 147.926 12.6361ZM196.392 39.0001H202.996C202.892 38.1161 202.736 36.3481 202.736 34.3721V13.4161H195.82V28.2881C195.82 31.2521 194.052 33.3321 190.984 33.3321C187.76 33.3321 186.304 31.0441 186.304 28.1841V13.4161H179.388V29.5881C179.388 35.1521 182.924 39.6761 189.112 39.6761C191.816 39.6761 194.78 38.6361 196.184 36.2441C196.184 37.2841 196.288 38.4801 196.392 39.0001ZM207.933 31.8761C208.245 34.7881 210.897 39.7801 218.593 39.7801C225.301 39.7801 228.525 35.5161 228.525 31.3561C228.525 27.6121 225.977 24.5441 220.933 23.5041L217.293 22.7241C215.889 22.4641 214.953 21.6841 214.953 20.4361C214.953 18.9801 216.409 17.8881 218.229 17.8881C221.141 17.8881 222.233 19.8121 222.441 21.3201L228.213 20.0201C227.901 17.2641 225.457 12.6361 218.177 12.6361C212.665 12.6361 208.609 16.4321 208.609 21.0081C208.609 24.5961 210.845 27.5601 215.785 28.6521L219.165 29.4321C221.141 29.8481 221.921 30.7841 221.921 31.9281C221.921 33.2801 220.829 34.4761 218.541 34.4761C215.525 34.4761 214.017 32.6041 213.861 30.5761L207.933 31.8761ZM239.028 23.2961C239.184 20.9561 241.16 18.2521 244.748 18.2521C248.7 18.2521 250.364 20.7481 250.468 23.2961H239.028ZM251.144 29.9521C250.312 32.2401 248.544 33.8521 245.32 33.8521C241.888 33.8521 239.028 31.4081 238.872 28.0281H257.176C257.176 27.9241 257.28 26.8841 257.28 25.8961C257.28 17.6801 252.548 12.6361 244.644 12.6361C238.092 12.6361 232.06 17.9401 232.06 26.1041C232.06 34.7361 238.248 39.7801 245.268 39.7801C251.56 39.7801 255.616 36.0881 256.916 31.6681L251.144 29.9521Z\" stroke=\"white\" stroke-width=\"1.5\"><\/path>\n<\/svg>",
+            "text": "<p>{{ product.metafields.custom.how_to_use_n1.value }}<\/p>",
+            "text1": "<p>{{ product.metafields.custom.how_to_use_n22.value }}<\/p>",
+            "text_size": 1,
+            "text_columns": 1,
+            "align_text": "text-center",
+            "button_text": "",
+            "button_url": "",
+            "button_color": "btn--neutral",
+            "button_style": "caps--link",
+            "text_color": "text--white",
+            "bg_color": "#ffffff"
+          }
+        },
+        "16606466201c295006-1": {
+          "type": "image",
+          "settings": {
+            "image": "{{ product.metafields.custom.how_to_use_image.value }}",
+            "bg_position": "center-center",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        }
+      },
+      "block_order": [
+        "16606466201c295006-0",
+        "16606466201c295006-1"
+      ],
+      "settings": {
+        "bg_color": "{{ product.metafields.custom.color.value }}",
+        "height": "image-height",
+        "padding": false,
+        "borders": false,
+        "wrapper": false
+      }
+    },
+    "1660571492a80cca1c": {
+      "type": "section-doubleproduct-details",
+      "disabled": true,
+      "blocks": {
+        "16605714929f18b782-1": {
+          "type": "image",
+          "settings": {
+            "image": "{{ product.metafields.custom.how_to_use_image.value }}",
+            "bg_position": "center-center",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        }
+      },
+      "block_order": [
+        "16605714929f18b782-1"
+      ],
+      "settings": {
+        "bg_color": "{{ product.metafields.custom.color.value }}",
+        "height": "image-height",
+        "padding": false,
+        "borders": false,
+        "wrapper": false
+      }
+    },
+    "1660572172f51cc5a6": {
+      "type": "section-doubleproduct-details",
+      "blocks": {
+        "16605721712fe06cfa-1": {
+          "type": "image",
+          "settings": {
+            "image": "{{ product.metafields.custom.stylist_tip_image.value }}",
+            "bg_position": "center-center",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        },
+        "16605721712fe06cfa-0": {
+          "type": "text",
+          "settings": {
+            "kicker": "",
+            "title": "<style>\n @media screen and (max-width: 767px) {\n.svg-m4{ width: 210px;} }\n<\/style>\n<svg class=\"svg-m4\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"223\" height=\"51\" viewbox=\"0 0 223 51\" fill=\"none\">\n<path d=\"M1 32.148C1.312 35.06 3.964 40.052 11.66 40.052C18.368 40.052 21.592 35.788 21.592 31.628C21.592 27.884 19.044 24.816 14 23.776L10.36 22.996C8.956 22.736 8.02 21.956 8.02 20.708C8.02 19.252 9.476 18.16 11.296 18.16C14.208 18.16 15.3 20.084 15.508 21.592L21.28 20.292C20.968 17.536 18.524 12.908 11.244 12.908C5.732 12.908 1.676 16.704 1.676 21.28C1.676 24.868 3.912 27.832 8.852 28.924L12.232 29.704C14.208 30.12 14.988 31.056 14.988 32.2C14.988 33.552 13.896 34.748 11.608 34.748C8.592 34.748 7.084 32.876 6.928 30.848L1 32.148ZM35.6808 6.044H29.4408V9.632C29.4408 11.92 28.1928 13.688 25.4888 13.688H24.1887V19.824H28.8167V31.732C28.8167 36.672 31.9367 39.636 36.9287 39.636C38.9567 39.636 40.2048 39.272 40.8288 39.012V33.292C40.4648 33.396 39.5288 33.5 38.6968 33.5C36.7208 33.5 35.6808 32.772 35.6808 30.536V19.824H40.8288V13.688H35.6808V6.044ZM56.1021 49.36L72.1701 13.688H64.7861L58.4941 28.664L51.6821 13.688H43.9341L54.8021 36.048L48.7701 49.36H56.1021ZM83.2758 39.272V1.624H76.3598V39.272H83.2758ZM97.5961 39.272V13.688H90.6801V39.272H97.5961ZM89.8481 5.316C89.8481 7.604 91.7721 9.528 94.1121 9.528C96.5041 9.528 98.3761 7.604 98.3761 5.316C98.3761 2.924 96.5041 1 94.1121 1C91.7721 1 89.8481 2.924 89.8481 5.316ZM102.816 32.148C103.128 35.06 105.78 40.052 113.476 40.052C120.184 40.052 123.408 35.788 123.408 31.628C123.408 27.884 120.86 24.816 115.816 23.776L112.176 22.996C110.772 22.736 109.836 21.956 109.836 20.708C109.836 19.252 111.292 18.16 113.112 18.16C116.024 18.16 117.116 20.084 117.324 21.592L123.096 20.292C122.784 17.536 120.34 12.908 113.06 12.908C107.548 12.908 103.492 16.704 103.492 21.28C103.492 24.868 105.728 27.832 110.668 28.924L114.048 29.704C116.024 30.12 116.804 31.056 116.804 32.2C116.804 33.552 115.712 34.748 113.424 34.748C110.408 34.748 108.9 32.876 108.744 30.848L102.816 32.148ZM137.497 6.044H131.257V9.632C131.257 11.92 130.009 13.688 127.305 13.688H126.005V19.824H130.633V31.732C130.633 36.672 133.753 39.636 138.745 39.636C140.773 39.636 142.021 39.272 142.645 39.012V33.292C142.281 33.396 141.345 33.5 140.513 33.5C138.537 33.5 137.497 32.772 137.497 30.536V19.824H142.645V13.688H137.497V6.044ZM169.743 6.044H163.503V9.632C163.503 11.92 162.255 13.688 159.551 13.688H158.251V19.824H162.879V31.732C162.879 36.672 165.999 39.636 170.991 39.636C173.019 39.636 174.267 39.272 174.891 39.012V33.292C174.527 33.396 173.591 33.5 172.759 33.5C170.783 33.5 169.743 32.772 169.743 30.536V19.824H174.891V13.688H169.743V6.044ZM187.682 39.272V13.688H180.766V39.272H187.682ZM179.934 5.316C179.934 7.604 181.858 9.528 184.198 9.528C186.59 9.528 188.462 7.604 188.462 5.316C188.462 2.924 186.59 1 184.198 1C181.858 1 179.934 2.924 179.934 5.316ZM202.002 49.152V36.776C203.25 38.492 205.85 39.896 209.386 39.896C216.614 39.896 221.45 34.176 221.45 26.428C221.45 18.836 217.134 13.116 209.646 13.116C205.798 13.116 202.938 14.832 201.794 16.808V13.688H195.086V49.152H202.002ZM214.638 26.48C214.638 31.056 211.83 33.708 208.294 33.708C204.758 33.708 201.898 31.004 201.898 26.48C201.898 21.956 204.758 19.304 208.294 19.304C211.83 19.304 214.638 21.956 214.638 26.48Z\" stroke=\"white\" stroke-width=\"1.5\"><\/path>\n<\/svg>",
+            "text": "<p>{{ product.metafields.custom.stylist_tip | metafield_tag }}<\/p>",
+            "text_size": 2,
+            "text_columns": 1,
+            "align_text": "text-center",
+            "button_text": "",
+            "button_url": "",
+            "button_color": "btn--neutral",
+            "button_style": "caps--link",
+            "text_color": "text--white",
+            "bg_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "16605721712fe06cfa-1",
+        "16605721712fe06cfa-0"
+      ],
+      "settings": {
+        "bg_color": "{{ product.metafields.custom.color.value }}",
+        "height": "image-height",
+        "padding": false,
+        "borders": false,
+        "wrapper": false
+      }
+    },
+    "1660572510674f1f0a": {
+      "type": "section-doubleproduct-details",
+      "blocks": {
+        "1660572509160f7d9e-0": {
+          "type": "text",
+          "settings": {
+            "kicker": "",
+            "title": "<style>\n @media screen and (max-width: 767px) {\n.svg-m{ width: 240px;}\n.svg-m1{ width: 300px;} }\n<\/style>\n<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"309\" height=\"119\" viewbox=\"0 0 309 119\" fill=\"none\">\n<path d=\"M53.073 10.08C52.305 6.24005 49.137 1.24805 40.881 1.24805C34.449 1.24805 29.025 5.85605 29.025 11.904C29.025 17.04 32.529 20.544 37.953 21.648L42.705 22.608C45.345 23.136 46.833 24.672 46.833 26.64C46.833 29.04 44.865 30.816 41.313 30.816C36.513 30.816 34.161 27.792 33.873 24.432L27.729 26.064C28.257 30.912 32.241 36.72 41.265 36.72C49.185 36.72 53.553 31.44 53.553 26.208C53.553 21.408 50.241 17.376 44.049 16.176L39.297 15.264C36.801 14.784 35.601 13.296 35.601 11.424C35.601 9.16805 37.713 7.10405 40.929 7.10405C45.249 7.10405 46.785 10.032 47.121 11.904L53.073 10.08ZM87.2738 36V1.96805H80.6018V15.648H65.7698V1.96805H59.1458V36H65.7698V21.888H80.6018V36H87.2738ZM99.9 18.96C99.9 11.28 105.276 7.63205 110.508 7.63205C115.788 7.63205 121.164 11.28 121.164 18.96C121.164 26.64 115.788 30.288 110.508 30.288C105.276 30.288 99.9 26.64 99.9 18.96ZM93.036 19.008C93.036 29.952 101.292 36.72 110.508 36.72C119.772 36.72 128.028 29.952 128.028 19.008C128.028 8.01605 119.772 1.24805 110.508 1.24805C101.292 1.24805 93.036 8.01605 93.036 19.008ZM140.443 17.472V7.72805H145.675C148.987 7.72805 151.003 9.60005 151.003 12.624C151.003 15.552 148.987 17.472 145.675 17.472H140.443ZM146.491 23.184C153.211 23.184 157.675 18.768 157.675 12.576C157.675 6.43205 153.211 1.96805 146.491 1.96805H133.771V36H140.395V23.184H146.491ZM181.412 36V22.752H194.612V16.656H181.364V8.25605H196.244V1.96805H174.74V36H181.412ZM214.319 36.768C221.615 36.768 227.423 32.304 227.423 23.952V1.96805H220.799V23.472C220.799 27.936 218.351 30.288 214.319 30.288C210.383 30.288 207.887 27.936 207.887 23.472V1.96805H201.263V23.952C201.263 32.304 207.071 36.768 214.319 36.768ZM256.672 36V29.664H241.504V1.96805H234.88V36H256.672ZM283.532 36V29.664H268.364V1.96805H261.74V36H283.532ZM18.4913 117.72C28.0433 117.72 32.9393 111.384 34.2353 106.152L28.0433 104.28C27.1313 107.448 24.2993 111.24 18.4913 111.24C13.0193 111.24 7.93126 107.256 7.93126 100.008C7.93126 92.28 13.3073 88.632 18.3953 88.632C24.2993 88.632 26.9393 92.232 27.7553 95.496L33.9953 93.528C32.6513 88.008 27.8033 82.248 18.3953 82.248C9.27526 82.248 1.06726 89.16 1.06726 100.008C1.06726 110.856 8.98726 117.72 18.4913 117.72ZM44.2594 99.96C44.2594 92.28 49.6354 88.632 54.8674 88.632C60.1474 88.632 65.5234 92.28 65.5234 99.96C65.5234 107.64 60.1474 111.288 54.8674 111.288C49.6354 111.288 44.2594 107.64 44.2594 99.96ZM37.3954 100.008C37.3954 110.952 45.6514 117.72 54.8674 117.72C64.1314 117.72 72.3874 110.952 72.3874 100.008C72.3874 89.016 64.1314 82.248 54.8674 82.248C45.6514 82.248 37.3954 89.016 37.3954 100.008ZM99.9221 117V110.664H84.7541V82.968H78.1301V117H99.9221ZM126.782 117V110.664H111.614V82.968H104.99V117H126.782ZM153.161 117V110.76H138.473V102.888H151.769V96.984H138.473V89.208H153.161V82.968H131.849V117H153.161ZM175.101 117.72C184.653 117.72 189.549 111.384 190.845 106.152L184.653 104.28C183.741 107.448 180.909 111.24 175.101 111.24C169.629 111.24 164.541 107.256 164.541 100.008C164.541 92.28 169.917 88.632 175.005 88.632C180.909 88.632 183.549 92.232 184.365 95.496L190.605 93.528C189.261 88.008 184.413 82.248 175.005 82.248C165.885 82.248 157.677 89.16 157.677 100.008C157.677 110.856 165.597 117.72 175.101 117.72ZM221.03 89.2561V82.968H192.854V89.2561H203.606V117H210.278V89.2561H221.03ZM232.413 117V82.968H225.693V117H232.413ZM245.025 99.96C245.025 92.28 250.401 88.632 255.633 88.632C260.913 88.632 266.289 92.28 266.289 99.96C266.289 107.64 260.913 111.288 255.633 111.288C250.401 111.288 245.025 107.64 245.025 99.96ZM238.161 100.008C238.161 110.952 246.417 117.72 255.633 117.72C264.897 117.72 273.153 110.952 273.153 100.008C273.153 89.016 264.897 82.248 255.633 82.248C246.417 82.248 238.161 89.016 238.161 100.008ZM307.936 117V82.968H301.312V105.48L287.152 82.968H278.896V117H285.52V92.856L300.976 117H307.936Z\" stroke=\"white\" stroke-width=\"1.5\"><\/path>\n<\/svg>",
+            "text": "",
+            "text_size": 2,
+            "text_columns": 1,
+            "align_text": "text-center",
+            "button_text": "",
+            "button_url": "",
+            "button_color": "btn--neutral",
+            "button_style": "caps--link",
+            "text_color": "text--neutral",
+            "bg_color": "#ffffff"
+          }
+        },
+        "1660572509160f7d9e-1": {
+          "type": "image",
+          "settings": {
+            "image": "{{ product.metafields.custom.shop_full_collection.value }}",
+            "bg_position": "center-center",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        }
+      },
+      "block_order": [
+        "1660572509160f7d9e-0",
+        "1660572509160f7d9e-1"
+      ],
+      "settings": {
+        "bg_color": "{{ product.metafields.custom.color.value }}",
+        "height": "image-height",
+        "padding": false,
+        "borders": false,
+        "wrapper": false
+      }
+    },
+    "16617778440bd6372e": {
+      "type": "apps",
+      "blocks": {
+        "8331bfb3-26e8-4048-a11f-86d4ae06e3e7": {
+          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "8331bfb3-26e8-4048-a11f-86d4ae06e3e7"
+      ],
+      "settings": {
+        "width": "wrapper",
+        "height": "margin--medium",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    }
+  },
+  "order": [
+    "shogun-helper",
+    "shogun-above",
+    "1656969662d5c2286c",
+    "main",
+    "1656999735fdea1b2b",
+    "custom-tabs",
+    "166056089733bd98e7",
+    "1659376185bb59a691",
+    "16579602720f5ca014",
+    "16562275959c6c0d0a",
+    "1657963663f1a93474",
+    "reviews",
+    "related",
+    "shogun-below",
+    "16610900422c501f8b",
+    "16605701365a3c47a5",
+    "16606466207ce05502",
+    "1660571492a80cca1c",
+    "1660572172f51cc5a6",
+    "1660572510674f1f0a",
+    "16617778440bd6372e"
+  ]
+}

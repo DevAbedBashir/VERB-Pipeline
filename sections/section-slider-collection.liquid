@@ -1,0 +1,1484 @@
+<style>
+  .Bg-custom-slider{
+    background-color: #9DDAE7;
+    width:100%;
+    height: auto;
+    padding:40px;
+  }
+  /**
+ * --------------------------------------------------------------------
+ * SCROLLER
+ * --------------------------------------------------------------------
+ */
+
+@media screen and (max-width: 999px) {
+  .scroller {
+    overflow: hidden;
+    margin: 0 calc(-1 * var(--mobile-container-gutter)); /* On mobile we remove the container gutter to make sure the scroll is edge to edge */
+  }
+
+  .scroller--flush {
+    margin: 0 !important;
+  }
+
+  .scroller__inner {
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 999px) {
+  .scroller {
+    margin: 0 calc(-1 * var(--desktop-container-gutter));
+  }
+
+  .scroller__inner {
+    scroll-padding-left: var(--desktop-container-gutter);
+  }
+
+  .scroller--mobile-only {
+    margin: 0;
+    overflow: visible;
+  }
+
+  .scroller--mobile-only > .scroller__inner {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    overflow: visible;
+  }
+}
+  
+@media screen and (max-width: 999px) {
+  .scroller .block-list {
+    white-space: nowrap;
+    flex-flow: row nowrap;
+  }
+
+  .scroller .block-list::before {
+    content: "";
+    flex: 0 0 var(--mobile-container-gutter);
+  }
+
+  .scroller .block-list::after {
+    content: "";
+    flex: 0 0 calc(var(--mobile-container-gutter) - 7px);
+  }
+
+  .scroller .block-list__item {
+    flex: 0 0 auto;
+    white-space: normal;
+    scroll-snap-align: center;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .scroller .block-list__item {
+    width: 81%;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 999px) {
+  .scroller .block-list__item {
+    width: 56%;
+  }
+
+  .scroller .block-list::before {
+    flex: 0 0 var(--desktop-container-gutter);
+  }
+
+  .scroller .block-list::after {
+    flex: 0 0 calc(var(--desktop-container-gutter) - 15px);
+  }
+}
+  @media screen and (max-width: 999px) {
+  .article-item:not(:last-child) {
+    padding-bottom: 20px;
+  }
+
+  .scroller .article-item:not(:last-child) {
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .cart-recap__scroller {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+
+  @supports (--css: variables) {
+    .cart-recap__scroller {
+      top: calc(var(--header-height) + 30px);
+    }
+  }
+}
+.scroller .mobile-menu__promo-list::before {
+  content: "";
+  flex: 0 0 20px;
+}
+
+.scroller .mobile-menu__promo-list::after {
+  content: "";
+  flex: 0 0 13px;
+}
+  @media screen and (min-width: 641px) and (max-width: 999px) {
+  .product-gallery .scroller {
+    margin: 0 -15px;
+  }
+  }
+  @media screen and (max-width: 999px) {
+  /* we have a logic on desktop with overflow scroller and we must force it to disabled on mobile */
+  .product-block-list__wrapper {
+    min-height: 0 !important;
+  }
+  }
+  /**
+ * --------------------------------------------------------------------
+ * COLLECTION ITEM (round style)
+ * --------------------------------------------------------------------
+ */
+
+.collection-item {
+  display: inline-block;
+  width: 36vw;
+  margin: 0 14px;
+  vertical-align: top;
+  white-space: normal;
+}
+
+.collection-item:first-child {
+  margin-left: var(--mobile-container-gutter);
+}
+
+.collection-item:last-child {
+  margin-right: var(--mobile-container-gutter);
+}
+
+.collection-item__image-wrapper {
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.collection-item__image-wrapper--rounded {
+  /* adding a stacking context (position: relative; z-index: 0;) is necessary due to a bug in Safari. More info here: https://bugs.webkit.org/show_bug.cgi?id=98538 */
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.collection-item__image-wrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transform: scale(1.01); /* The 1.01 is necessary to avoid some rounding issues on Chrome */
+  font-family: "object-fit: cover; object-position: center;"; /* IE11 polyfill */
+  transition: opacity 0.2s ease-in-out, transform 0.95s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.collection-item__title {
+  display: block;
+  line-height: 1.4;
+  text-align: center;
+  transition: color 0.2s ease-in-out;
+}
+
+.collection-item__title svg {
+  display: none;
+}
+
+@media screen and (min-width: 641px) and (max-width: 999px) {
+  .collection-item {
+    width: 190px;
+  }
+
+  .collection-item:first-child {
+    margin-left: var(--desktop-container-gutter);
+  }
+
+  .collection-item:last-child {
+    margin-right: var(--desktop-container-gutter);
+  }
+}
+
+@media screen and (min-width: 641px) {
+  .collection-item__title {
+    transition: transform 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .collection-item__title svg {
+    /*
+    Note: for some strange reasons, on Safari (even last version), if we use a transform it cause a delay of up to 1 second on heavy home page before the
+    animation starts. I couldn't find any explanation, but maybe the nested transforms (on both the link and SVG) does not work correctly on Safari. As a
+    consequence, I've used a animation on right property (which is much slower but should be ok on this small piece of content)
+    */
+    position: relative;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    vertical-align: -2px;
+    margin-left: 8px;
+    right: -5px;
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .collection-list {
+    margin: 30px -14px 0 -14px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .collection-list::after {
+    display: none;
+    content: "flickity"; /* enable Flickity slideshow */
+  }
+
+  .collection-item {
+    width: 20%;
+    margin: 0 !important;
+    padding: 0 14px;
+  }
+
+  .collection-list .flickity-prev-next-button {
+    top: calc(50% - 25px - 12px - 0.5em); /* 12px is the margin bottom below the image and 0.5em is half a line of text */
+  }
+
+  .collection-list .flickity-prev-next-button.previous {
+    left: -10px;
+  }
+
+  .collection-list .flickity-prev-next-button.next {
+    right: -10px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .collection-item {
+    width: 16.6666667%;
+  }
+}
+
+@media screen and (any-hover: hover) {
+  .collection-item:hover .collection-item__title {
+    color: var(--accent-color);
+  }
+
+  .features--animate-zoom .collection-item:hover img {
+    transform: scale(1.07);
+  }
+
+  .collection-item:hover .collection-item__title {
+    transform: translateX(0);
+  }
+
+  .collection-item:hover .collection-item__title svg {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+/**
+ * --------------------------------------------------------------------
+ * COLLECTION ITEM (block style)
+ * --------------------------------------------------------------------
+ */
+
+/* General */
+.collection-list__section {
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 641px) {
+  .collection-list__section {
+    margin-bottom: 60px;
+  }
+}
+
+.collection-block-item {
+  display: block;
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.collection-block-item--overlay::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.collection-block-item__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 8s linear, opacity 0.3s ease-in-out !important;
+}
+
+.collection-block-item__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  padding: 0 20px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  z-index: 1;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (any-hover: hover) {
+  .features--animate-zoom .collection-block-item:hover .collection-block-item__image {
+    transform: scale(1.4);
+  }
+}
+  /**
+ * --------------------------------------------------------------------
+ * ASPECT RATIO
+ * --------------------------------------------------------------------
+ */
+
+.aspect-ratio {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* The aspect-ratio can also contain a native HTML5 video element */
+.aspect-ratio img,
+.aspect-ratio video,
+.aspect-ratio svg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.aspect-ratio--square {
+  padding-bottom: 100% !important;
+}
+
+.aspect-ratio--short {
+  padding-bottom: 75% !important;
+}
+
+.aspect-ratio--tall {
+  padding-bottom: 150% !important;
+}
+
+.aspect-ratio--square img,
+.aspect-ratio--short img,
+.aspect-ratio--tall img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+@supports ((-o-object-fit: contain) or (object-fit: contain)) {
+  .aspect-ratio--square img,
+  .aspect-ratio--short img,
+  .aspect-ratio--tall img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+  /**
+ * --------------------------------------------------------------------
+ * LAZY LOADING
+ * --------------------------------------------------------------------
+ */
+
+@-webkit-keyframes lazyLoader {
+  0%, 100% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes lazyLoader {
+  0%, 100% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+img.lazyload[data-sizes=auto] {
+  width: 100%;
+  /* this is needed to help LazySizes calculate the correct size */
+}
+
+.image--fade-in {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lazyloaded.image--fade-in,
+.no-js [data-bgset],
+.no-js [data-bg] {
+  opacity: 1;
+}
+
+.lazyload__loader {
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 40px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  margin: auto;
+  pointer-events: none;
+  background-color: var(--border-color);
+  z-index: -1;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.lazyload__loader::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 200%;
+  background-color: var(--text-color);
+}
+
+.lazyloading ~ .lazyload__loader {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+.lazyloading ~ .lazyload__loader::after {
+  -webkit-animation: lazyLoader 3s infinite;
+          animation: lazyLoader 3s infinite;
+  -webkit-animation-timing-function: cubic-bezier(0.43, 0.43, 0.25, 0.99);
+          animation-timing-function: cubic-bezier(0.43, 0.43, 0.25, 0.99);
+}
+
+/**
+ * --------------------------------------------------------------------
+ * PLACEHOLDER SVG
+ * --------------------------------------------------------------------
+ */
+
+.placeholder-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.placeholder-svg {
+  display: block;
+  fill: var(--text-color);
+  background-color: rgba(var(--text-color-rgb), 0.1);
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.placeholder-svg--inverted {
+  fill: var(--background);
+  background-color: var(--text-color);
+  fill-opacity: 0.5;
+}
+/* This is just a foundation for an ultra simplistic grid */
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 -18px -18px;
+}
+
+.grid__cell {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  padding: 0 0 18px 18px;
+  margin: 0;
+  vertical-align: top;
+  font-size: 1rem;
+}
+
+.grid__cell--top {
+  align-self: flex-start;
+}
+
+.grid__cell--middle {
+  align-self: center;
+}
+
+.grid__cell--bottom {
+  align-self: flex-end;
+}
+
+@media screen and (min-width: 641px) {
+  .grid {
+    margin: 0 0 -30px -30px;
+  }
+
+  .grid__cell {
+    padding: 0 0 30px 30px;
+  }
+}
+
+.\31\/1 {
+  width: 100%;
+}
+
+.\31\/2 {
+  width: 50%;
+}
+
+.\31\/3 {
+  width: 33.333333%;
+}
+
+.\31\/4 {
+  width: 25%;
+}
+
+.\31\/5 {
+  width: 20%;
+}
+
+.\31\/6 {
+  width: 16.666667%;
+}
+
+@media screen and (max-width: 640px) {
+  .hidden-phone {
+    display: none !important;
+  }
+
+  .\31\/1--phone {
+    width: 100%;
+  }
+
+  .\31\/2--phone {
+    width: 50%;
+  }
+
+  .\31\/3--phone {
+    width: 33.333333%;
+  }
+
+  .\31\/4--phone {
+    width: 25%;
+  }
+
+  .\31\/5--phone {
+    width: 20%;
+  }
+
+  .\31\/6--phone {
+    width: 16.666667%;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 999px) {
+  .hidden-tablet {
+    display: none !important;
+  }
+
+  .\31\/1--tablet {
+    width: 100%;
+  }
+
+  .\31\/2--tablet {
+    width: 50%;
+  }
+
+  .\31\/3--tablet {
+    width: 33.333333%;
+  }
+
+  .\31\/4--tablet {
+    width: 25%;
+  }
+
+  .\31\/5--tablet {
+    width: 20%;
+  }
+
+  .\31\/6--tablet {
+    width: 16.666667%;
+  }
+}
+
+@media screen and (min-width: 641px) {
+  .hidden-tablet-and-up {
+    display: none !important;
+  }
+
+  .\31\/1--tablet-and-up {
+    width: 100%;
+  }
+
+  .\31\/2--tablet-and-up {
+    width: 50%;
+  }
+
+  .\31\/3--tablet-and-up {
+    width: 33.333333%;
+  }
+
+  .\31\/4--tablet-and-up {
+    width: 25%;
+  }
+
+  .\31\/5--tablet-and-up {
+    width: 20%;
+  }
+
+  .\31\/6--tablet-and-up {
+    width: 16.666667%;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .hidden-pocket {
+    display: none !important;
+  }
+
+  .\31\/1--pocket {
+    width: 100%;
+  }
+
+  .\31\/2--pocket {
+    width: 50%;
+  }
+
+  .\31\/3--pocket {
+    width: 33.333333%;
+  }
+
+  .\31\/4--pocket {
+    width: 25%;
+  }
+
+  .\31\/5--pocket {
+    width: 20%;
+  }
+
+  .\31\/6--pocket {
+    width: 16.666667%;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1279px) {
+  .hidden-lap {
+    display: none !important;
+  }
+
+  .\31\/1--lap {
+    width: 100%;
+  }
+
+  .\39\/12--lap {
+    width: 75%;
+  }
+
+  .\32\/3--lap {
+    width: 66.666666%;
+  }
+
+  .\31\/2--lap {
+    width: 50%;
+  }
+
+  .\31\/3--lap {
+    width: 33.333333%;
+  }
+
+  .\31\/4--lap {
+    width: 25%;
+  }
+
+  .\31\/5--lap {
+    width: 20%;
+  }
+
+  .\31\/6--lap {
+    width: 16.666667%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .hidden-lap-and-up {
+    display: none !important;
+  }
+
+  .\31\/1--lap-and-up {
+    width: 100%;
+  }
+
+  .\39\/12--lap-and-up {
+    width: 75%;
+  }
+
+  .\32\/3--lap-and-up {
+    width: 66.666666%;
+  }
+
+  .\31\/2--lap-and-up {
+    width: 50%;
+  }
+
+  .\31\/3--lap-and-up {
+    width: 33.333333%;
+  }
+
+  .\31\/4--lap-and-up {
+    width: 25%;
+  }
+
+  .\31\/5--lap-and-up {
+    width: 20%;
+  }
+
+  .\31\/6--lap-and-up {
+    width: 16.666667%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .hidden-desk {
+    display: none !important;
+  }
+
+  .\31\/1--desk {
+    width: 100%;
+  }
+
+  .\39\/12--desk {
+    width: 75%;
+  }
+
+  .\32\/3--desk {
+    width: 66.666666%;
+  }
+
+  .\31\/2--desk {
+    width: 50%;
+  }
+
+  .\31\/3--desk {
+    width: 33.333333%;
+  }
+
+  .\31\/4--desk {
+    width: 25%;
+  }
+
+  .\31\/5--desk {
+    width: 20%;
+  }
+
+  .\31\/6--desk {
+    width: 16.666667%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hidden-wide {
+    display: none !important;
+  }
+
+  .\31\/1--wide {
+    width: 100%;
+  }
+
+  .\39\/12--wide {
+    width: 75%;
+  }
+
+  .\32\/3--wide {
+    width: 66.666666%;
+  }
+
+  .\31\/2--wide {
+    width: 50%;
+  }
+
+  .\31\/3--wide {
+    width: 33.333333%;
+  }
+
+  .\31\/4--wide {
+    width: 25%;
+  }
+
+  .\31\/5--wide {
+    width: 20%;
+  }
+
+  .\31\/6--wide {
+    width: 16.666667%;
+  }
+}
+  .container {
+  max-width: 1480px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--mobile-container-gutter);
+}
+
+.container--medium {
+  max-width: 1150px;
+}
+
+.container--narrow {
+  max-width: 800px;
+}
+
+.container--extra-narrow {
+  max-width: 630px;
+}
+
+.container--giga-narrow {
+  max-width: 520px;
+}
+@media screen and (max-width: 640px) {
+  .container--flush {
+    padding: 0;
+  }
+
+  .container--unflush {
+    padding: 0 var(--mobile-container-gutter);
+  }
+}
+
+@media screen and (min-width: 641px) {
+  .container {
+    padding: 0 var(--desktop-container-gutter);
+  }
+}
+@media screen and (min-width: 641px) {
+  .rte blockquote {
+    padding-left: 30px;
+    font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 18px));
+  }
+
+  .rte img,
+  .rte .video-wrapper {
+    margin: 3em 0;
+  }
+}
+.section {
+  margin: 50px 0;
+}
+
+.section--tight {
+  margin: 30px 0;
+}
+
+/* When isolated, sections use padding instead of margin (useful for sections that has plain background) */
+.section--isolated {
+  margin: 0 !important;
+  padding: 50px 0;
+}
+
+.section--isolated.section--tight {
+  padding: 40px 0;
+}
+
+.section--text-centered {
+  text-align: center;
+}
+
+.section__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.section__title {
+  margin-bottom: 0;
+}
+
+.section__action-link {
+  margin-left: 20px;
+  flex-shrink: 0;
+  font-weight: var(--text-font-bolder-weight);
+  color: var(--accent-color);
+}
+
+.section__action-link svg {
+  display: none;
+}
+
+/* The header stack is used when we display more info like a countdown timer */
+.section__header-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Isolated sections are isolated due to their usage of different background/color, so here we must inherit the heading color */
+.section--isolated .heading {
+  color: inherit;
+}
+
+@media screen and (max-width: 640px) {
+  .section__header-stack > .section__title + * {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 641px) {
+  .section {
+    margin: 60px 0;
+  }
+
+  .section--tight {
+    margin: 40px 0;
+  }
+
+  .section--isolated {
+    padding: 60px 0;
+  }
+
+  .section__header {
+    overflow: visible;
+    margin-bottom: 20px;
+  }
+
+  .section__header--tight {
+    margin-bottom: 14px;
+  }
+
+  .section__header-stack {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .section__action-link {
+    transform: translateX(26px);
+    transition: transform 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .section__action-link svg {
+    /*
+    Note: for some strange reasons, on Safari (even last version), if we use a transform it cause a delay of up to 1 second on heavy home page before the
+    animation starts. I couldn't find any explanation, but maybe the nested transforms (on both the link and SVG) does not work correctly on Safari. As a
+    consequence, I've used a animation on right property (which is much slower but should be ok on this small piece of content)
+    */
+    position: relative;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    vertical-align: -2px;
+    margin-left: 8px;
+    right: -5px;
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .section__header-stack > .section__title {
+    margin: 0 16px 0 0;
+  }
+}
+
+@media screen and (any-hover: hover) {
+  .section__action-link:hover {
+    transform: translateX(0);
+  }
+
+  .section__action-link:hover svg {
+    opacity: 1;
+    right: 0;
+  }
+}
+.slideshow {
+  height: 400px;
+  overflow: hidden;
+}
+
+.slideshow--small {
+  height: 350px;
+}
+
+.slideshow--large {
+  height: 450px;
+}
+
+.slideshow__slide {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.slideshow__slide-inner {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.slideshow:not(.flickity-enabled) .slideshow__slide:not(.is-selected) {
+  display: none;
+}
+
+.slideshow__placeholder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.slideshow__image-placeholder {
+  height: 100%;
+  fill: dimgrey;
+  background: darkgrey;
+}
+
+.slideshow__title {
+  margin-bottom: 7px;
+  color: inherit;
+}
+
+.slideshow__content-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 25px;
+}
+
+.slideshow__content {
+  max-width: 650px;
+  margin: 0 auto 22px auto;
+}
+
+.slideshow .flickity-page-dots {
+  bottom: 30px;
+}
+
+.slideshow .flickity-page-dots .dot {
+  width: 12px;
+  height: 12px;
+  margin: 0 8px;
+  background: #ffffff;
+  border: 3px solid #ffffff;
+  transform: none !important;
+  transition: background 0.25s ease-in-out;
+}
+
+.slideshow .flickity-page-dots .dot::before {
+  top: -10px;
+  right: -10px;
+  left: -10px;
+  bottom: -10px;
+}
+
+.slideshow .flickity-page-dots .dot.is-selected {
+  background: transparent;
+}
+
+/** Overlay variation **/
+.slideshow__slide--overlay::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+}
+
+/** Preserve ratio variation
+
+ IMPLEMENTATION NOTE: I am using two different ways to center the content. If the slideshow is a fixed height, the theme uses a flexbox
+                      based approach, while if the slideshow is not fixed (ie. respecting the image aspect ratio), I use a transform based
+                      approach. I could have keep it simpler and use the transform based everywhere (which would have removed a lot of code),
+                      but the transform based is proved to reduce sometimes the quality of the text and make it a bit blurry. This is why
+                      there is another, more optimized way to position when it is possible
+ **/
+.slideshow--preserve-ratio {
+  height: auto !important;
+}
+
+.slideshow--preserve-ratio .slideshow__slide {
+  height: auto;
+}
+
+.slideshow--preserve-ratio .slideshow__slide-inner {
+  position: relative;
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+.slideshow--preserve-ratio .slideshow__content-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.flickity-enabled {
+  position: relative;
+  overflow: visible !important;
+}
+
+.flickity-enabled:focus {
+  outline: none;
+}
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+/* draggable */
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+/* page dots */
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  padding: 0;
+  bottom: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 0;
+}
+
+.flickity-rtl .flickity-page-dots {
+  direction: rtl;
+}
+
+.flickity-page-dots .dot {
+  position: relative;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 5px;
+  background: rgba(var(--text-color-rgb), 0.8);
+  border-radius: 100%;
+  cursor: pointer;
+  transform: scale(1);
+  will-change: transform;
+  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.flickity-page-dots .dot::before {
+  position: absolute;
+  content: "";
+  top: -4px;
+  right: -4px;
+  left: -4px;
+  bottom: -4px;
+}
+
+.flickity-page-dots .dot.is-selected {
+  transform: scale(1.35);
+  background: var(--heading-color);
+}
+
+/* prev/next buttons */
+.flickity-prev-next-button {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  top: calc(50% - 25px);
+  border-radius: 100%;
+  visibility: visible;
+  background: var(--flickity-arrow-color);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.7);
+  z-index: 1;
+}
+.flickity-prev-next-button:hover {
+  background: var(--accent-color);
+}
+.flickity-prev-next-button svg {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  fill: var(--secondary-background);
+  vertical-align: middle;
+}
+.flickity-prev-next-button[disabled] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.flickity-prev-next-button.previous {
+  left: -25px;
+}
+.flickity-prev-next-button.previous svg {
+  left: 1px;
+}
+
+.flickity-prev-next-button.next {
+  right: -25px;
+}
+.flickity-prev-next-button.next svg {
+  left: -1px;
+}
+
+.flickity-enabled:hover .flickity-prev-next-button:not([disabled]) {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/*
+   flickity-fade
+
+   NOTE: there is currently a bug in Flickity-fade when there are only 2 slides (https://github.com/metafizzy/flickity-fade/issues/1),
+         which requires currently those ugly !important rules to fix the issue
+ */
+.flickity-enabled.is-fade .flickity-slider > * {
+  pointer-events: none;
+  z-index: 0;
+  visibility: hidden;
+  transition: opacity 0.3s linear, visibility 0.3s linear !important;
+  opacity: 0 !important;
+}
+
+.flickity-enabled.is-fade .flickity-slider > .is-selected {
+  pointer-events: auto;
+  z-index: 1;
+  visibility: visible;
+  opacity: 1 !important;
+}
+
+/* Make sure that if Flickity is embedded within a modal, the slideshow are not with auto pointer events */
+.modal[aria-hidden=true] .flickity-slider > * {
+  pointer-events: none !important;
+}
+
+/* Temporary fix for slideshow, should be fixed once Flickity is fixed */
+.product-gallery__carousel.is-fade .flickity-slider > * {
+  transition: opacity 0.3s linear !important;
+}
+
+</style>
+<div class="Bg-custom-slider">
+  <section class="section" data-section-id="{{ section.id }}" data-section-type="collection-list">
+     <div class="container">
+       {% if section.settings.title != blank %}
+     <h2 class="h2 standard__heading" data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="2" style="text-align: center;margin-bottom:20px; color:#fff">
+          {%if section.settings.title == 'collections'%}
+            <svg width="107.251" height="45.7" viewBox="0 0 107.251 45.7" xmlns="http://www.w3.org/2000/svg"><g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#ffffff" stroke-width="0.5mm" fill="none" style="stroke:#ffffff;stroke-width:0.5mm;fill:none"><path d="M 30.8 21.9 L 30.8 36.2 L 25 36.2 L 25 0 L 30.8 0 L 30.8 14.2 Q 33.15 11.15 37.75 11.15 Q 42.05 11.15 44.35 13.85 A 9.434 9.434 0 0 1 46.414 18.236 A 13.301 13.301 0 0 1 46.65 20.8 L 46.65 36.2 L 40.85 36.2 L 40.85 21.8 A 8.128 8.128 0 0 0 40.695 20.165 Q 40.488 19.156 40.004 18.372 A 4.711 4.711 0 0 0 39.65 17.875 A 3.735 3.735 0 0 0 37.857 16.682 Q 37.232 16.479 36.469 16.422 A 8.302 8.302 0 0 0 35.85 16.4 A 5.499 5.499 0 0 0 34.262 16.618 A 4.231 4.231 0 0 0 32.225 17.95 A 5.815 5.815 0 0 0 30.968 20.546 A 7.96 7.96 0 0 0 30.8 21.9 Z M 0 29.6 L 5.05 28.2 Q 5.2 29.95 6.5 31.15 A 4.377 4.377 0 0 0 8.506 32.188 Q 9.181 32.347 9.975 32.35 A 8.018 8.018 0 0 0 10 32.35 A 5.835 5.835 0 0 0 11.072 32.258 Q 11.671 32.145 12.148 31.897 A 3.054 3.054 0 0 0 12.675 31.55 Q 13.65 30.75 13.65 29.55 A 2.305 2.305 0 0 0 12.523 27.502 Q 12.091 27.224 11.495 27.032 A 6.979 6.979 0 0 0 10.8 26.85 L 7.2 26.05 A 11.496 11.496 0 0 1 5.001 25.338 Q 3.649 24.734 2.691 23.805 A 6.956 6.956 0 0 1 2.35 23.45 Q 0.65 21.55 0.65 18.95 A 7.04 7.04 0 0 1 2.785 13.869 A 9.67 9.67 0 0 1 3.25 13.425 A 9.698 9.698 0 0 1 3.291 13.389 Q 5.879 11.1 9.6 11.1 Q 12 11.1 13.85 11.8 A 9.433 9.433 0 0 1 15.193 12.425 Q 15.907 12.833 16.44 13.335 A 5.348 5.348 0 0 1 16.725 13.625 Q 17.642 14.631 18.179 15.578 A 7.566 7.566 0 0 1 18.3 15.8 A 6.936 6.936 0 0 1 18.831 17.112 A 5.903 5.903 0 0 1 19 17.9 L 14.1 19.3 Q 13.9 17.9 12.825 16.775 A 3.383 3.383 0 0 0 11.386 15.899 Q 10.612 15.65 9.6 15.65 A 4.501 4.501 0 0 0 8.423 15.797 A 3.478 3.478 0 0 0 7.1 16.475 A 3.036 3.036 0 0 0 6.492 17.138 A 2.329 2.329 0 0 0 6.1 18.45 Q 6.1 20.409 8.337 20.952 A 5.888 5.888 0 0 0 8.55 21 L 12.25 21.75 A 13.068 13.068 0 0 1 14.531 22.463 Q 16.311 23.216 17.45 24.45 Q 19.25 26.4 19.25 29.15 A 7.167 7.167 0 0 1 17.475 33.874 A 9.784 9.784 0 0 1 16.825 34.575 Q 14.4 36.95 10.05 36.95 Q 7.55 36.95 5.575 36.2 A 10.628 10.628 0 0 1 4.111 35.52 Q 3.355 35.092 2.782 34.573 A 6.041 6.041 0 0 1 2.475 34.275 A 12.569 12.569 0 0 1 1.502 33.137 A 9.271 9.271 0 0 1 0.725 31.925 A 6.75 6.75 0 0 1 0.209 30.684 A 5.44 5.44 0 0 1 0 29.6 Z M 88.4 33.45 L 88.4 45.7 L 82.65 45.7 L 82.65 11.85 L 88.25 11.85 L 88.25 15.15 Q 89.2 13.5 91.25 12.4 A 9.194 9.194 0 0 1 94.337 11.413 A 11.872 11.872 0 0 1 96 11.3 A 12.396 12.396 0 0 1 99.621 11.803 A 9.562 9.562 0 0 1 104.25 14.875 A 12.576 12.576 0 0 1 106.957 20.724 A 17.532 17.532 0 0 1 107.25 24 A 16.048 16.048 0 0 1 106.7 28.303 A 12.368 12.368 0 0 1 104.1 33.175 A 10.308 10.308 0 0 1 96.592 36.778 A 13.996 13.996 0 0 1 95.8 36.8 A 11.249 11.249 0 0 1 93.368 36.547 A 9.047 9.047 0 0 1 91.35 35.85 Q 89.4 34.9 88.4 33.45 Z M 68.971 11.843 A 13.556 13.556 0 0 0 64.4 11.1 A 15.892 15.892 0 0 0 63.893 11.108 A 12.003 12.003 0 0 0 55.375 14.75 A 12.075 12.075 0 0 0 52.484 19.473 A 14.389 14.389 0 0 0 51.8 24 A 16.609 16.609 0 0 0 51.843 25.202 A 12.494 12.494 0 0 0 55.375 33.275 A 11.786 11.786 0 0 0 59.738 36.156 A 13.237 13.237 0 0 0 64.4 36.95 A 15.94 15.94 0 0 0 65.08 36.936 A 11.984 11.984 0 0 0 73.475 33.275 A 12.188 12.188 0 0 0 76.341 28.606 A 14.393 14.393 0 0 0 77.05 24 A 16.564 16.564 0 0 0 77.004 22.756 A 12.393 12.393 0 0 0 73.475 14.75 A 11.758 11.758 0 0 0 68.971 11.843 Z M 59.575 29.675 A 6.392 6.392 0 0 0 64.212 31.748 A 7.712 7.712 0 0 0 64.4 31.75 A 6.429 6.429 0 0 0 69.101 29.826 A 7.785 7.785 0 0 0 69.225 29.7 A 6.746 6.746 0 0 0 70.874 26.702 Q 71.158 25.64 71.195 24.378 A 13.036 13.036 0 0 0 71.2 24 A 10.561 10.561 0 0 0 70.967 21.711 Q 70.521 19.704 69.225 18.375 A 6.468 6.468 0 0 0 64.533 16.351 A 7.937 7.937 0 0 0 64.4 16.35 A 6.472 6.472 0 0 0 59.668 18.281 A 7.762 7.762 0 0 0 59.575 18.375 A 6.669 6.669 0 0 0 57.901 21.428 Q 57.6 22.594 57.6 24 A 10.595 10.595 0 0 0 57.844 26.343 Q 58.224 28.019 59.195 29.239 A 6.545 6.545 0 0 0 59.575 29.675 Z M 101.45 24 Q 101.45 20.6 99.65 18.525 Q 97.85 16.45 94.9 16.45 A 6.586 6.586 0 0 0 92.511 16.869 A 5.927 5.927 0 0 0 90.175 18.525 A 7.113 7.113 0 0 0 88.586 21.727 A 10.375 10.375 0 0 0 88.35 24 A 10.601 10.601 0 0 0 88.601 26.375 A 7.212 7.212 0 0 0 90.175 29.55 A 5.903 5.903 0 0 0 94.453 31.637 A 7.677 7.677 0 0 0 94.9 31.65 Q 97.8 31.65 99.625 29.55 Q 101.445 27.456 101.45 24.02 A 13.075 13.075 0 0 0 101.45 24 Z" vector-effect="non-scaling-stroke"/></g></svg>
+            <svg width="245.202" height="37.451" viewBox="0 0 245.202 37.451" xmlns="http://www.w3.org/2000/svg"><g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#ffffff" stroke-width="0.5mm" fill="#ffffff" style="stroke:#ffffff;stroke-width:0.5mm;fill:#ffffff"><path d="M 205.201 22.65 L 205.201 36.7 L 199.401 36.7 L 199.401 12.35 L 205.051 12.35 L 205.051 15.6 A 7.668 7.668 0 0 1 206.791 13.501 A 7.088 7.088 0 0 1 208.126 12.625 Q 210.051 11.65 212.251 11.65 Q 216.551 11.65 218.801 14.35 A 9.474 9.474 0 0 1 220.785 18.562 A 13.433 13.433 0 0 1 221.051 21.3 L 221.051 36.7 L 215.251 36.7 L 215.251 22.3 A 8.128 8.128 0 0 0 215.096 20.665 Q 214.888 19.656 214.404 18.873 A 4.711 4.711 0 0 0 214.051 18.375 A 3.735 3.735 0 0 0 212.258 17.183 Q 211.633 16.98 210.869 16.923 A 8.302 8.302 0 0 0 210.251 16.9 A 5.679 5.679 0 0 0 208.665 17.11 A 4.213 4.213 0 0 0 206.526 18.525 Q 205.201 20.15 205.201 22.65 Z M 225.951 30.1 L 231.001 28.7 Q 231.151 30.45 232.451 31.65 A 4.377 4.377 0 0 0 234.456 32.688 Q 235.132 32.848 235.925 32.85 A 8.018 8.018 0 0 0 235.951 32.85 A 5.835 5.835 0 0 0 237.022 32.758 Q 237.622 32.646 238.099 32.397 A 3.054 3.054 0 0 0 238.626 32.05 Q 239.601 31.25 239.601 30.05 A 2.305 2.305 0 0 0 238.473 28.002 Q 238.042 27.724 237.446 27.532 A 6.979 6.979 0 0 0 236.751 27.35 L 233.151 26.55 A 11.496 11.496 0 0 1 230.951 25.838 Q 229.6 25.235 228.642 24.306 A 6.956 6.956 0 0 1 228.301 23.95 Q 226.601 22.05 226.601 19.45 A 7.04 7.04 0 0 1 228.736 14.369 A 9.67 9.67 0 0 1 229.201 13.925 A 9.698 9.698 0 0 1 229.241 13.889 Q 231.83 11.6 235.551 11.6 Q 237.951 11.6 239.801 12.3 A 9.433 9.433 0 0 1 241.144 12.926 Q 241.858 13.334 242.39 13.835 A 5.348 5.348 0 0 1 242.676 14.125 Q 243.593 15.132 244.129 16.078 A 7.566 7.566 0 0 1 244.251 16.3 A 6.936 6.936 0 0 1 244.782 17.613 A 5.903 5.903 0 0 1 244.951 18.4 L 240.051 19.8 Q 239.851 18.4 238.776 17.275 A 3.383 3.383 0 0 0 237.337 16.4 Q 236.563 16.15 235.551 16.15 A 4.501 4.501 0 0 0 234.374 16.297 A 3.478 3.478 0 0 0 233.051 16.975 A 3.036 3.036 0 0 0 232.443 17.638 A 2.329 2.329 0 0 0 232.051 18.95 Q 232.051 20.909 234.287 21.453 A 5.888 5.888 0 0 0 234.501 21.5 L 238.201 22.25 A 13.068 13.068 0 0 1 240.482 22.963 Q 242.262 23.716 243.401 24.95 Q 245.201 26.9 245.201 29.65 A 7.167 7.167 0 0 1 243.426 34.375 A 9.784 9.784 0 0 1 242.776 35.075 Q 240.351 37.45 236.001 37.45 Q 233.501 37.45 231.526 36.7 A 10.628 10.628 0 0 1 230.061 36.021 Q 229.305 35.593 228.732 35.073 A 6.041 6.041 0 0 1 228.426 34.775 A 12.569 12.569 0 0 1 227.453 33.637 A 9.271 9.271 0 0 1 226.676 32.425 A 6.75 6.75 0 0 1 226.16 31.184 A 5.44 5.44 0 0 1 225.951 30.1 Z M 18.701 27.65 L 23.801 29.5 A 11.293 11.293 0 0 1 20.656 34.46 A 13.987 13.987 0 0 1 19.926 35.1 A 10.197 10.197 0 0 1 15.351 37.197 A 14.287 14.287 0 0 1 12.601 37.45 A 12.732 12.732 0 0 1 7.542 36.467 A 12.147 12.147 0 0 1 3.626 33.75 A 12.549 12.549 0 0 1 0.015 25.187 A 16.481 16.481 0 0 1 0.001 24.5 A 14.389 14.389 0 0 1 0.685 19.974 A 12.075 12.075 0 0 1 3.576 15.25 Q 7.151 11.6 12.451 11.6 A 14.396 14.396 0 0 1 15.719 11.952 A 10.073 10.073 0 0 1 19.876 13.95 A 11.495 11.495 0 0 1 22.359 16.715 A 10.103 10.103 0 0 1 23.601 19.6 L 18.401 21.5 Q 17.901 19.6 16.476 18.275 A 4.693 4.693 0 0 0 14.517 17.204 Q 13.789 16.999 12.92 16.96 A 9.288 9.288 0 0 0 12.501 16.95 A 6.328 6.328 0 0 0 7.873 18.851 A 7.726 7.726 0 0 0 7.751 18.975 A 6.744 6.744 0 0 0 6.053 22.175 Q 5.801 23.242 5.801 24.5 A 10.292 10.292 0 0 0 6.05 26.835 Q 6.473 28.65 7.61 29.922 A 6.541 6.541 0 0 0 7.776 30.1 A 6.428 6.428 0 0 0 12.423 32.148 A 7.812 7.812 0 0 0 12.601 32.15 A 7.693 7.693 0 0 0 14.301 31.973 Q 15.699 31.656 16.676 30.775 A 7.383 7.383 0 0 0 17.968 29.27 A 6.12 6.12 0 0 0 18.701 27.65 Z M 128.701 27.65 L 133.801 29.5 A 11.293 11.293 0 0 1 130.656 34.46 A 13.987 13.987 0 0 1 129.926 35.1 A 10.197 10.197 0 0 1 125.351 37.197 A 14.287 14.287 0 0 1 122.601 37.45 A 12.732 12.732 0 0 1 117.542 36.467 A 12.147 12.147 0 0 1 113.626 33.75 A 12.549 12.549 0 0 1 110.015 25.187 A 16.481 16.481 0 0 1 110.001 24.5 A 14.389 14.389 0 0 1 110.685 19.974 A 12.075 12.075 0 0 1 113.576 15.25 Q 117.151 11.6 122.451 11.6 A 14.396 14.396 0 0 1 125.719 11.952 A 10.073 10.073 0 0 1 129.876 13.95 A 11.495 11.495 0 0 1 132.359 16.715 A 10.103 10.103 0 0 1 133.601 19.6 L 128.401 21.5 Q 127.901 19.6 126.476 18.275 A 4.693 4.693 0 0 0 124.517 17.204 Q 123.789 16.999 122.92 16.96 A 9.288 9.288 0 0 0 122.501 16.95 A 6.328 6.328 0 0 0 117.873 18.851 A 7.726 7.726 0 0 0 117.751 18.975 A 6.744 6.744 0 0 0 116.053 22.175 Q 115.801 23.242 115.801 24.5 A 10.292 10.292 0 0 0 116.05 26.835 Q 116.473 28.65 117.61 29.922 A 6.541 6.541 0 0 0 117.776 30.1 A 6.428 6.428 0 0 0 122.423 32.148 A 7.812 7.812 0 0 0 122.601 32.15 A 7.693 7.693 0 0 0 124.301 31.973 Q 125.699 31.656 126.676 30.775 A 7.383 7.383 0 0 0 127.968 29.27 A 6.12 6.12 0 0 0 128.701 27.65 Z M 101.151 28.2 L 106.051 29.75 Q 105.001 33.1 102.126 35.275 A 10.625 10.625 0 0 1 97.308 37.278 A 14.296 14.296 0 0 1 95.051 37.45 A 12.566 12.566 0 0 1 89.632 36.296 A 12.409 12.409 0 0 1 86.226 33.9 A 11.846 11.846 0 0 1 82.827 27.225 A 16.907 16.907 0 0 1 82.601 24.4 A 14.575 14.575 0 0 1 83.228 20.031 A 11.886 11.886 0 0 1 86.126 15.2 A 12.157 12.157 0 0 1 89.84 12.557 A 11.146 11.146 0 0 1 94.451 11.6 A 14.705 14.705 0 0 1 98.122 12.033 A 10.185 10.185 0 0 1 103.201 15.025 A 11.523 11.523 0 0 1 105.908 20.234 Q 106.337 22.018 106.35 24.115 A 21.215 21.215 0 0 1 106.351 24.25 Q 106.351 25.8 106.201 26.1 L 88.401 26.1 A 6.708 6.708 0 0 0 88.973 28.648 A 6.266 6.266 0 0 0 90.426 30.65 Q 92.351 32.45 95.051 32.45 A 7.87 7.87 0 0 0 97.433 32.114 Q 100.144 31.255 101.151 28.2 Z M 141.051 4.9 L 146.301 4.9 L 146.301 12.35 L 151.351 12.35 L 151.351 17.5 L 146.301 17.5 L 146.301 28.8 Q 146.301 29.762 146.572 30.408 A 2.128 2.128 0 0 0 147.051 31.125 A 2.279 2.279 0 0 0 147.869 31.62 Q 148.5 31.85 149.401 31.85 Q 150.401 31.85 151.401 31.65 L 151.401 36.45 A 5.819 5.819 0 0 1 150.395 36.763 Q 149.327 37 147.851 37 A 9.693 9.693 0 0 1 145.639 36.762 A 6.461 6.461 0 0 1 142.501 35.075 Q 140.551 33.15 140.551 29.75 L 140.551 17.5 L 136.051 17.5 L 136.051 12.35 L 137.301 12.35 A 5.193 5.193 0 0 0 138.393 12.243 Q 139.455 12.014 140.101 11.3 A 3.596 3.596 0 0 0 140.958 9.549 A 5.132 5.132 0 0 0 141.051 8.55 L 141.051 4.9 Z M 63.701 0.5 L 63.701 36.7 L 57.901 36.7 L 57.901 0.5 L 63.701 0.5 Z M 77.001 0.5 L 77.001 36.7 L 71.201 36.7 L 71.201 0.5 L 77.001 0.5 Z M 44.222 12.343 A 13.556 13.556 0 0 0 39.651 11.6 A 15.892 15.892 0 0 0 39.144 11.608 A 12.003 12.003 0 0 0 30.626 15.25 A 12.075 12.075 0 0 0 27.735 19.974 A 14.389 14.389 0 0 0 27.051 24.5 A 16.609 16.609 0 0 0 27.093 25.702 A 12.494 12.494 0 0 0 30.626 33.775 A 11.786 11.786 0 0 0 34.989 36.656 A 13.237 13.237 0 0 0 39.651 37.45 A 15.94 15.94 0 0 0 40.331 37.436 A 11.984 11.984 0 0 0 48.726 33.775 A 12.188 12.188 0 0 0 51.592 29.106 A 14.393 14.393 0 0 0 52.301 24.5 A 16.564 16.564 0 0 0 52.255 23.257 A 12.393 12.393 0 0 0 48.726 15.25 A 11.758 11.758 0 0 0 44.222 12.343 Z M 185.722 12.343 A 13.556 13.556 0 0 0 181.151 11.6 A 15.892 15.892 0 0 0 180.644 11.608 A 12.003 12.003 0 0 0 172.126 15.25 A 12.075 12.075 0 0 0 169.235 19.974 A 14.389 14.389 0 0 0 168.551 24.5 A 16.609 16.609 0 0 0 168.593 25.702 A 12.494 12.494 0 0 0 172.126 33.775 A 11.786 11.786 0 0 0 176.489 36.656 A 13.237 13.237 0 0 0 181.151 37.45 A 15.94 15.94 0 0 0 181.831 37.436 A 11.984 11.984 0 0 0 190.226 33.775 A 12.188 12.188 0 0 0 193.092 29.106 A 14.393 14.393 0 0 0 193.801 24.5 A 16.564 16.564 0 0 0 193.755 23.257 A 12.393 12.393 0 0 0 190.226 15.25 A 11.758 11.758 0 0 0 185.722 12.343 Z M 162.951 12.35 L 162.951 36.7 L 157.201 36.7 L 157.201 12.35 L 162.951 12.35 Z M 34.826 30.175 A 6.392 6.392 0 0 0 39.462 32.248 A 7.712 7.712 0 0 0 39.651 32.25 A 6.429 6.429 0 0 0 44.351 30.326 A 7.785 7.785 0 0 0 44.476 30.2 A 6.746 6.746 0 0 0 46.125 27.202 Q 46.409 26.14 46.445 24.878 A 13.036 13.036 0 0 0 46.451 24.5 A 10.561 10.561 0 0 0 46.217 22.211 Q 45.772 20.204 44.476 18.875 A 6.468 6.468 0 0 0 39.784 16.851 A 7.937 7.937 0 0 0 39.651 16.85 A 6.472 6.472 0 0 0 34.919 18.781 A 7.762 7.762 0 0 0 34.826 18.875 A 6.669 6.669 0 0 0 33.152 21.928 Q 32.851 23.094 32.851 24.5 A 10.595 10.595 0 0 0 33.095 26.843 Q 33.475 28.519 34.446 29.739 A 6.545 6.545 0 0 0 34.826 30.175 Z M 176.326 30.175 A 6.392 6.392 0 0 0 180.962 32.248 A 7.712 7.712 0 0 0 181.151 32.25 A 6.429 6.429 0 0 0 185.851 30.326 A 7.785 7.785 0 0 0 185.976 30.2 A 6.746 6.746 0 0 0 187.625 27.202 Q 187.909 26.14 187.945 24.878 A 13.036 13.036 0 0 0 187.951 24.5 A 10.561 10.561 0 0 0 187.717 22.211 Q 187.272 20.204 185.976 18.875 A 6.468 6.468 0 0 0 181.284 16.851 A 7.937 7.937 0 0 0 181.151 16.85 A 6.472 6.472 0 0 0 176.419 18.781 A 7.762 7.762 0 0 0 176.326 18.875 A 6.669 6.669 0 0 0 174.652 21.928 Q 174.351 23.094 174.351 24.5 A 10.595 10.595 0 0 0 174.595 26.843 Q 174.975 28.519 175.946 29.739 A 6.545 6.545 0 0 0 176.326 30.175 Z M 88.551 21.85 L 100.501 21.85 A 6.042 6.042 0 0 0 100.019 19.678 A 5.535 5.535 0 0 0 98.876 18 A 4.924 4.924 0 0 0 96.67 16.726 Q 95.703 16.45 94.501 16.45 A 6.758 6.758 0 0 0 92.588 16.708 A 5.227 5.227 0 0 0 90.301 18.075 A 6.184 6.184 0 0 0 88.991 19.995 A 5.722 5.722 0 0 0 88.551 21.85 Z M 156.301 3.849 A 3.608 3.608 0 0 0 157.401 6.45 A 4.386 4.386 0 0 0 157.435 6.484 A 3.607 3.607 0 0 0 160.051 7.55 A 4.623 4.623 0 0 0 160.101 7.55 A 3.664 3.664 0 0 0 162.751 6.45 A 4.386 4.386 0 0 0 162.785 6.416 A 3.607 3.607 0 0 0 163.851 3.8 A 4.623 4.623 0 0 0 163.85 3.75 A 3.664 3.664 0 0 0 162.751 1.1 A 3.724 3.724 0 0 0 161.641 0.325 A 3.834 3.834 0 0 0 160.051 0 A 3.7 3.7 0 0 0 158.823 0.201 A 3.671 3.671 0 0 0 157.401 1.125 A 4.149 4.149 0 0 0 157.399 1.127 A 3.695 3.695 0 0 0 156.301 3.8 A 4.341 4.341 0 0 0 156.301 3.849 Z" vector-effect="non-scaling-stroke"/></g></svg>
+       {%else%}
+       {{ section.settings.title | escape }}
+      	  {% endif %}
+    </h2>
+  {% endif %}
+       <div class="scroller">
+      <div class="scroller__inner">
+        <div class="collection-list">
+          {%- for block in section.blocks -%}
+            {%- assign collection = block.settings.collection -%}
+
+            <a href="{{ block.settings.link | default: collection.url | default: '#' }}" class="collection-item" data-collection-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+              {%- unless collection == blank -%}
+                {%- assign collection_image = block.settings.image | default: collection.image | default: collection.products.first.featured_image -%}
+
+                <div class="collection-item__image-wrapper {% if section.settings.round_images %}collection-item__image-wrapper--rounded{% endif %}">
+                  {%- capture supported_sizes -%}{%- render 'image-size', sizes: '300,400,500,600,700,800', image: collection_image -%}{%- endcapture -%}
+                  {%- assign image_url = collection_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+                  <div class="aspect-ratio" style="padding-bottom: 100%">
+                    <img class="lazyload image--fade-in" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ collection_image.alt | escape }}">
+
+                    <noscript>
+                      <img src="{{ collection_image | img_url: '450x' }}" alt="{{ collection_image.alt | escape }}">
+                    </noscript>
+                  </div>
+                </div>
+
+                {%- if section.settings.show_collection_title -%}
+                  <span class="collection-item__title text--strong">{{ collection.title }} </span>
+                {%- endif -%}
+              {%- else -%}
+                <div class="collection-item__image-wrapper {% if section.settings.round_images %}collection-item__image-wrapper--rounded{% endif %}">
+                  {%- capture placeholder -%}{% cycle 'collection-1', 'collection-2', 'collection-3', 'collection-4', 'collection-5', 'collection-6' %}{%- endcapture -%}
+                  {{- placeholder | placeholder_svg_tag: 'placeholder-svg' -}}
+                </div>
+
+                {%- if section.settings.show_collection_title -%}
+                  <span class="collection-item__title text--strong">{{ 'home_page.onboarding.collection_title' | t }} </span>
+                {%- endif -%}
+              {%- endunless -%}
+            </a>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</div>
+
+
+{% schema %}
+{
+  "name": "Collection slider list",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Our collections"
+    },
+    {
+      "type": "text",
+      "id": "link_title",
+      "label": "Link title",
+      "default": "View all"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "default": "/collections"
+    },
+    {
+      "type": "checkbox",
+      "id": "round_images",
+      "label": "Round images",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_title",
+      "label": "Show collection title",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "600 x 600px .jpg recommended"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "If none is set, collection URL will be used."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Collection",
+      "name": "Collection list",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

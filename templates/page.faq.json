@@ -1,0 +1,959 @@
+{
+  "sections": {
+    "hero": {
+      "type": "section-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Web_Revamp_Collection_Pages_1408x160_FAQ_Gradient.png",
+        "mobile_image": "shopify:\/\/shop_images\/Web_Revamp_Collection_Pages_375x138_FAQ-Gradient.png",
+        "bg_position": "center-bottom",
+        "height": "use_screen_one_third",
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "kicker": "",
+        "title": "FAQ",
+        "richtext": "",
+        "text_align": "align--middle-center",
+        "text_color": "text--neutral",
+        "link_text": "",
+        "link": "",
+        "button_color": "btn--white",
+        "button_style": "btn"
+      }
+    },
+    "main": {
+      "type": "page",
+      "settings": {
+        "kicker": "",
+        "show_title": false,
+        "show_content": false,
+        "text_size": 4,
+        "align_text": "text-center",
+        "height": "margin--medium",
+        "width": "wrapper--narrow",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "16582570754879615e": {
+      "type": "accordion-ancher",
+      "blocks": {
+        "16582570752e2338cb-0": {
+          "type": "text",
+          "settings": {
+            "title": "Basics",
+            "background-color": "#9bc2d2"
+          }
+        },
+        "035b8697-3581-4a03-be58-e27af298ae6f": {
+          "type": "text",
+          "settings": {
+            "title": "Shipping",
+            "background-color": "#e782a9"
+          }
+        },
+        "efa3e4d0-e8a0-4767-ab24-30001ea3ad09": {
+          "type": "text",
+          "settings": {
+            "title": "Billing",
+            "background-color": "#65a5b8"
+          }
+        },
+        "2f673305-6398-4aa6-9baf-907496119afa": {
+          "type": "text",
+          "settings": {
+            "title": "Returns",
+            "background-color": "#d78000"
+          }
+        },
+        "008f8c48-718d-46bc-9039-309111646246": {
+          "type": "text",
+          "settings": {
+            "title": "Rewards",
+            "background-color": "#da8080"
+          }
+        },
+        "7ae46e5f-8d79-4fc0-a08e-5bd84ffe134b": {
+          "type": "text",
+          "settings": {
+            "title": "Products",
+            "background-color": "#00a0cd"
+          }
+        },
+        "dfb82c06-4d37-495e-b99e-603fa158cf47": {
+          "type": "text",
+          "settings": {
+            "title": "Salons",
+            "background-color": "#80bdd0"
+          }
+        },
+        "52d40d09-9e55-4189-a675-0f371db3a071": {
+          "type": "text",
+          "settings": {
+            "title": "Wholesale",
+            "background-color": "#bcabda"
+          }
+        },
+        "2c432d19-abe2-4b62-83b8-0c08e72e14fa": {
+          "type": "text",
+          "settings": {
+            "title": "Affiliates",
+            "background-color": "#828586"
+          }
+        },
+        "72852b1f-1698-4efc-b241-cadbe4285d2f": {
+          "type": "text",
+          "settings": {
+            "title": "Gift Cards",
+            "background-color": "#fa6378"
+          }
+        },
+        "c0fbc92d-e877-4e30-b47a-76de292b6cf3": {
+          "type": "text",
+          "settings": {
+            "title": "Giveaways",
+            "background-color": "#9bc2d2"
+          }
+        },
+        "4bdb1b34-a77c-4a92-ad21-6f92fe4175e1": {
+          "type": "text",
+          "settings": {
+            "title": "Promotions",
+            "background-color": "#e782a9"
+          }
+        },
+        "0c9828a0-1ca4-499d-89f2-dc7280766879": {
+          "type": "text",
+          "settings": {
+            "title": "Other",
+            "background-color": "#65a5b8"
+          }
+        }
+      },
+      "block_order": [
+        "16582570752e2338cb-0",
+        "035b8697-3581-4a03-be58-e27af298ae6f",
+        "efa3e4d0-e8a0-4767-ab24-30001ea3ad09",
+        "2f673305-6398-4aa6-9baf-907496119afa",
+        "008f8c48-718d-46bc-9039-309111646246",
+        "7ae46e5f-8d79-4fc0-a08e-5bd84ffe134b",
+        "dfb82c06-4d37-495e-b99e-603fa158cf47",
+        "52d40d09-9e55-4189-a675-0f371db3a071",
+        "2c432d19-abe2-4b62-83b8-0c08e72e14fa",
+        "72852b1f-1698-4efc-b241-cadbe4285d2f",
+        "c0fbc92d-e877-4e30-b47a-76de292b6cf3",
+        "4bdb1b34-a77c-4a92-ad21-6f92fe4175e1",
+        "0c9828a0-1ca4-499d-89f2-dc7280766879"
+      ],
+      "settings": {
+      }
+    },
+    "16576120709c38fa8a": {
+      "type": "section-faq",
+      "blocks": {
+        "1657612070186f0cdc-0": {
+          "type": "text",
+          "settings": {
+            "title": "I received a product that is damaged. What should I do?",
+            "content": "<p>We are sorry to hear you received a damaged order. Please send us an email with the order number and a photo of the damaged item(s) to <a href=\"mailto:info@verbproducts.com\"><span style=\"text-decoration:underline\">info@verbproducts.com<\/span><\/a>. We will then connect with you to remedy the situation to the best of our ability. <\/p>"
+          }
+        },
+        "1657612070186f0cdc-2": {
+          "type": "text",
+          "settings": {
+            "title": "Where can I buy Verb?",
+            "content": "<p>You can purchase our full range of products on this website, or you can visit one of our retail partners: <a href=\"http:\/\/sephora.com\"><span style=\"text-decoration:underline\">sephora.com<\/span><\/a>, <a href=\"http:\/\/ulta.com\"><span style=\"text-decoration:underline\">ulta.com <\/span><\/a>and <a href=\"http:\/\/amazon.com\"><span style=\"text-decoration:underline\">amazon.com<\/span><\/a>. <\/p><p>You can also check to see if your local salon carries Verb <a href=\"https:\/\/www.verbproducts.com\/pages\/locate\"><span style=\"text-decoration:underline\">here<\/span><\/a>.<\/p>"
+          }
+        },
+        "7c55fac0-09bb-469b-849d-446946f2eb8f": {
+          "type": "text",
+          "settings": {
+            "title": "Can I use multiple discount codes on a single order?",
+            "content": "<p>Discount codes may not be combined with other discounts or promotions. Discounts are applied at checkout.<\/p>"
+          }
+        },
+        "10edf8e9-cef1-4df3-accd-f94aa82f0485": {
+          "type": "text",
+          "settings": {
+            "title": "Who can I contact about partnerships or sponsorship with Verb?",
+            "content": "<p>For collaboration inquiries, please email <a href=\"mailto:info@verbproducts.com\"><span style=\"text-decoration:underline\">info@verbproducts.com<\/span><\/a>. <\/p>"
+          }
+        },
+        "1657612070186f0cdc-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "Product broken? Need a pump or new cap?",
+            "content": "<p>We are on it! Send us your order number to info@verbproducts.com and we’ll get you what you need.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1657612070186f0cdc-0",
+        "1657612070186f0cdc-2",
+        "7c55fac0-09bb-469b-849d-446946f2eb8f",
+        "10edf8e9-cef1-4df3-accd-f94aa82f0485",
+        "1657612070186f0cdc-1"
+      ],
+      "settings": {
+        "title": "Basics",
+        "tagtitle": "Basics",
+        "align_text": "text-left",
+        "text_size": 1,
+        "height": "margin--medium",
+        "width": "wrapper--narrow",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "165761207417092f52": {
+      "type": "section-faq",
+      "blocks": {
+        "165761207469681d8f-0": {
+          "type": "text",
+          "settings": {
+            "title": "Where does Verb ship?",
+            "content": "<p>We ship anywhere in the US via FedEx Standard Ground. Additional costs apply for Alaska and Hawaii. <strong>We do not ship to PO Boxes<\/strong>.<\/p><p>Please note at this time we do not offer shipping to Puerto Rico, Guam, U.S. Virgin Islands and all other U.S. territories. <\/p><p>For any further questions, please contact our customer service team.<\/p>"
+          }
+        },
+        "165761207469681d8f-1": {
+          "type": "text",
+          "settings": {
+            "title": "What are your shipping costs?",
+            "content": "<p>Shipping to the contiguous US is $8. Orders of $40 or more ship free. <\/p><p>Shipping to Alaska and Hawaii is a flat rate of $35.<\/p>"
+          }
+        },
+        "165761207469681d8f-2": {
+          "type": "text",
+          "settings": {
+            "title": "When will my order ship?",
+            "content": "<p>After you place your order, it takes 1-2 business days to be processed. A tracking number will then be sent to your email. Please allow 5-10 business days for your order to be delivered after tracking is sent. <\/p>"
+          }
+        },
+        "79b24c6f-9cc4-425d-9bf7-c6264074424f": {
+          "type": "text",
+          "settings": {
+            "title": "When will my weekend order ship?",
+            "content": "<p>Orders made on the weekends will be processed on the following Monday. A tracking number will then be sent to your email after the order is processed.<\/p>"
+          }
+        },
+        "e67e3fd8-0fe5-4a9c-bd88-47d17baa9c16": {
+          "type": "text",
+          "settings": {
+            "title": "My package said it was delivered, but I can’t find it.",
+            "content": "<p>If you can’t locate your package after your tracking status has been updated to “delivered,” please contact <a href=\"mailto:info@verbproducts.com\"><span style=\"text-decoration:underline\">info@verbproducts.com<\/span><\/a> with your order information. <\/p>"
+          }
+        },
+        "bdc6b85d-c78e-4158-a3dc-dc68da33567c": {
+          "type": "text",
+          "settings": {
+            "title": "Help, my address is wrong on my order!",
+            "content": "<p>If the address on your order is wrong, email <a href=\"mailto:info@verbproducts.com\"><span style=\"text-decoration:underline\">info@verbproducts.com<\/span><\/a> asap with the correct address and we will make an effort to update the package before it ships.<\/p>"
+          }
+        },
+        "d089f030-68c5-4746-877e-8861eac96bdb": {
+          "type": "text",
+          "settings": {
+            "title": "Do you ship internationally?",
+            "content": "<p>Unfortunately, at this time we do not offer international shipping. We will update this page and send an announcement when that changes.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "165761207469681d8f-0",
+        "165761207469681d8f-1",
+        "165761207469681d8f-2",
+        "79b24c6f-9cc4-425d-9bf7-c6264074424f",
+        "e67e3fd8-0fe5-4a9c-bd88-47d17baa9c16",
+        "bdc6b85d-c78e-4158-a3dc-dc68da33567c",
+        "d089f030-68c5-4746-877e-8861eac96bdb"
+      ],
+      "settings": {
+        "title": "Shipping",
+        "tagtitle": "",
+        "align_text": "text-left",
+        "text_size": 1,
+        "height": "margin--medium",
+        "width": "wrapper--narrow",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "1657612831e95095bc": {
+      "type": "section-faq",
+      "blocks": {
+        "1657612831468470ed-0": {
+          "type": "text",
+          "settings": {
+            "title": "When will my card get charged?",
+            "content": "<p>Your credit card will be charged when your order ships. Orders take1-2 business days for processing before shipping.<\/p>"
+          }
+        },
+        "1657612831468470ed-1": {
+          "type": "text",
+          "settings": {
+            "title": "What should I do if my payment was declined?",
+            "content": "<p>If your payment was declined, double-check that your billing address, expiration date and card verification number are all correct. <\/p><p>If your credit card is still getting declined, we recommend using a different card or checking with your bank to verify that your information is up-to-date.<\/p>"
+          }
+        },
+        "1657612831468470ed-2": {
+          "type": "text",
+          "settings": {
+            "title": "What are your approved payment methods?",
+            "content": "<p>We accept Visa, Mastercard, Discover, American Express, Apple Pay, Amazon Pay and Google Pay. We also accept Verb gift cards, which can be purchased <a href=\"https:\/\/www.verbproducts.com\/products\/gift-cards?_pos=1&_sid=1dcbd9c75&_ss=r\"><span style=\"text-decoration:underline\">here<\/span><\/a>.<\/p>"
+          }
+        },
+        "b7cc7635-7bcf-42d6-bd0f-35689dce4418": {
+          "type": "text",
+          "settings": {
+            "title": "Do you offer alternative payment methods?",
+            "content": "<p>We offer alternative payments through Shop Now, Amazon Pay, PayPal, Klarna and AfterPay.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1657612831468470ed-0",
+        "1657612831468470ed-1",
+        "1657612831468470ed-2",
+        "b7cc7635-7bcf-42d6-bd0f-35689dce4418"
+      ],
+      "settings": {
+        "title": "Billing",
+        "tagtitle": "",
+        "align_text": "text-left",
+        "text_size": 1,
+        "height": "margin--medium",
+        "width": "wrapper--narrow",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "16576417047f236528": {
+      "type": "section-faq",
+      "blocks": {
+        "1657641704799087ef-0": {
+          "type": "text",
+          "settings": {
+            "title": "Can I add a product to my order after I have already checked out?",
+            "content": "<p>Once an order is placed, an item cannot be added or removed.<\/p>"
+          }
+        },
+        "015a98b8-78a8-495c-9498-a6bda9b679e7": {
+          "type": "text",
+          "settings": {
+            "title": "What is your return policy?",
+            "content": "<p>If you wish to return product(s) in your order please email <a href=\"mailto:info@verbproducts.com\"><span style=\"text-decoration:underline\">info@verbproducts.com<\/span><\/a> with your receipt and the reason you are requesting a return.<\/p><p>Custom sample kits are not eligible for returns or refunds.<\/p><p>If you need to return an item from a kit, the remaining product(s) you keep no longer qualify for the kit discount and go up to full price. Your refund will reflect this price change. <\/p><p>If you have any questions or concerns, please don’t hesitate to reach out. <\/p>"
+          }
+        },
+        "1657641704799087ef-2": {
+          "type": "text",
+          "settings": {
+            "title": "How do I return the products that I purchased through Sephora, Ulta or Amazon?",
+            "content": "<p>We are unable to accept returns purchased outside of verbproducts.com. <\/p><p>If you would like to return a product that was purchased through authorized retailers, we suggest you check their return policies.<\/p>"
+          }
+        },
+        "2d0f1d3f-f3b7-4d10-89d3-1769188cfd00": {
+          "type": "text",
+          "settings": {
+            "title": "How do I return the products that I purchased through a salon?",
+            "content": "<p>If you purchased Verb products at a salon, please contact the salon for their return policy.<\/p>"
+          }
+        },
+        "8f1a15e2-fb8b-48ff-b8ed-b3c6442747de": {
+          "type": "text",
+          "settings": {
+            "title": "How do I cancel my order?",
+            "content": "<p>Contact<a href=\"mailto:info@verbproducts.com\"> <span style=\"text-decoration:underline\">info@verbproducts.com<\/span><\/a> with your order number, and we will check if the order is still eligible for  cancellation. <\/p>"
+          }
+        },
+        "1657641704799087ef-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "Verb is made easy and made simple, so our return policy is too.",
+            "content": "<p>Just a quick heads-up before we get to the simple stuff, Custom Sample Kits are not eligible for returns or refunds.<\/p><p>If you need to return an item from a kit, the remaining product(s) you keep no longer qualify for the kit discount and go up to full price. Your refund will reflect this price change. If you have any questions or concerns about this, please don’t hesitate to reach out. We’re here to help!<\/p><p>Want to return something else from our site? If you don’t love it, we’ll take it back within 30 days. No questions asked. Just email info@verbproducts.com with your receipt, and we’ll take it from there.<\/p><p>Also - if you have a sec - help a sister out, and let us know why you didn’t like the product so that we can improve the experience for you next time.<\/p>"
+          }
+        },
+        "dc51e150-9b12-46ed-be13-c88390a274f9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "Received a damaged product?",
+            "content": "<p>Send over a photo to info@verbproducts.com, and we’ll help you out with this ASAP. Helpful hint: If you include your order number in that email, things can move faster!<\/p>"
+          }
+        },
+        "8e82c34a-29ab-4c8d-8fdd-0176f6509895": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "Product broken? Need a pump or new cap?",
+            "content": "<p>We are on it! Send us your order number to info@verbproducts.com, and we’ll get you what you need.    <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1657641704799087ef-0",
+        "015a98b8-78a8-495c-9498-a6bda9b679e7",
+        "1657641704799087ef-2",
+        "2d0f1d3f-f3b7-4d10-89d3-1769188cfd00",
+        "8f1a15e2-fb8b-48ff-b8ed-b3c6442747de",
+        "1657641704799087ef-1",
+        "dc51e150-9b12-46ed-be13-c88390a274f9",
+        "8e82c34a-29ab-4c8d-8fdd-0176f6509895"
+      ],
+      "settings": {
+        "title": "Returns",
+        "tagtitle": "",
+        "align_text": "text-left",
+        "text_size": 1,
+        "height": "margin--medium",
+        "width": "wrapper--narrow",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "1657642898bf6705fd": {
+      "type": "section-faq",
+      "blocks": {
+        "16576428980f13b72b-0": {
+          "type": "text",
+          "settings": {
+            "title": "What is Verb Rewards?",
+            "content": "<p>Verb Rewards is a program we created to thank you for being a loyal customer. For every $1 you spend as a rewards member, you'll receive 1 point, which you can use to redeem free products and discounts on future orders.<\/p><p>For more information please visit our <a href=\"https:\/\/www.verbproducts.com\/pages\/rewards\"><span style=\"text-decoration:underline\">rewards<\/span><\/a> page.<\/p>"
+          }
+        },
+        "16576428980f13b72b-1": {
+          "type": "text",
+          "settings": {
+            "title": "How do I sign up for Verb Rewards?",
+            "content": "<p>Visit our rewards page <a href=\"https:\/\/www.verbproducts.com\/pages\/rewards\"><span style=\"text-decoration:underline\">here<\/span><\/a> and follow the instructions to sign up.<\/p>"
+          }
+        },
+        "16576428980f13b72b-2": {
+          "type": "text",
+          "settings": {
+            "title": "How do I redeem my rewards points?",
+            "content": "<p>Once you have logged in, you will be brought to your account page. You can then click the “redeem now” button to see the different prize options available. <\/p><p>You will also have the ability to apply points directly on your order at checkout.<\/p>"
+          }
+        },
+        "f5bfabe4-0f65-4055-9329-c4bc176deb8c": {
+          "type": "text",
+          "settings": {
+            "title": "Are there any purchase requirements when using my reward points?",
+            "content": "<p>To use your points you must hit a minimum spend amount as follows:<\/p><p>To get $10 off you must spend $30.00 or more<\/p><p>To get $30 off you must spend  $50.00 or more<\/p><p>To get $40 off you must spend $60.00 or more<\/p>"
+          }
+        },
+        "abcd7ab3-89f7-4a68-87fe-f55466d5189a": {
+          "type": "text",
+          "settings": {
+            "title": "How long after making a purchase will my points or tier change be reflected?",
+            "content": "<p>You should receive your points 24-48 hours after placing your order. If you make a purchase that qualifies you to move up a tier, the new tier will be reflected on your account once the order is finished processing. <\/p><p>Contact us at info@verbproducts.com if you have any questions regarding this process.<\/p>"
+          }
+        },
+        "4c6797d5-d497-4d47-8629-6a7a560acf38": {
+          "type": "text",
+          "settings": {
+            "title": "Can I redeem my rewards points immediately after signing up?",
+            "content": "<p>Yes! You automatically receive 100 points once you sign up, which can be redeemed for $10 off any purchase of $30+. <\/p>"
+          }
+        },
+        "523dd752-3b68-4dcd-a4f2-1775a0cbd276": {
+          "type": "text",
+          "settings": {
+            "title": "Can I combine my rewards discount code with custom kits and value kits?",
+            "content": "<p>Discount codes can be applied to custom and value kits. This excludes gift cards, select kits and other exclusions that may apply.<\/p>"
+          }
+        },
+        "bb9ba277-62d2-495b-827f-f96f1d762816": {
+          "type": "text",
+          "settings": {
+            "title": "Can I redeem more than one reward at a time?",
+            "content": "<p>Yes, you are able to use a discount code and redeem a free product within the same order<strong>. However, only one discount code can be applied per order.<\/strong><\/p>"
+          }
+        },
+        "01698d61-3901-4874-954a-29792b3dd620": {
+          "type": "text",
+          "settings": {
+            "title": "Can I return my entire order if I redeemed points for a discount?",
+            "content": "<p>If you are returning the entire order, we will refund you the total dollar amount spent after the discount was applied. The points you used to redeem the discount will also be added back into your account.<\/p>"
+          }
+        },
+        "87bc2eb6-4eee-4cf3-9446-e37a5a4169b1": {
+          "type": "text",
+          "settings": {
+            "title": "Can I return part of my order if I redeemed points for a discount?",
+            "content": "<p>Yes, your refund will be credited back depending on how you paid for your items. If you used points to make your purchase they will be issued back to your Verb Rewards account. Money spent will be credited back to your original payment method.<\/p>"
+          }
+        },
+        "c36c505b-8700-41ff-aef9-a17d77bc8627": {
+          "type": "text",
+          "settings": {
+            "title": "If I redeemed points for a product, can I still return the item?",
+            "content": "<p>Yes, if you would like to return a product that you redeemed with your rewards points, you will be refunded the points back to your rewards account. <\/p>"
+          }
+        },
+        "9666aff0-12c6-4e9c-b4b4-3692a4bd6113": {
+          "type": "text",
+          "settings": {
+            "title": "I registered my Instagram username to my rewards account and then posted a picture but I didn't earn any rewards points, what happened?",
+            "content": "<p>In order to earn points on a post, you must make sure that your Instagram account is public at the time of posting. You must also tag @verbproducts in your post and limit any additional tags to no more than four other Instagram accounts. Lastly, you are only able to earn points on one post a week. If you followed all of these guidelines and still did not earn points, please reach out to us at <a href=\"mailto:info@verbproducts.com\"><span style=\"text-decoration:underline\">info@verbproducts.com<\/span><\/a>.<\/p>"
+          }
+        },
+        "aa48fb11-16f2-47c2-ae54-9fe52113b202": {
+          "type": "text",
+          "settings": {
+            "title": "I just changed my Instagram username, how do I update my rewards account with my new username?",
+            "content": "<p>Send us an email at <a href=\"mailto:info@verbproducts.com\"><span style=\"text-decoration:underline\">info@verbproducts.com<\/span><\/a>, and we'll update your account with your new username. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16576428980f13b72b-0",
+        "16576428980f13b72b-1",
+        "16576428980f13b72b-2",
+        "f5bfabe4-0f65-4055-9329-c4bc176deb8c",
+        "abcd7ab3-89f7-4a68-87fe-f55466d5189a",
+        "4c6797d5-d497-4d47-8629-6a7a560acf38",
+        "523dd752-3b68-4dcd-a4f2-1775a0cbd276",
+        "bb9ba277-62d2-495b-827f-f96f1d762816",
+        "01698d61-3901-4874-954a-29792b3dd620",
+        "87bc2eb6-4eee-4cf3-9446-e37a5a4169b1",
+        "c36c505b-8700-41ff-aef9-a17d77bc8627",
+        "9666aff0-12c6-4e9c-b4b4-3692a4bd6113",
+        "aa48fb11-16f2-47c2-ae54-9fe52113b202"
+      ],
+      "settings": {
+        "title": "Verb Rewards",
+        "tagtitle": "Rewards",
+        "align_text": "text-left",
+        "text_size": 1,
+        "height": "margin--small",
+        "width": "wrapper--narrow",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "1657643948fa65e689": {
+      "type": "section-faq",
+      "blocks": {
+        "165764394795f73a4e-0": {
+          "type": "text",
+          "settings": {
+            "title": "Tell me more about your products…",
+            "content": "<p>All of our products are free of parabens, gluten and harmful sulfates. You can learn more about ingredients, claims and usage on our dedicated product pages.<\/p>"
+          }
+        },
+        "165764394795f73a4e-1": {
+          "type": "text",
+          "settings": {
+            "title": "Are Verb products vegan?",
+            "content": "<p>Most of our products are vegan, with the following exceptions: ghost dry oil, ghost dry oil disco edition, sculpting clay, forming fiber, reset clarifying shampoo, strong hair spray, ghost hair spray and reset sealing mist.<\/p>"
+          }
+        },
+        "165764394795f73a4e-2": {
+          "type": "text",
+          "settings": {
+            "title": "Are Verb products tested on animals?",
+            "content": "<p>No, we do not test on animals and all our products are PETA-Certified.<\/p>"
+          }
+        },
+        "fec1b16e-717b-4e1c-9d02-7dcd570a5215": {
+          "type": "text",
+          "settings": {
+            "title": "Can Verb packaging be recycled?",
+            "content": "<p>Most of our standard packaging is recyclable. Please check your local recycling guidelines for more information. <\/p>"
+          }
+        },
+        "5c8b66dc-07c5-4333-b3f7-857a9de8cd30": {
+          "type": "text",
+          "settings": {
+            "title": "Can Verb be used on keratin- treated hair?",
+            "content": "<p>Our products are keratin safe with the exception of our Sea collection, which is formulated with sea salt.<\/p>"
+          }
+        },
+        "d8a1e9e4-a1d7-4ef7-8d2f-002daead0147": {
+          "type": "text",
+          "settings": {
+            "title": "Verb smells delicious! What’s your secret?",
+            "content": "<p>We use the same grapefruit and oatmeal fragrances for all of our products. <\/p><p>Please email <a href=\"mailto:info@verbproducts.com\"><span style=\"text-decoration:underline\">info@verbproducts.com<\/span><\/a> for any questions you may have on allergens.<\/p>"
+          }
+        },
+        "5b7e6dcc-7dc7-4b45-95a6-12152851dbac": {
+          "type": "text",
+          "settings": {
+            "title": "Do you have any product tutorials I can watch?",
+            "content": "<p>You can watch tutorial videos <a href=\"https:\/\/www.youtube.com\/user\/VerbProducts\"><span style=\"text-decoration:underline\">here<\/span><\/a>. Please also visit our dedicated product pages for more information about specific products.<\/p>"
+          }
+        },
+        "83d571c2-33f6-4889-b8b1-e0502f4e0237": {
+          "type": "text",
+          "settings": {
+            "title": "How can I make sure my Verb products are legit?",
+            "content": "<p>The only way to ensure your products are authentic is to buy them from our website, Sephora, Ulta, Amazon or any of the locations found on our salon locator <a href=\"https:\/\/www.verbproducts.com\/locate\"><span style=\"text-decoration:underline\">here<\/span><\/a>.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "165764394795f73a4e-0",
+        "165764394795f73a4e-1",
+        "165764394795f73a4e-2",
+        "fec1b16e-717b-4e1c-9d02-7dcd570a5215",
+        "5c8b66dc-07c5-4333-b3f7-857a9de8cd30",
+        "d8a1e9e4-a1d7-4ef7-8d2f-002daead0147",
+        "5b7e6dcc-7dc7-4b45-95a6-12152851dbac",
+        "83d571c2-33f6-4889-b8b1-e0502f4e0237"
+      ],
+      "settings": {
+        "title": "Get to know the products",
+        "tagtitle": "",
+        "align_text": "text-left",
+        "text_size": 1,
+        "height": "margin--medium",
+        "width": "wrapper--narrow",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "1657643970538f2d07": {
+      "type": "section-faq",
+      "blocks": {
+        "1657643970bdd4447e-0": {
+          "type": "text",
+          "settings": {
+            "title": "How do I carry Verb at my salon?",
+            "content": "<p>First, thanks for your interest in carrying Verb at your salon. You can purchase all of our products plus exclusive kits through your local distributor and on<a href=\"http:\/\/saloncentric.com\/\"> <span style=\"text-decoration:underline\">saloncentric.com<\/span><\/a>. <\/p><p>If you need help locating another distributor, click <a href=\"https:\/\/www.verbproducts.com\/pages\/locate\"><span style=\"text-decoration:underline\">here<\/span><\/a> or email us at <a href=\"mailto:info@verbproducts.com\"><span style=\"text-decoration:underline\">nfo@verbproducts.com<\/span><\/a>.<\/p>"
+          }
+        },
+        "1657643970bdd4447e-1": {
+          "type": "text",
+          "settings": {
+            "title": "Do you sell Verb products directly to salons?",
+            "content": "<p>No, we work with our committed distributors to fulfill salon orders. All salon orders can be placed through the distributor closest to you.<\/p><p>Exclusive professional intro offers are also purchased through distributors.<\/p>"
+          }
+        },
+        "1657643970bdd4447e-2": {
+          "type": "text",
+          "settings": {
+            "title": "Do you offer product knowledge training?",
+            "content": "<p>Strong product knowledge is the best way to learn how to utilize our products or sell them in your retail space. <a href=\"http:\/\/verbpartners.com\">Verbpartners.com<\/a> is full of great resources and information about all of our products.<\/p><p>For further questions, feel free to contact us at info@verbproducts.com.<\/p>"
+          }
+        },
+        "036cf244-6b25-4d73-afe6-15e154c84ee1": {
+          "type": "text",
+          "settings": {
+            "title": "Do you have pictures we can use for social media?",
+            "content": "<p>Yes, <a href=\"http:\/\/verbpartners.com\">verbpartners.com<\/a> provides downloadable assets to use in your salon or on social media. This site also offers more information about our products. <\/p>"
+          }
+        },
+        "b599e7fb-30d3-4bc6-8931-0788003aef0a": {
+          "type": "text",
+          "settings": {
+            "title": "Are starter packages available for salons?",
+            "content": "<p>We have a few different options for salons to integrate Verb products. Please email your distributor for more information. <\/p>"
+          }
+        },
+        "fbd81144-d08f-40b8-bc5d-3b96c8346689": {
+          "type": "text",
+          "settings": {
+            "title": "I carry Verb at my salon, how do I get on your salon locator?",
+            "content": "<p>We’d love to add you! Send us an email at info@verbproducts.com with your salon’s name and address, so we can add you to the registry.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1657643970bdd4447e-0",
+        "1657643970bdd4447e-1",
+        "1657643970bdd4447e-2",
+        "036cf244-6b25-4d73-afe6-15e154c84ee1",
+        "b599e7fb-30d3-4bc6-8931-0788003aef0a",
+        "fbd81144-d08f-40b8-bc5d-3b96c8346689"
+      ],
+      "settings": {
+        "title": "Salons",
+        "tagtitle": "",
+        "align_text": "text-left",
+        "text_size": 1,
+        "height": "margin--medium",
+        "width": "wrapper--narrow",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "16576439748ba44f15": {
+      "type": "section-faq",
+      "blocks": {
+        "165764397401ac50e8-0": {
+          "type": "text",
+          "settings": {
+            "title": "How can I become an authorized retailer with Verb?",
+            "content": "<p>You can apply to be a Verb retailer through our wholesale website, click <a href=\"https:\/\/www.verbwholesale.com\/checkout\/wholesaleSignupLoad.do?merchantId=VERBP\"><span style=\"text-decoration:underline\">here<\/span><\/a> to get started.<\/p><p>*Stylists can purchase wholesale through a local distributor.<\/p>"
+          }
+        },
+        "165764397401ac50e8-1": {
+          "type": "text",
+          "settings": {
+            "title": "Who can I contact about following up with a wholesale application or other wholesale inquiries?",
+            "content": "<p>Please reach out to our wholesale team at <a href=\"mailto:info@verbproducts.com\"><span style=\"text-decoration:underline\">info@verbproducts.com<\/span><\/a>. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "165764397401ac50e8-0",
+        "165764397401ac50e8-1"
+      ],
+      "settings": {
+        "title": "Wholesale",
+        "tagtitle": "",
+        "align_text": "text-left",
+        "text_size": 1,
+        "height": "margin--medium",
+        "width": "wrapper--narrow",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "1657643980409285fc": {
+      "type": "section-faq",
+      "blocks": {
+        "1657643980d5d39465-0": {
+          "type": "text",
+          "settings": {
+            "title": "I’m interested in being a Verb Friend, how do I reach out?",
+            "content": "<p>Amazing! Send us an email at <a href=\"mailto:friends@verbproducts.com\"><span style=\"text-decoration:underline\">friends@verbproducts.com<\/span><\/a>, and we’ll be in touch with you shortly.<\/p>"
+          }
+        },
+        "1657643980d5d39465-1": {
+          "type": "text",
+          "settings": {
+            "title": "I’m interested in being a Verb Friend, how do I reach out?",
+            "content": "<p>Amazing! Shoot us an email at friends@verbproducts.com, and we’ll be in touch with you shortly.<\/p>"
+          }
+        },
+        "ecb3c757-28a5-4b9b-a7e0-5bc2076b140e": {
+          "type": "text",
+          "settings": {
+            "title": "I’m interested in being a Verb Friend Stylist, how do I get started?",
+            "content": "<p>We are currently revamping our Verb Friends affiliate and ambassador program which will have its own section dedicated to stylists. Once signed up you will receive a link and promo code for your clients to use when shopping at <a href=\"http:\/\/verbproducts.com\"><span style=\"text-decoration:underline\">verbproducts.com<\/span><\/a>, which will earn you a Stylist Only commission. You will also have exclusive access to product launches, promotions, product testing and more! <\/p><p>Once the new program is up and running, we will make an announcement on our platforms. Confirm that you are subscribed to our emails and follow us on Instagram @verbproducts for updates.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1657643980d5d39465-0",
+        "1657643980d5d39465-1",
+        "ecb3c757-28a5-4b9b-a7e0-5bc2076b140e"
+      ],
+      "settings": {
+        "title": "Collaborations and Affiliates",
+        "tagtitle": "",
+        "align_text": "text-left",
+        "text_size": 1,
+        "height": "margin--medium",
+        "width": "wrapper--narrow",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "165764398471e3569b": {
+      "type": "section-faq",
+      "blocks": {
+        "16576439849bc2ac5a-0": {
+          "type": "text",
+          "settings": {
+            "title": "How do I use e-gift cards?",
+            "content": "<p>1) Open your gift card email and click on \"redeem your gift card,” this will take you to your unique gift card page. Here, you can see your code and remaining gift card balance.<\/p><p>2) On your gift card page, copy your unique code by clicking on the clipboard check icon. Click “start shopping” and add items to your cart.<\/p><p>3) At checkout, paste or enter your unique e-gift card code.<\/p><p>4) Click \"apply\" to apply e-gift card amount to your order. If a purchase exceeds the amount of the e-gift card, the remaining balance must be paid with a credit card or other available payment method. Unused dollars may be applied toward future purchases.<\/p><p>5) We suggest keeping track of what you’ve spent so you know the balance on the card. <\/p><p>If you have any questions about your card contact us at <a href=\"mailto:info@verbproducts.com\"><span style=\"text-decoration:underline\">info@verbproducts.com<\/span><\/a>.<\/p>"
+          }
+        },
+        "894aa5f5-91b0-4346-98ca-835c507a430a": {
+          "type": "text",
+          "settings": {
+            "title": "Can I use more than one e-gift card on an order?",
+            "content": "<p>Yes, you are able to use multiple Verb e-gift cards on a transaction.<\/p>"
+          }
+        },
+        "df26e6e9-4adb-4eb3-b4c9-b2cb8c13eb48": {
+          "type": "text",
+          "settings": {
+            "title": "Can I add someone else as the recipient?",
+            "content": "<p>When you purchase an e-gift card, you’re not able to add someone else as the recipient. We suggest you forward the e-gift card from your email address so the recipient knows who it’s from.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16576439849bc2ac5a-0",
+        "894aa5f5-91b0-4346-98ca-835c507a430a",
+        "df26e6e9-4adb-4eb3-b4c9-b2cb8c13eb48"
+      ],
+      "settings": {
+        "title": "Gift Cards",
+        "tagtitle": "",
+        "align_text": "text-left",
+        "text_size": 1,
+        "height": "margin--medium",
+        "width": "wrapper--narrow",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "16635866862a8bd582": {
+      "type": "section-faq",
+      "blocks": {
+        "166358668688499655-0": {
+          "type": "text",
+          "settings": {
+            "title": "How many entries can I have on a Verb giveaway?",
+            "content": "<p>You can only have one (1) entry per giveaway.<\/p>"
+          }
+        },
+        "166358668688499655-1": {
+          "type": "text",
+          "settings": {
+            "title": "How do I know if I won?",
+            "content": "<p>If you win one of our giveaways, our team will reach out directly to you via email. If you didn’t win, don’t fret! We’ll have plenty more in the future.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "166358668688499655-0",
+        "166358668688499655-1"
+      ],
+      "settings": {
+        "title": "Giveaways",
+        "tagtitle": "",
+        "align_text": "text-left",
+        "text_size": 1,
+        "height": "margin--medium",
+        "width": "wrapper--narrow",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "166358680682335847": {
+      "type": "section-faq",
+      "blocks": {
+        "166358680535c07c9f-0": {
+          "type": "text",
+          "settings": {
+            "title": "Can I receive an additional discount on custom\/ value kits?",
+            "content": "<p>Our custom\/value kits already provide a 20% discount. For this reason, a further discount or promotional code can’t be applied.<\/p><p>For any questions, reach out to customer support by emailing <a href=\"mailto:info@verbproducts.com\"><span style=\"text-decoration:underline\">info@verbproducts.com<\/span><\/a>.<\/p>"
+          }
+        },
+        "166358680535c07c9f-1": {
+          "type": "text",
+          "settings": {
+            "title": "Can I use a rewards code to purchase sale items?",
+            "content": "<p>Unfortunately, at this time our sales, promos, and\/ or storewide discounts can't be combined with reward codes. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "166358680535c07c9f-0",
+        "166358680535c07c9f-1"
+      ],
+      "settings": {
+        "title": "Promotions",
+        "tagtitle": "",
+        "align_text": "text-left",
+        "text_size": 1,
+        "height": "margin--medium",
+        "width": "wrapper--narrow",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "1663586876d45f7aa4": {
+      "type": "section-faq",
+      "blocks": {
+        "166358687673a50961-0": {
+          "type": "text",
+          "settings": {
+            "title": "Still have a question?",
+            "content": "<p>If you don’t see an answer to your question above, please reach out to our customer service team at <a href=\"mailto:info@verbproducts.com\"><span style=\"text-decoration:underline\">info@verbproducts.com<\/span><\/a>. Thank you. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "166358687673a50961-0"
+      ],
+      "settings": {
+        "title": "Other",
+        "tagtitle": "",
+        "align_text": "text-left",
+        "text_size": 1,
+        "height": "margin--medium",
+        "width": "wrapper--narrow",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "icons": {
+      "type": "section-icons",
+      "disabled": true,
+      "blocks": {
+        "icons-0": {
+          "type": "icon_block",
+          "settings": {
+            "icon_name": "icon-basket-return",
+            "icon_color": "#aaaaaa",
+            "title": "Free returns",
+            "text": "<p>Returns within 30 days receive a full refund.<\/p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "icons-1": {
+          "type": "icon_block",
+          "settings": {
+            "icon_name": "icon-shipment-world",
+            "icon_color": "#aaaaaa",
+            "title": "Worldwide shipping",
+            "text": "<p>Ship anywhere, rates available at checkout.<\/p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "icons-2": {
+          "type": "icon_block",
+          "settings": {
+            "icon_name": "icon-phone",
+            "icon_color": "#aaaaaa",
+            "title": "24\/7 support",
+            "text": "<p>Call us anytime at 1(800) 555-1234.<\/p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "icons-0",
+        "icons-1",
+        "icons-2"
+      ],
+      "settings": {
+        "title": "",
+        "bg": "palette--light bg--accent",
+        "icon_size": "icon--medium",
+        "icon_alignment": "icon--top",
+        "layout": "grid--stacked",
+        "align_text": "text-left"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "main",
+    "16582570754879615e",
+    "16576120709c38fa8a",
+    "165761207417092f52",
+    "1657612831e95095bc",
+    "16576417047f236528",
+    "1657642898bf6705fd",
+    "1657643948fa65e689",
+    "1657643970538f2d07",
+    "16576439748ba44f15",
+    "1657643980409285fc",
+    "165764398471e3569b",
+    "16635866862a8bd582",
+    "166358680682335847",
+    "1663586876d45f7aa4",
+    "icons"
+  ]
+}

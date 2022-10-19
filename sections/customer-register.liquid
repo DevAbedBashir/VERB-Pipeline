@@ -1,0 +1,88 @@
+<style>
+  .title-text-works{
+    color: rgb(255, 255, 255); 
+    font-size: 56.84pt !important;
+    font-weight: 500; 
+    font-style: normal;
+    text-align: center;
+    z-index:1;
+  }
+  .custom-outline__titlewhite{
+    color: transparent !important;
+    -webkit-text-stroke-width: 2px !important;
+    -webkit-text-stroke-color: white !important;
+  }
+  .btn-on-hover:hover{
+    background-color: transparent;
+    border: 4px #fff solid;
+  }
+   @media screen and (max-width: 850px) {
+     .title-text-works{
+      font-size: 37.49pt !important; 
+    }
+   }
+  
+</style>
+<!-- /templates/customers/register.liquid -->
+<div style="background-image: url('https://cdn.shopify.com/s/files/1/0573/0061/5202/files/BG_1.png?v=1662464808');background-size:100% 100%">
+<div class="full__page__form__wrapper" style="background-color:transparent !important;">
+  <div class="wrapper">
+    <div class="grid">
+      <div class="title-text-works">
+        <span class="custom-outline__titlewhite">create</span> an account
+      </div>
+      <div class="grid__item medium-up--one-half medium-up--push-one-quarter text-center">
+        
+        <div class="full__page__form" style="padding-top:20px;margin-top:10px;">
+          
+          {% form 'create_customer' %}
+
+            {{ form.errors | default_errors }}
+
+            <div class="float__wrapper">
+              <label for="FirstName">{{ 'customer.register.first_name' | t }}</label>
+              <input style="background-color:#fff !important;border: 1px solid rgb(255 255 255);padding:10px 15px;" type="text" name="customer[first_name]" id="FirstName" placeholder="{{ 'customer.register.first_name' | t }}" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autofocus>
+            </div>
+
+            <div class="float__wrapper">
+              <label for="LastName">{{ 'customer.register.last_name' | t }}</label>
+              <input  style="background-color:#fff !important;border: 1px solid rgb(255 255 255);padding:10px 15px;" type="text" name="customer[last_name]" id="LastName" placeholder="{{ 'customer.register.last_name' | t }}" {% if form.last_name %}value="{{ form.last_name }}"{% endif %}>
+            </div>
+
+            <div class="float__wrapper">
+              <label for="Email">{{ 'customer.register.email' | t }}</label>
+              <input  style="background-color:#fff !important;border: 1px solid rgb(255 255 255);padding:10px 15px;" type="email" name="customer[email]" id="Email" placeholder="{{ 'customer.register.email' | t }}" {% if form.errors contains "email" %} class="error"{% elsif form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off">
+            </div>
+
+            <div class="float__wrapper">
+              <input  style="background-color:#fff !important;border: 1px solid rgb(255 255 255);padding:10px 15px;" type="password" name="customer[password]" id="CreatePassword" placeholder="{{ 'customer.register.password' | t }}" {% if form.errors contains "password" %} class="error"{% endif %}>
+            </div>
+
+            <div class="float__wrapper">
+              <h2 class="account__form__title " style="color:white;margin:20px auto;">Enter your birthday</h2>
+              <label for="birthday">Birthday</label>
+              <input style="background-color:#fff !important;border: 1px solid rgb(255 255 255);padding:10px 15px;" type="date" name="customer[note][Birthday]" id="birthday" placeholder="enter your birthday" />
+            </div>
+
+            <button type="submit" class="btn--outline uppercase btn--full btn-on-hover" style="background-color:#7774ab; color:#fff; border: 4px #7774ab;padding:18px 15px !important;">
+<!--               {{ 'customer.register.submit' | t }} -->
+              sign up
+            </button>
+            <div class="form--additional" style="margin-top: 15px;">
+              <a class="btn--outline uppercase btn--full" style="color:#fff !important; border:2px #fff solid !important;padding:15px 15px !important;" href="{{ routes.account_login_url }}">
+<!--                 {{ 'layout.customer.log_in' | t }} -->
+                sign in
+              </a>
+            </div>
+<!--             <hr>
+            <div class="form__legal">
+              {{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}
+            </div>  -->
+          {% endform %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+              

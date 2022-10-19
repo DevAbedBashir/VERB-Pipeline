@@ -1,0 +1,247 @@
+<style>
+    span.outlined_text {
+    color: transparent;
+    -webkit-text-stroke-width: 2pt;
+    -webkit-text-stroke-color: white;
+}
+  
+h2.h2.standard__heading.aos-init.aos-animate {
+    font-size: 56.84pt !important;
+}
+  
+  
+  .Bg-custom{
+    background-color: #e9893c;
+    height: auto;
+/*     padding: 30px 50px 20px 0; */
+    position: relative;
+    z-index: 0;
+  }
+  .half-circle-right{
+/*     background-color: #f2f2f2; */
+    background-color: #fff;
+    width: 96.5%;
+    height:75%;
+/*     margin-right: 100px; */
+    border-radius: 0px 550px 550px 0px;
+    position: absolute;
+    z-index: 1;
+    overflow-x: hidden
+  }
+  .tab-on-mobile{
+    z-index:2; 
+    padding-right: 60px; 
+    padding-left: 60px; 
+    padding-bottom: 30px;
+    }
+   .svg-custom{
+        margin-bottom: -1.5px;
+      }
+
+    @media screen and (max-width: 600px) {
+  .Bg-custom{
+     padding-right: 15px;
+    padding-left: 15px;
+    min-height: 600px;
+  }
+  .half-circle-right{
+    border-radius: 550px 550px 550px 550px ;
+    
+}
+      .svg-custom{
+        width:71px;
+        margin-bottom: -4px;
+      }
+      .tab-on-mobile{
+        height:  600px;
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+    }
+  
+</style>
+
+{%- for block in section.blocks -%}
+  {%- assign featured_collection = collections[block.settings.collection] -%}
+  {%- assign featured_collection_title = block.settings.title | default: featured_collection.title | default: 'Collection' -%}
+
+  {%- capture tabs_navigation -%}
+    {{ tabs_navigation }}
+    <button type="button" class="tab-link tab-link-{{ forloop.index0 }}"
+      data-focus-element
+      data-tab="{{ forloop.index0 }}"
+      data-block-id="{{ block.id }}"
+      tabindex="0"
+      {{ block.shopify_attributes }}>
+      <span>{{ featured_collection_title }}</span>
+    </button>
+  {%- endcapture -%}
+
+  {%- capture tabs -%}
+    {{ tabs }}
+    <div class="tab-content tab-content-{{ forloop.index0 }}">
+      <div class="flickity-grid" data-slider data-grid-large="{{ section.settings.grid }}">
+        <!-- /snippets/product-grid-item.liquid -->
+        {% for product in featured_collection.products limit: section.settings.limit %}
+          <div class="product-grid-slide">
+            {% render 'product-grid-item', product: product %}
+          </div>
+        {% else %}
+          {% render 'onboarding-product-grid-item', limit: section.settings.limit, wrap: 'product-grid-slide' %}
+        {% endfor %}
+      </div>
+    </div>
+  {%- endcapture -%}
+{%- endfor -%}
+<div class="Bg-custom">
+  <div class="homepage-collection-tabs ">
+  {% if section.settings.title != blank %}
+    <h2 class="h2 standard__heading" data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="2" style="text-align: center;margin-bottom:20px; color:#fff">
+          <span class="outlined_text">{{ section.settings.outlined_text }}</span> {{ section.settings.title | escape }}
+    </h2>
+  {% endif %}
+    <div class="half-circle-right">
+      </div>
+      <div class="collection-tabs tab-on-mobile">
+       <div class="homepage-collection-tabs "
+  data-section-id="{{ section.id }}"
+  data-section-type="collection-tabs">
+         <div class="wrapper" data-tabs-holder>
+           <div class="collection-tabs">
+             {{ tabs }}
+           </div>
+            {% unless section.settings.link_text == '' %}
+        <a class="{{ section.settings.button_style }} {{ section.settings.button_color }} hero__btn btn--long uppercase" 
+          href="{{ section.settings.link }}"
+          data-aos="hero"
+          data-aos-anchor="{{ animation_anchor }}"
+          data-aos-order="4">
+          {{ section.settings.link_text | escape }}
+        </a>
+      {% endunless %}
+         </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "collections custom",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Tab collections"
+    },
+            {
+          "label": "Outlined heading",
+          "id": "outlined_text",
+          "type": "text"
+        },
+	{
+            "type": "checkbox",
+            "id": "enable_image",
+            "label": "Show image",
+            "default": true
+    },
+    {
+      "type":    "range",
+      "id":      "grid",
+      "min":     1,
+      "max":     6,
+      "step":    1,
+      "default": 3,
+      "label":   "Products per row"
+    },
+    {
+      "type":    "range",
+      "id":      "limit",
+      "min":     1,
+      "max":     20,
+      "step":    1,
+      "default": 6,
+      "label":   "Product limit",
+      "info": "Loading a large number of products can affect page speed"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Tab collections",
+      "settings": [
+        {
+          "label": "Collection",
+          "id": "collection",
+          "type": "collection"
+        },
+        {
+          "label": "Tab heading",
+          "id": "title",
+          "type": "text"
+        },        
+       {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Text",
+          "default": "View products",
+          "info": "Leave blank to link entire image"
+        },
+            {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "select",
+      "id": "button_color",
+      "label": "Color",
+      "default": "btn--white",
+      "options": [
+        { "value": "btn--primary", "label": "Bright accent" },
+        { "value": "btn--secondary", "label": "Secondary accent" },
+        { "value": "btn--neutral", "label": "Text color" },
+        { "value": "btn--black", "label": "Black" },
+        { "value": "btn--white", "label": "White" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "default": "btn",
+      "options": [
+        { "value": "btn", "label": "Solid button"},
+        { "value": "btn--soft", "label": "Soft button"},
+        { "value": "btn--outline", "label": "Outlined button"}
+      ]
+    }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Collection",
+      "name": "Tab collections",
+      "blocks": [
+        {
+          "type": "collection",
+          "settings": {
+            "title": "First collection"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
+

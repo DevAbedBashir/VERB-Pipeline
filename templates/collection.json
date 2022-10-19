@@ -1,0 +1,218 @@
+{
+  "sections": {
+    "1664105183aa191a35": {
+      "type": "section-hero",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Web_Revamp_Collection_Pages_1408x160_Ghost.png",
+        "mobile_image": "shopify:\/\/shop_images\/Web_Revamp_Collection_Pages_375x138_Ghost.png",
+        "bg_position": "center-center",
+        "height": "use_screen_one_fifth",
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "kicker": "",
+        "title": "{{ collection.title }}",
+        "richtext": "",
+        "text_align": "align--middle-center",
+        "text_color": "text--white",
+        "link_text": "",
+        "link": "",
+        "button_color": "btn--white",
+        "button_style": "btn"
+      }
+    },
+    "hero": {
+      "type": "collection-hero",
+      "settings": {
+        "text_align": "align--middle-center",
+        "show_title": false,
+        "show_title_below": false,
+        "show_mobile_image": false,
+        "show_description": false,
+        "show_description_below": false,
+        "bg_color": "",
+        "show_image": true,
+        "show_mobile": false,
+        "background_image": "shopify:\/\/shop_images\/Web_Revamp_Collection_Pages_375x138_Ghost_75941ee3-2f2c-4ad4-94dd-f2b61fe7f19b.png",
+        "bg_position": "center-center",
+        "image_height": "use_screen_one_third",
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "text_color": "text--white"
+      }
+    },
+    "subcollections": {
+      "type": "collection-sub",
+      "settings": {
+        "show_subcollection": true,
+        "text_color": "text--white",
+        "text_align": "align--middle-center",
+        "select_image": "collection",
+        "bg_position": "center-center",
+        "aspect_ratio": 0.9,
+        "overlay_opacity": 55,
+        "overlay_color": "#000000"
+      }
+    },
+    "main": {
+      "type": "collection",
+      "blocks": {
+        "collections": {
+          "type": "collections",
+          "disabled": true,
+          "settings": {
+            "title": "All collections"
+          }
+        },
+        "2dc5bd7d-a82d-46cc-96f5-bd500f96ab5b": {
+          "type": "nav_links",
+          "disabled": true,
+          "settings": {
+            "collection_linklist": "main-menu"
+          }
+        },
+        "filters": {
+          "type": "filters",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "355a95c4-dc03-4e47-a242-0c3089497dbc": {
+          "type": "nav_links",
+          "disabled": true,
+          "settings": {
+            "collection_linklist": "collection"
+          }
+        },
+        "ffc3b168-ab72-4cab-9dcd-4259ffd28c23": {
+          "type": "nav_links",
+          "disabled": true,
+          "settings": {
+            "collection_linklist": "product"
+          }
+        },
+        "293b6283-3766-4e27-a19c-745254fb38c0": {
+          "type": "link",
+          "settings": {
+            "collection_title_link": "Shop all",
+            "link": "shopify:\/\/pages\/shop-all",
+            "border_color": "#9bc2d2"
+          }
+        },
+        "5342504e-3041-4094-b31a-977e041c88eb": {
+          "type": "link",
+          "settings": {
+            "collection_title_link": "ghost",
+            "link": "shopify:\/\/collections\/ghost",
+            "border_color": "#e782a9"
+          }
+        },
+        "7734580e-3f8b-41b3-afd9-a538d10b81bc": {
+          "type": "link",
+          "settings": {
+            "collection_title_link": "hydrate",
+            "link": "shopify:\/\/collections\/hydrate",
+            "border_color": "#65a5b8"
+          }
+        },
+        "ad927238-b17b-4b0a-8013-a98bc2a7dec7": {
+          "type": "link",
+          "settings": {
+            "collection_title_link": "curl",
+            "link": "shopify:\/\/collections\/curl",
+            "border_color": "#d78000"
+          }
+        },
+        "4ab56937-20fd-4bf2-a943-2d029a553b5b": {
+          "type": "link",
+          "settings": {
+            "collection_title_link": "volume",
+            "link": "shopify:\/\/collections\/volume",
+            "border_color": "#da8080"
+          }
+        },
+        "4498259a-8dd7-4226-bed8-8c363f6c42e0": {
+          "type": "link",
+          "settings": {
+            "collection_title_link": "glossy",
+            "link": "shopify:\/\/collections\/glossy",
+            "border_color": "#00a0cd"
+          }
+        },
+        "e15726b2-9fdc-4110-86fe-18f0de38cea8": {
+          "type": "link",
+          "settings": {
+            "collection_title_link": "sea",
+            "link": "shopify:\/\/collections\/sea",
+            "border_color": "#80bdd0"
+          }
+        },
+        "b7611c57-74bc-4a39-b46d-dbbb8b3c1633": {
+          "type": "link",
+          "disabled": true,
+          "settings": {
+            "collection_title_link": "Reset",
+            "link": "shopify:\/\/collections\/reset",
+            "border_color": ""
+          }
+        },
+        "5bede7a2-fdc8-4791-98b0-fa40caf734a2": {
+          "type": "link",
+          "settings": {
+            "collection_title_link": "purple",
+            "link": "shopify:\/\/collections\/purple",
+            "border_color": "#bcabda"
+          }
+        },
+        "b050baae-5931-4dde-8db3-2504a4bf13b3": {
+          "type": "link",
+          "settings": {
+            "collection_title_link": "treatments",
+            "link": "shopify:\/\/collections\/treatments",
+            "border_color": "#828586"
+          }
+        },
+        "13583939-71ed-400f-8a66-ed71bc2363dd": {
+          "type": "link",
+          "settings": {
+            "collection_title_link": "dry shampoo",
+            "link": "shopify:\/\/collections\/dry-shampoo",
+            "border_color": "#fa6378"
+          }
+        }
+      },
+      "block_order": [
+        "collections",
+        "2dc5bd7d-a82d-46cc-96f5-bd500f96ab5b",
+        "filters",
+        "355a95c4-dc03-4e47-a242-0c3089497dbc",
+        "ffc3b168-ab72-4cab-9dcd-4259ffd28c23",
+        "293b6283-3766-4e27-a19c-745254fb38c0",
+        "5342504e-3041-4094-b31a-977e041c88eb",
+        "7734580e-3f8b-41b3-afd9-a538d10b81bc",
+        "ad927238-b17b-4b0a-8013-a98bc2a7dec7",
+        "4ab56937-20fd-4bf2-a943-2d029a553b5b",
+        "4498259a-8dd7-4226-bed8-8c363f6c42e0",
+        "e15726b2-9fdc-4110-86fe-18f0de38cea8",
+        "b7611c57-74bc-4a39-b46d-dbbb8b3c1633",
+        "5bede7a2-fdc8-4791-98b0-fa40caf734a2",
+        "b050baae-5931-4dde-8db3-2504a4bf13b3",
+        "13583939-71ed-400f-8a66-ed71bc2363dd"
+      ],
+      "settings": {
+        "product_limit": 36,
+        "grid_setting_large": 3,
+        "grid_setting_mobile": "2",
+        "enable_layout_toggle": true,
+        "collection_sorting": false,
+        "hide_sidebar": false
+      }
+    }
+  },
+  "order": [
+    "1664105183aa191a35",
+    "hero",
+    "subcollections",
+    "main"
+  ]
+}

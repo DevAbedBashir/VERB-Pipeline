@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="lt-ie10" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>twentytwenty</title>
+  <link rel="preload" href="{{ 'foundation.css' | asset_url }}" as="style">
+  <link rel="preload" href="{{ 'twentytwenty.css' | asset_url }}" as="style">
+  <style>
+    .columns-ba{
+      column-gap: 20px;
+      columns: 3 240px;
+      background-color:#008CBB;
+      padding: 2em 1em;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      }
+    .twentytwenty-container{
+      width: 325px; 
+      border-radius: 16%; 
+      border: 3px solid #ffffff;
+    }
+    
+  </style>
+</head>
+  <body>
+        <svg style="height:100px;width:100%;background-color:black">
+
+<defs>
+<filter id="whiteOutlineEffect" color-interpolation-filters="sRGB">
+  <feMorphology in="SourceAlpha" result="MORPH" operator="dilate" radius="2" />
+  <feColorMatrix in="MORPH" result="WHITENED" type="matrix" values="-1 0 0 0 1, 0 -1 0 0 1, 0 0 -1 0 1, 0 0 0 1 0"/>
+  <feMerge>
+    <feMergeNode in="WHITENED"/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+</defs>
+
+<g>
+  <text x="10" y="50" fill="none" font-size="70" filter="url(#whiteOutlineEffect)">
+    verb
+  </text>
+</g>
+
+</svg>
+      <svg width="auto" height="75" viewBox="0 0 350 75"><rect x="0" y="0" width="450" height="75" style="fill:none"/>
+        <g style="overflow:hidden; text-anchor: middle; font-size:calc( ( 30.0708736214px + 9.1907840805 * (100vw - 480px) / 920 ) * var(--FONT-ADJUST-HEADING) ); font-weight:500;font-family: linetocircularbook;">
+          <text x="175" y="55" style="fill: none; stroke: white; stroke-width:1">new</text>
+        </g>
+       </svg> 
+         <svg viewBox="0 0 1000 90" xmlns="http://www.w3.org/2000/svg">
+    <text x="500" text-anchor="middle" dominant-baseline="hanging" fill="none" stroke="red" stroke-width="2" paint-order="stroke">
+      Product
+    </text>
+  </svg>  Manager
+        <h1>
+ 
+</h1>
+    <div class="row" style="margin-top: 2em;padding: 2em 1em;">
+      <div class="large-4 columns">
+        <h3>Basic Usage</h3>
+        <p>Demonstrates basic usage of the plugin.</p>
+      </div>
+      <div class="large-8 columns-ba">
+        <div class="twentytwenty-container">
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/3-after_bc82e2b7-16eb-43e0-93bc-a0f2d7ad9702.png?v=1660567058" />
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/3-before_2e31473f-21c7-4cee-8132-072681cd4624.png?v=1660567058" />
+        </div>
+         <div class="twentytwenty-container">
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/2-before_6bf6ec8e-709f-410e-b35c-0613b248363a.png?v=1660567058" />
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/2-after_60f8d46e-b1b8-477d-8583-d67b724c20b1.png?v=1660567058" />
+        </div>
+         <div class="twentytwenty-container">
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/1-before_2d4c1e91-602b-4e5a-acb2-ba4273349a6e.png?v=1660567058" />
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/1-after_e6b8a044-61a6-4e66-8242-0208e7aad0c7.png?v=1660567058" />
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 2em; margin-bottom: 2em;">
+      <div class="large-4 columns">
+        <h3>Vertical Orientation</h3>
+        <p>Demonstrates sliding up and down.</p>
+      </div>
+      <div class="large-8 columns">
+        <div class="twentytwenty-container" data-orientation="vertical">
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/2-before_6bf6ec8e-709f-410e-b35c-0613b248363a.png?v=1660567058" />
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/2-after_60f8d46e-b1b8-477d-8583-d67b724c20b1.png?v=1660567058" />
+        </div>
+        <div class="twentytwenty-container" data-orientation="vertical">
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/2-before_6bf6ec8e-709f-410e-b35c-0613b248363a.png?v=1660567058" />
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/2-after_60f8d46e-b1b8-477d-8583-d67b724c20b1.png?v=1660567058" />
+        </div>
+        <div class="twentytwenty-container" data-orientation="vertical">
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/2-before_6bf6ec8e-709f-410e-b35c-0613b248363a.png?v=1660567058" />
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/2-after_60f8d46e-b1b8-477d-8583-d67b724c20b1.png?v=1660567058" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 2em;">
+      <div class="large-4 columns">
+        <h3>Side by side</h3>
+        <p>Using multiple comparisons at once.</p>
+      </div>
+      <div class="large-4 columns-ba">
+        <div class="twentytwenty-container">
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/1-before_2d4c1e91-602b-4e5a-acb2-ba4273349a6e.png?v=1660567058" />
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/1-after_e6b8a044-61a6-4e66-8242-0208e7aad0c7.png?v=1660567058" />
+        </div>
+        <div class="twentytwenty-container">
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/1-before_2d4c1e91-602b-4e5a-acb2-ba4273349a6e.png?v=1660567058" />
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/1-after_e6b8a044-61a6-4e66-8242-0208e7aad0c7.png?v=1660567058" />
+        </div>
+        <div class="twentytwenty-container">
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/1-before_2d4c1e91-602b-4e5a-acb2-ba4273349a6e.png?v=1660567058" />
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/1-after_e6b8a044-61a6-4e66-8242-0208e7aad0c7.png?v=1660567058" />
+        </div>
+      </div>
+      <div class="large-4 columns-ba">
+        <div class="twentytwenty-container">
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/2-before_6bf6ec8e-709f-410e-b35c-0613b248363a.png?v=1660567058" />
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/2-after_60f8d46e-b1b8-477d-8583-d67b724c20b1.png?v=1660567058" />
+        </div>
+        <div class="twentytwenty-container">
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/2-before_6bf6ec8e-709f-410e-b35c-0613b248363a.png?v=1660567058" />
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/2-after_60f8d46e-b1b8-477d-8583-d67b724c20b1.png?v=1660567058" />
+        </div>
+        <div class="twentytwenty-container">
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/2-before_6bf6ec8e-709f-410e-b35c-0613b248363a.png?v=1660567058" />
+          <img src="https://cdn.shopify.com/s/files/1/0573/0061/5202/files/2-after_60f8d46e-b1b8-477d-8583-d67b724c20b1.png?v=1660567058" />
+        </div>
+      </div>
+    </div>
+    {% section 'section-ba' %}}
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <link rel="preload" href="{{ 'jquery.event.move.js' | asset_url }}" as="script">
+<!--     <link rel="preload" href="{{ 'jquery.twentytwenty.js' | asset_url }}" as="script"> -->
+    <script>
+    $(window).load(function(){
+      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.7});
+      $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.3, orientation: 'vertical'});
+    });
+    </script>
+  </body>
+</html>

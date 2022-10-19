@@ -1,0 +1,305 @@
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<style>
+  .carousel-image {
+  min-width: 300px;
+  height:330px;
+   border-radius: 50% 50% 0px 0px;
+
+}
+</style>
+{% comment %}
+* Make sure you have the Flickity plugin installed and the proper license for this to function on your store
+* Plugin, licensing and documentation at https://flickity.metafizzy.co/
+{% endcomment %}
+
+
+{% assign collection_limit = section.settings.collection_limit %}
+
+{% assign cell_align = section.settings.cell_align %}
+{% assign wrap_around = section.settings.wrap_around %}
+{% assign img_width = section.settings.img_width | append: 'x' %}
+
+<div class="homepage-columns " style="background-color: {{ section.settings.bg }}">
+<div class="page-width">
+<div>
+<h2 class="h3" style="text-align:center" >{{ section.settings.title }}</h2>
+</div>
+<div class="flickity-section__carousel carousel-{{section.id }} text-center "
+data-flickity='{
+"cellAlign": "{{ cell_align }}",
+"pageDots": false,
+"freeScroll": true,
+"contain": true,
+"wrapAround": {{ wrap_around }}
+}'>
+{% for block in section.blocks %}
+
+{% assign collection_main = collections[section.settings.collection_main] %}
+{% assign featured_img_src = collection_main.enable_image.src | default: collection.enable_image.src %}
+<div class="carousel__cell" style="width:{{ section.settings.cell_width }};margin-right:{{ section.settings.mr }}px">
+<a href="{{ collection.url }}">
+ <img style="align: center; margin-left:auto;margin-right:auto;" class="lazy-image column__image carousel-image" src="{{ collection.featured_media.enable_image | img_url: img_width }}" alt="{{ collection.enable_image.alt | default: collection.title | strip_html | escape }}">
+</a>
+<a href="{{ collection.url }}">
+<h3 class="h6" style="align: center" >{{ collection.title }}</h3>
+</a>
+</div>
+{% endfor %}
+
+{% comment %}
+{% for block in section.blocks %}
+{% assign block_product = all_products[block.settings.featured_product] %}
+{% assign block_first_variant = block_product.selected_or_first_available_variant %}
+{% assign featured_img_src = block_first_variant.featured_img.src | default: block_product.featured_image.src %}
+{% assign price = block_first_variant.price %}
+{% assign compare_at_price = block_first_variant.compare_at_price %}
+<div class="carousel__cell" style="width:{{ section.settings.cell_width }};margin-right:{{ section.settings.mr }}px">
+{% if block.settings.featured_product != blank %}
+<a href="{{ block_product.url }}">
+<img class="lazy2" data-src="{{ featured_img_src | img_url: img_width }}" alt="{{ block_product.featured_img.alt }}" />
+</a>
+{% else %}
+{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+{% endif %}
+<a href="{{ block_product.url }}">
+<h5 class=" h6" style="text-align:center;font-weight:500">{{ block_product.title }}</h5>
+</a>
+{% if compare_at_price > price %}
+<s class="block-product__compare-at-price">{{ compare_at_price | money }}</s>
+<p class="block-product__product-price">{{ price | money }}</p>
+{% else %}
+<p class="block-product__product-price">{{ price | money }}</p>
+{% endif %}
+</div>
+{% endfor %}
+{% endfor %}
+{% endcomment %}
+</div>
+  <div class="vertical-center">
+  <a class="{{ section.settings.button_style }} {{ section.settings.button_color }} hero__btn btn--long uppercase" 
+          href="{{ section.settings.link }}"
+          data-aos="hero"
+          data-aos-anchor="{{ animation_anchor }}"
+          data-aos-order="4">
+          {{ section.settings.link_text | escape }}
+        </a>
+  </div>
+</div>
+</div>
+<style>
+  .vertical-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    margin-top: 20px;
+  }
+</style>
+
+{% schema %}
+{
+"name": "Collection Slider",
+"settings": [
+{
+"type": "collection",
+"id": "collection_main",
+"label": "Choose a Collection"
+},
+{
+"type": "range",
+"id": "collection_limit",
+"min": 2,
+"max": 50,
+"step": 1,
+"unit": ".",
+"label": "How many products to show",
+"default": 4
+},
+{
+"type": "color",
+"id": "bg",
+"label": "Background Color"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Title",
+"default": "Featured Collection Slider"
+},
+{
+"type": "range",
+"id": "img_width",
+"min": 200,
+"max": 600,
+"step": 5,
+"unit": "px",
+"label": "Image Width",
+"default": 200
+},
+{
+"type": "select",
+"id": "cell_align",
+"label": "Slide Alignment",
+"options": [
+{
+"value": "center",
+"label": "Center"
+},
+{
+"value": "left",
+"label": "Left"
+}
+],
+"default": "center"
+},
+{
+"type": "range",
+"id": "title_mb",
+"min": 30,
+"max": 120,
+"step": 1,
+"unit": "px",
+"label": "Title Margin Bottom",
+"default": 48
+},
+{
+"type": "select",
+"id": "cell_width",
+"label": "Choose number of slides to show on start",
+"options": [
+{
+"value": "33.33333%",
+"label": "Three"
+},
+{
+"value": "25%",
+"label": "Four"
+},
+{
+"value": "20%",
+"label": "Five"
+},
+{
+"value": "16.6666667%",
+"label": "Six"
+},
+{
+"value": "12.5%",
+"label": "Eight"
+}
+],
+"default": "25%"
+},
+{
+"type": "radio",
+"id": "wrap_around",
+"label": "Enable Wrap Around (endless scrolling)",
+"options": [
+{
+"value": "true",
+"label": "True"
+},
+{
+"value": "false",
+"label": "False"
+}
+],
+"default": "true"
+},
+{
+"type": "range",
+"id": "mr",
+"min": 0,
+"max": 48,
+"step": 1,
+"unit": "px",
+"label": "Cell Margin Right",
+"default": 16,
+"info": "Save page to see changes."
+},
+{
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Text",
+      "default": "View products",
+      "info": "Leave blank to link entire image"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "select",
+      "id": "button_color",
+      "label": "Color",
+      "default": "btn--white",
+      "options": [
+        { "value": "btn--primary", "label": "Bright accent" },
+        { "value": "btn--secondary", "label": "Secondary accent" },
+        { "value": "btn--neutral", "label": "Text color" },
+        { "value": "btn--black", "label": "Black" },
+        { "value": "btn--white", "label": "White" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "default": "btn",
+      "options": [
+        { "value": "btn", "label": "Solid button"},
+        { "value": "btn--soft", "label": "Soft button"},
+        { "value": "btn--outline", "label": "Outlined button"}
+      ]
+    }
+],
+ "blocks": [
+		 {
+        "type": "text_block",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_image",
+            "label": "Show image",
+            "default": true
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "bg_position",
+            "label": "Position",
+            "default": "center-center",
+            "options": [
+              { "label": "Top", "value": "center-top" },
+              { "label": "Right", "value": "right-center" },
+              { "label": "Center", "value": "center-center" },
+              { "label": "Left", "value": "left-center" },
+              { "label": "Bottom", "value": "center-bottom" }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Feature images or videos"
+          }
+
+]}],
+"presets": [
+{
+"name": "Collection Slider",
+"category": "Slider"
+}
+]
+}
+{% endschema %}

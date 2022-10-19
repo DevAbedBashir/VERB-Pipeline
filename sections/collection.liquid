@@ -1,0 +1,306 @@
+<style>
+  .vh {
+    border: 1px solid;
+    width: 100%;
+    align-items: center;
+    margin-left: 20px;
+}
+
+  .Collection__Header {
+    margin-bottom: 0.5rem;
+}
+
+  .containerVH {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+  .custom__tabs{
+    width: 20%;
+    padding: 52px;
+  }
+
+  .collection__content.custom__content > .collection__products {
+    padding: 0 100px 0 0;
+}
+  
+
+
+
+   @media only screen and (max-width: 600px) {
+   .custom__content{
+    display: flex;
+    flex-direction: column;
+  }
+
+    .tabs--center {
+    text-align: center;
+    flex-direction: row !important;
+}
+
+    .side-collection-links {
+    margin-left: 20px;
+}
+
+    .custom__tabs {
+    width: auto;
+    padding: unset;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+    .collection__content.custom__content > .collection__products {
+    padding: 10px;
+}
+    
+}
+</style>
+<!-- /sections/collection.liquid -->
+
+
+<div data-section-id="{{ section.id }}"
+  data-section-type="collection"
+  data-sort="{{ section.settings.collection_sorting }}">
+
+  <div class="collection" data-sidebar-toggle>
+    <div class="wrappers">
+      {%- assign collection_sidebar = false -%}
+      {%- if section.blocks.size > 0 -%}
+        {%- assign collection_sidebar = true -%}
+      {%- endif -%}
+
+
+
+
+      <div class="collection__content custom__content">
+<div class="custom__tabs tab__scroll">
+  <div class="tabs tabs--center tabs--pill" data-scrollbar="" data-scrollbar-slider="" style="
+    display: flex;
+    flex-direction: column;
+">
+    {% render 'collection-filters-sidebar', section: section, collection: collection %}
+  </div>
+</div>
+              
+
+
+        {%- paginate collection.products by section.settings.product_limit -%}
+          <div class="collection__products" data-products-grid>
+
+            <div class="js-grid" data-grid-large="{{ section.settings.grid_setting_large }}" data-grid-small="{{ section.settings.grid_setting_mobile }}">
+              <!-- /snippets/product-grid-item.liquid -->
+
+
+            
+              {% for product in collection.products %}
+                
+                {% render 'product-grid-item', product: product %}
+              {% else %}
+                {% if collection.handle == 'all' and collection.current_tags == '' %}
+                  {% render 'onboarding-empty-collection' %}
+                {% else %}
+                <div class="js-grid__full-row">
+                  <p>{{ 'collections.general.no_matches' | t }}</p>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            {% if paginate.pages > 1 %}
+              <div class="text-center">
+                {% render 'pagination-custom', paginate: paginate, enable_ajax: true %}
+              </div>
+            {% endif %}
+          </div>
+        {% endpaginate %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection product grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type":    "range",
+      "id":      "product_limit",
+      "min":     1,
+      "max":     50,
+      "step":    1,
+      "label":   "Products per page",
+      "default": 36
+    },
+    {
+      "type":    "range",
+      "id":      "grid_setting_large",
+      "min":     1,
+      "max":     4,
+      "step":    1,
+      "label":   "Desktop: products per row",
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "grid_setting_mobile",
+      "label": "Mobile: products per row",
+      "options": [
+        {
+          "value": "1",
+          "label": "One"
+        },
+        {
+          "value": "2",
+          "label": "Two"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_layout_toggle",
+      "label": "Show product layout buttons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Collection sorting"
+    },
+    {
+      "type": "checkbox",
+      "id": "collection_sorting",
+      "label": "Show collection sorting",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Collection filter sidebar"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_sidebar",
+      "label": "Hide filter sidebar by default",
+      "info": "Customers will have the option to show them"
+    }
+    ],
+    "blocks": [
+    {
+      "type": "filters",
+      "name": "Filters",
+      "limit": 1,
+      "settings": [      
+        {
+          "type": "paragraph",
+          "content": "Create filters in the [navigation](/admin/menus) section of your online store setings."
+        }
+      ]
+    },
+    {
+      "type": "collections",
+      "name": "All Collections",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Show a list of all the collections in your store."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "All collections"
+        }
+      ]
+    },
+    {
+      "type": "nav_links",
+      "name": "Navigation links",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "collection_linklist",
+          "label": "Sidebar navigation",
+          "info": "Create a list of [navigation links](/admin/menus) to show specific collections in the sidebar."
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "name": "Legacy: Tag group",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Legacy feature: tag grouping"
+        },
+        {
+          "type": "paragraph",
+          "content": "This is a legacy feature that is intended to help merchants with large catalogs transition to OS2.0. Filtering by tag will be removed from Pipeline when 0S2.0 filters can fully replace their functionality. This method of tag-based product filtering cannot be combined with [OS2.0 filters](/admin/menus)."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Group name",
+          "default": "Filter by size"
+        },
+        {
+          "type": "text",
+          "id": "group_tags",
+          "label": "Tag list",
+          "default": "Small, Medium, Large",
+          "info": "Comma separated group of tags"
+        }
+      ]
+    },
+         {
+      "type": "link",
+      "name": "Link",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Collection Link"
+        },
+        {
+          "type": "text",
+          "id": "collection_title_link",
+          "label": "Collection Title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+                {
+          "type": "color",
+          "id": "border_color",
+          "label": "Border Color"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}
+
+<script>
+  // set content on click
+$('.button').click(function(e) {
+  e.preventDefault();
+  setContent($(this));
+  localStorage.setItem('active-container', $(this).data('rel'));
+});
+
+// set content on load
+localStorage.getItem('active-container') && setContent($('.button[data-rel="' + localStorage.getItem('active-container') + '"]'));
+
+function setContent($el) {
+  $('.button').removeClass('active');
+  $('.container').hide();
+
+  $el.addClass('active');
+  $($el.data('rel')).show();
+}
+</script>

@@ -1,0 +1,68 @@
+<style>
+  a.js-anchor-link {
+    background-color: #9087B0;
+    border: 1px solid #9087B0;
+    border-radius: 50px;
+    text-align: center;
+    padding: 15px;
+}
+  
+  a.js-anchor-link:hover {
+    background: unset;
+}
+  
+  .accordion--anchor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+  
+  .standard__kicker:not(.standard__kicker--set) {
+    font-size: 2em;
+}
+  
+</style>  
+
+
+<!--Navigation Ancor goes here-->  
+<!--   <div class="wrapper--narrow"> -->
+  	<div class="accordion--anchor">
+    	{% for block in section.blocks %}
+        	<a href="#{{block.settings.title}}" class="js-anchor-link">{{block.settings.title}}</a>
+        {% endfor %}
+	</div>
+<!--   </div> -->
+
+<!--End Of The Navigation Anchor-->
+
+{% schema %}
+{
+  "name": "Accordion Anchor",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accordion Anchor",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

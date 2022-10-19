@@ -1,0 +1,1401 @@
+{% liquid
+  assign blockList = ''
+  for block in section.blocks
+    assign blockList = blockList | append: block.type | append: ','
+    assign blockList = blockList | replace: 'video', 'image'
+  endfor
+  assign blockArray = blockList | split: ","
+
+  assign swaparoo_class = ''
+  if blockArray[0] != 'image' and  blockArray[1] == 'image'
+    assign swaparoo_class = 'brick__section--reverse'
+  endif
+
+  if section.settings.height == 'image-height'
+    assign padding_ratio = 1
+    if blockArray[0] == 'image'
+      assign padding_ratio = section.blocks[0].settings.image.aspect_ratio
+    elsif blockArray[1] == 'image'
+      assign padding_ratio = section.blocks[1].settings.image.aspect_ratio
+    endif
+    assign padding_ratio = 1 | divided_by: padding_ratio | times: 100 | append: '%'
+  endif
+
+  assign border_class = ''
+  if section.settings.borders
+    assign border_class = 'brick--border'
+  endif
+
+  assign margin_class = ''
+  if section.settings.padding
+    assign margin_class = 'brick--margin'
+  endif
+
+  assign wrapper_class = ''
+  if section.settings.wrapper
+    assign wrapper_class = 'wrapper--brick'
+  endif
+
+  assign transparent_header = false
+  assign non_image_block_types = 'text, newsletter, reviews, product, collection' | split: ','
+  unless non_image_block_types contains section.blocks[0].type and non_image_block_types contains section.blocks[1].type
+    assign transparent_header = true
+  endunless
+
+  assign animation_anchor = "[data-section-id='" | append: section.id | append: "']"
+%}
+
+<section data-section-id="{{ section.id }}"
+  data-section-type="custom-content"
+  data-overflow-wrapper
+  {% if transparent_header %}data-overlay-header{% endif %}
+  style="--padding-ratio: {{ padding_ratio | default: '100%' }}"
+  class="brick__section brick--{{ section.blocks.size }} {{ margin_class }} {{ border_class }} {{ wrapper_class }} {{ section.settings.height }} {{ swaparoo_class }}">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'image' %}
+        <div class="brick__block" data-overflow-frame {{ block.shopify_attributes }}>
+          <div class="brick__block__image {{ block.settings.text_color }}">
+            <div class="hero__content__wrapper {{ block.settings.text_align }}">
+              <div class="hero__content" data-overflow-content>
+
+                {% unless block.settings.kicker == '' %}
+                  <p class="hero__kicker"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="1">
+                    {{ block.settings.kicker | escape }}
+                  </p>
+                {% endunless %}
+
+                {%- unless block.settings.title == '' -%}
+                  <h1 class="hero__title h2"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="2">{{ block.settings.title | escape }}</h1>
+                {%- endunless -%}
+
+                {%- unless block.settings.richtext == '' -%}
+                  <p class="hero__description h5--body"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="3">
+                    {{ block.settings.richtext }}
+                  </p>
+                {%- endunless -%}
+
+                {%- if block.settings.link_text != '' -%}
+                  <a class="hero__btn {{ block.settings.button_style }} {{ block.settings.button_color }}"
+                    href="{{ block.settings.link }}"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="4">
+                    {{ block.settings.link_text | escape }}
+                  </a>
+                {%- endif -%}
+
+              </div>
+
+              {%- if block.settings.link != blank -%}
+                {%- unless block.settings.link_text != blank -%}
+                  <a href="{{ block.settings.link }}" class="link-over-image" aria-label="{{ block.settings.image.alt | strip_html | escape }}"></a>
+                {%- endunless -%}
+              {%- endif -%}
+            </div>
+
+            <div class="image-overlay" style="--bg:{{ block.settings.overlay_color }}; opacity:{{ block.settings.overlay_opacity | times: 0.01 }};"></div>
+
+            {%- render 'hero', img_object: block.settings.image, frame_height_class: section.settings.height, bg_position: block.settings.bg_position -%}
+          </div>
+        </div>
+      {% when 'text' %}
+        {%- liquid
+          assign kicker_line_class = ''
+          if block.settings.title == blank
+            assign kicker_line_class = 'kicker__line'
+          endif
+          
+          assign characters = block.settings.text | size
+          assign justify_class = ''
+          if characters > 400 and block.settings.align_text == 'text-center' and block.settings.text_columns > 1
+            assign justify_class = 'text-justify'
+          endif
+        -%}          
+        <div class="brick__block" data-prevent-transparent-header {{ block.shopify_attributes }}>
+          <div class="brick__block__text {{ block.settings.text_color }}" data-overflow-frame style="--bg: {{ block.settings.bg_color }};">
+            <div class="brick__block__text__inner">
+              <div class="text__standard {{ block.settings.align_text }}" data-overflow-content>
+                
+                {% if block.settings.kicker != blank %}
+                  <p class="standard__kicker {{ kicker_line_class }}"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="1">
+                    {{ block.settings.kicker }}
+                  </p>
+                {% endif %}
+
+                {% if block.settings.title != blank %}
+                  <h2 class="h2 standard__heading"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="2">
+                    {%if block.settings.title == 'kit'%}
+					<svg width="163.901" height="32.551" viewBox="0 0 163.901 32.551" xmlns="http://www.w3.org/2000/svg"><g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#ffffff" stroke-width="0.5mm" fill="none" style="stroke:#ffffff;stroke-width:0.5mm;fill:none"><path d="M 133.101 17.35 L 133.101 31.8 L 127.351 31.8 L 127.351 7.45 L 132.901 7.45 L 132.901 10.55 A 6.614 6.614 0 0 1 135.369 8.051 A 8.273 8.273 0 0 1 135.926 7.75 Q 137.951 6.75 140.101 6.75 A 9.369 9.369 0 0 1 142.834 7.138 A 8.265 8.265 0 0 1 144.501 7.85 Q 146.451 8.95 147.401 11.05 A 8.549 8.549 0 0 1 150.467 7.928 Q 152.087 6.989 154.195 6.799 A 12.272 12.272 0 0 1 155.301 6.75 A 9.118 9.118 0 0 1 158.768 7.394 A 8.501 8.501 0 0 1 161.401 9.1 Q 163.668 11.231 163.879 15.172 A 15.485 15.485 0 0 1 163.901 16 L 163.901 31.8 L 158.301 31.8 L 158.301 16.95 A 7.01 7.01 0 0 0 158.139 15.401 Q 157.878 14.247 157.194 13.407 A 4.467 4.467 0 0 0 157.126 13.325 A 3.731 3.731 0 0 0 155.257 12.16 Q 154.634 11.983 153.883 11.955 A 7.674 7.674 0 0 0 153.601 11.95 A 5.316 5.316 0 0 0 151.854 12.226 A 4.528 4.528 0 0 0 149.951 13.5 A 5.389 5.389 0 0 0 148.575 16.752 A 7.097 7.097 0 0 0 148.551 17.35 L 148.551 31.8 L 142.851 31.8 L 142.851 16.95 A 7.01 7.01 0 0 0 142.689 15.401 Q 142.428 14.247 141.744 13.407 A 4.467 4.467 0 0 0 141.676 13.325 A 3.731 3.731 0 0 0 139.807 12.16 Q 139.184 11.983 138.433 11.955 A 7.674 7.674 0 0 0 138.151 11.95 A 5.615 5.615 0 0 0 136.495 12.183 A 4.423 4.423 0 0 0 134.476 13.475 A 5.286 5.286 0 0 0 133.166 16.361 A 7.196 7.196 0 0 0 133.101 17.35 Z M 28.351 22.8 L 28.351 7.45 L 34.151 7.45 L 34.151 21.75 Q 34.151 24.033 35.192 25.534 A 5.124 5.124 0 0 0 35.351 25.75 A 3.824 3.824 0 0 0 37.482 27.116 Q 38.134 27.286 38.917 27.299 A 7.896 7.896 0 0 0 39.051 27.3 A 6.394 6.394 0 0 0 40.601 27.123 A 4.268 4.268 0 0 0 42.826 25.8 A 5.147 5.147 0 0 0 43.991 23.439 A 7.476 7.476 0 0 0 44.151 21.85 L 44.151 7.45 L 49.951 7.45 L 49.951 27.35 Q 49.951 29.55 50.201 31.8 L 44.651 31.8 Q 44.5 30.969 44.463 29.851 A 22.782 22.782 0 0 1 44.451 29.1 A 5.352 5.352 0 0 1 42.724 31.004 A 7.246 7.246 0 0 1 41.676 31.6 Q 39.751 32.5 37.551 32.5 A 10.595 10.595 0 0 1 34.613 32.113 A 7.954 7.954 0 0 1 30.826 29.75 A 9.546 9.546 0 0 1 28.453 24.446 A 12.891 12.891 0 0 1 28.351 22.8 Z M 55.301 25.2 L 60.351 23.8 Q 60.501 25.55 61.801 26.75 A 4.377 4.377 0 0 0 63.806 27.788 Q 64.482 27.947 65.275 27.95 A 8.018 8.018 0 0 0 65.301 27.95 A 5.835 5.835 0 0 0 66.372 27.858 Q 66.972 27.745 67.449 27.497 A 3.054 3.054 0 0 0 67.976 27.15 Q 68.951 26.35 68.951 25.15 A 2.305 2.305 0 0 0 67.823 23.102 Q 67.392 22.824 66.796 22.632 A 6.979 6.979 0 0 0 66.101 22.45 L 62.501 21.65 A 11.496 11.496 0 0 1 60.301 20.938 Q 58.95 20.334 57.992 19.405 A 6.956 6.956 0 0 1 57.651 19.05 Q 55.951 17.15 55.951 14.55 A 7.04 7.04 0 0 1 58.086 9.469 A 9.67 9.67 0 0 1 58.551 9.025 A 9.698 9.698 0 0 1 58.591 8.989 Q 61.18 6.7 64.901 6.7 Q 67.301 6.7 69.151 7.4 A 9.433 9.433 0 0 1 70.494 8.025 Q 71.208 8.433 71.74 8.935 A 5.348 5.348 0 0 1 72.026 9.225 Q 72.943 10.231 73.479 11.178 A 7.566 7.566 0 0 1 73.601 11.4 A 6.936 6.936 0 0 1 74.132 12.712 A 5.903 5.903 0 0 1 74.301 13.5 L 69.401 14.9 Q 69.201 13.5 68.126 12.375 A 3.383 3.383 0 0 0 66.687 11.499 Q 65.913 11.25 64.901 11.25 A 4.501 4.501 0 0 0 63.724 11.397 A 3.478 3.478 0 0 0 62.401 12.075 A 3.036 3.036 0 0 0 61.793 12.738 A 2.329 2.329 0 0 0 61.401 14.05 Q 61.401 16.009 63.637 16.552 A 5.888 5.888 0 0 0 63.851 16.6 L 67.551 17.35 A 13.068 13.068 0 0 1 69.832 18.063 Q 71.612 18.816 72.751 20.05 Q 74.551 22 74.551 24.75 A 7.167 7.167 0 0 1 72.776 29.474 A 9.784 9.784 0 0 1 72.126 30.175 Q 69.701 32.55 65.351 32.55 Q 62.851 32.55 60.876 31.8 A 10.628 10.628 0 0 1 59.411 31.12 Q 58.655 30.692 58.082 30.173 A 6.041 6.041 0 0 1 57.776 29.875 A 12.569 12.569 0 0 1 56.803 28.737 A 9.271 9.271 0 0 1 56.026 27.525 A 6.75 6.75 0 0 1 55.51 26.284 A 5.44 5.44 0 0 1 55.301 25.2 Z M 18.701 22.75 L 23.801 24.6 A 11.293 11.293 0 0 1 20.656 29.56 A 13.987 13.987 0 0 1 19.926 30.2 A 10.197 10.197 0 0 1 15.351 32.297 A 14.287 14.287 0 0 1 12.601 32.55 A 12.732 12.732 0 0 1 7.542 31.566 A 12.147 12.147 0 0 1 3.626 28.85 A 12.549 12.549 0 0 1 0.015 20.287 A 16.481 16.481 0 0 1 0.001 19.6 A 14.389 14.389 0 0 1 0.685 15.073 A 12.075 12.075 0 0 1 3.576 10.35 Q 7.151 6.7 12.451 6.7 A 14.396 14.396 0 0 1 15.719 7.051 A 10.073 10.073 0 0 1 19.876 9.05 A 11.495 11.495 0 0 1 22.359 11.815 A 10.103 10.103 0 0 1 23.601 14.7 L 18.401 16.6 Q 17.901 14.7 16.476 13.375 A 4.693 4.693 0 0 0 14.517 12.304 Q 13.789 12.099 12.92 12.059 A 9.288 9.288 0 0 0 12.501 12.05 A 6.328 6.328 0 0 0 7.873 13.95 A 7.726 7.726 0 0 0 7.751 14.075 A 6.744 6.744 0 0 0 6.053 17.275 Q 5.801 18.342 5.801 19.6 A 10.292 10.292 0 0 0 6.05 21.934 Q 6.473 23.75 7.61 25.022 A 6.541 6.541 0 0 0 7.776 25.2 A 6.428 6.428 0 0 0 12.423 27.248 A 7.812 7.812 0 0 0 12.601 27.25 A 7.693 7.693 0 0 0 14.301 27.072 Q 15.699 26.756 16.676 25.875 A 7.383 7.383 0 0 0 17.968 24.37 A 6.12 6.12 0 0 0 18.701 22.75 Z M 82.401 0 L 87.651 0 L 87.651 7.45 L 92.701 7.45 L 92.701 12.6 L 87.651 12.6 L 87.651 23.9 Q 87.651 24.862 87.922 25.508 A 2.128 2.128 0 0 0 88.401 26.225 A 2.279 2.279 0 0 0 89.219 26.72 Q 89.85 26.95 90.751 26.95 Q 91.751 26.95 92.751 26.75 L 92.751 31.55 A 5.819 5.819 0 0 1 91.745 31.863 Q 90.677 32.1 89.201 32.1 A 9.693 9.693 0 0 1 86.989 31.862 A 6.461 6.461 0 0 1 83.851 30.175 Q 81.901 28.25 81.901 24.85 L 81.901 12.6 L 77.401 12.6 L 77.401 7.45 L 78.651 7.45 A 5.193 5.193 0 0 0 79.743 7.342 Q 80.805 7.114 81.451 6.4 A 3.596 3.596 0 0 0 82.308 4.649 A 5.132 5.132 0 0 0 82.401 3.65 L 82.401 0 Z M 113.672 7.443 A 13.556 13.556 0 0 0 109.101 6.7 A 15.892 15.892 0 0 0 108.594 6.708 A 12.003 12.003 0 0 0 100.076 10.35 A 12.075 12.075 0 0 0 97.185 15.073 A 14.389 14.389 0 0 0 96.501 19.6 A 16.609 16.609 0 0 0 96.543 20.802 A 12.494 12.494 0 0 0 100.076 28.875 A 11.786 11.786 0 0 0 104.439 31.756 A 13.237 13.237 0 0 0 109.101 32.55 A 15.94 15.94 0 0 0 109.781 32.536 A 11.984 11.984 0 0 0 118.176 28.875 A 12.188 12.188 0 0 0 121.042 24.206 A 14.393 14.393 0 0 0 121.751 19.6 A 16.564 16.564 0 0 0 121.705 18.356 A 12.393 12.393 0 0 0 118.176 10.35 A 11.758 11.758 0 0 0 113.672 7.443 Z M 104.276 25.275 A 6.392 6.392 0 0 0 108.912 27.348 A 7.712 7.712 0 0 0 109.101 27.35 A 6.429 6.429 0 0 0 113.801 25.426 A 7.785 7.785 0 0 0 113.926 25.3 A 6.746 6.746 0 0 0 115.575 22.302 Q 115.859 21.24 115.895 19.978 A 13.036 13.036 0 0 0 115.901 19.6 A 10.561 10.561 0 0 0 115.667 17.311 Q 115.222 15.304 113.926 13.975 A 6.468 6.468 0 0 0 109.234 11.951 A 7.937 7.937 0 0 0 109.101 11.95 A 6.472 6.472 0 0 0 104.369 13.881 A 7.762 7.762 0 0 0 104.276 13.975 A 6.669 6.669 0 0 0 102.602 17.028 Q 102.301 18.194 102.301 19.6 A 10.595 10.595 0 0 0 102.545 21.943 Q 102.925 23.619 103.896 24.839 A 6.545 6.545 0 0 0 104.276 25.275 Z" vector-effect="non-scaling-stroke"/></g></svg>                    {{ block.settings.title }}
+                    {%else if block.settings.title == 'rewards' %}
+					<svg width="99.851" height="36.951" viewBox="0 0 99.851 36.951" xmlns="http://www.w3.org/2000/svg"><g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#ffffff" stroke-width="0.5mm" fill="none" style="stroke:#ffffff;stroke-width:0.5mm;fill:none"><path d="M 80.9 32.95 L 80.9 36.2 L 75.25 36.2 L 75.25 0 L 80.95 0 L 80.95 14.85 Q 81.784 13.414 83.606 12.406 A 10.54 10.54 0 0 1 83.9 12.25 A 9.503 9.503 0 0 1 87.002 11.303 A 12.091 12.091 0 0 1 88.6 11.2 A 12.6 12.6 0 0 1 92.179 11.682 A 9.472 9.472 0 0 1 96.875 14.775 A 12.622 12.622 0 0 1 99.559 20.619 A 17.671 17.671 0 0 1 99.85 23.9 A 16.727 16.727 0 0 1 99.344 28.119 A 12.411 12.411 0 0 1 96.725 33.175 A 10.257 10.257 0 0 1 89.278 36.773 A 14.186 14.186 0 0 1 88.4 36.8 A 10.978 10.978 0 0 1 85.433 36.424 A 7.444 7.444 0 0 1 80.9 32.95 Z M 45.4 27.7 L 50.3 29.25 Q 49.25 32.6 46.375 34.775 A 10.625 10.625 0 0 1 41.558 36.778 A 14.296 14.296 0 0 1 39.3 36.95 A 12.566 12.566 0 0 1 33.881 35.795 A 12.409 12.409 0 0 1 30.475 33.4 A 11.846 11.846 0 0 1 27.077 26.725 A 16.907 16.907 0 0 1 26.85 23.9 A 14.575 14.575 0 0 1 27.477 19.531 A 11.886 11.886 0 0 1 30.375 14.7 A 12.157 12.157 0 0 1 34.089 12.057 A 11.146 11.146 0 0 1 38.7 11.1 A 14.705 14.705 0 0 1 42.372 11.533 A 10.185 10.185 0 0 1 47.45 14.525 A 11.523 11.523 0 0 1 50.157 19.734 Q 50.586 21.517 50.6 23.614 A 21.215 21.215 0 0 1 50.6 23.75 Q 50.6 25.3 50.45 25.6 L 32.65 25.6 A 6.708 6.708 0 0 0 33.222 28.148 A 6.266 6.266 0 0 0 34.675 30.15 Q 36.6 31.95 39.3 31.95 A 7.87 7.87 0 0 0 41.683 31.614 Q 44.394 30.755 45.4 27.7 Z M 19.15 11.85 L 25.25 11.85 L 15.7 36.2 L 9.9 36.2 L 0 11.85 L 6.4 11.85 L 12.85 29.25 L 19.15 11.85 Z M 70.4 11.7 L 70.4 17.6 Q 69.4 17.45 68.5 17.45 A 8.571 8.571 0 0 0 65.809 17.836 Q 61.95 19.112 61.95 24.6 L 61.95 36.2 L 56.15 36.2 L 56.15 11.85 L 61.8 11.85 L 61.8 15.75 Q 62.65 13.8 64.55 12.675 A 8.123 8.123 0 0 1 68.253 11.568 A 9.857 9.857 0 0 1 68.85 11.55 Q 69.65 11.55 70.4 11.7 Z M 92.175 29.575 Q 94 27.5 94 23.95 A 11.287 11.287 0 0 0 93.787 21.69 Q 93.381 19.704 92.2 18.375 A 5.932 5.932 0 0 0 87.993 16.368 A 8.147 8.147 0 0 0 87.45 16.35 A 6.549 6.549 0 0 0 84.961 16.81 A 6.077 6.077 0 0 0 82.75 18.375 A 6.741 6.741 0 0 0 81.229 21.226 Q 80.9 22.452 80.9 23.95 A 10.775 10.775 0 0 0 81.139 26.285 Q 81.512 27.965 82.466 29.205 A 6.734 6.734 0 0 0 82.75 29.55 A 5.947 5.947 0 0 0 87.076 31.641 A 7.476 7.476 0 0 0 87.45 31.65 A 6.586 6.586 0 0 0 89.839 31.231 A 5.927 5.927 0 0 0 92.175 29.575 Z M 32.8 21.35 L 44.75 21.35 A 6.042 6.042 0 0 0 44.268 19.178 A 5.535 5.535 0 0 0 43.125 17.5 A 4.924 4.924 0 0 0 40.919 16.226 Q 39.952 15.95 38.75 15.95 A 6.758 6.758 0 0 0 36.837 16.208 A 5.227 5.227 0 0 0 34.55 17.575 A 6.184 6.184 0 0 0 33.24 19.494 A 5.722 5.722 0 0 0 32.8 21.35 Z" vector-effect="non-scaling-stroke"/></g></svg>                    {{ block.settings.title }}
+                    {%else%}
+                    {{ block.settings.title }}
+                    {%endif%}
+                  </h2>
+                {% endif %}
+
+                {% if block.settings.text != blank %}
+                  {% assign font_size_class = block.settings.text_size | plus: 1 | prepend: 'font--' %}
+                  {% assign text_columns_class = block.settings.text_columns | prepend: 'columns--' %}
+                  <div class="standard__rte {{ font_size_class }} {{ text_columns_class }} {{ justify_class }}"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="3">
+                    {{ block.settings.text }}
+                  </div>
+                {% endif %}
+
+                {% if block.settings.button_text != blank %}
+                  <a href="{{ block.settings.button_url }}" 
+                    class="standard__cta {{ block.settings.button_style }} {{ block.settings.button_color }}"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="4">
+                    {{ block.settings.button_text }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% when 'newsletter' %}
+        {%- liquid
+          assign kicker_line_class = ''
+          if block.settings.title == blank
+            assign kicker_line_class = 'kicker__line'
+          endif
+
+          assign ratio = block.settings.bg_color | color_desaturate: 100 | color_contrast: '#ffffff'
+          assign dark_class = ''
+          if ratio > 4
+            assign dark_class = 'palette--dark'
+          endif
+        -%}          
+        <div class="brick__block {{ dark_class }}" data-prevent-transparent-header {{ block.shopify_attributes }}>
+          <div class="brick__block__text {{ block.settings.text_color }}" data-overflow-frame style="--bg: {{ block.settings.bg_color }};">
+            <div class="brick__block__text__inner">
+              <div class="text__standard {{ block.settings.align_text }}" data-overflow-content>
+                
+                {% if block.settings.kicker != blank %}
+                  <p class="standard__kicker {{ kicker_line_class }}"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="1">
+                    {{ block.settings.kicker }}
+                  </p>
+                {% endif %}
+
+                {% if block.settings.title != blank %}
+                  <h2 class="h2 standard__heading"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="2">
+                    {{ block.settings.title }}
+                  </h2>
+                {% endif %}
+
+                {% if block.settings.text != blank %}
+                  {% assign font_size_class = block.settings.text_size | plus: 1 | prepend: 'font--' %}
+                  {% assign text_columns_class = block.settings.text_columns | prepend: 'columns--' %}
+                  <div class="standard__rte {{ font_size_class }}"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="3">
+                    {{ block.settings.text }}
+                  </div>
+                {% endif %}
+
+                <div class="standard__newsletter {{ block.settings.button_color }}"
+                  style="--bg: {{ block.settings.bg_color }}"
+                  data-aos="hero"
+                  data-aos-anchor="{{ animation_anchor }}"
+                  data-aos-order="4">
+                  {% assign unique =  'section-newsletter' | append: block.id %}
+                  {% render 'newsletter-form', unique: unique, text: block.settings.button_text, style: block.settings.button_style, color: block.settings.button_color %}
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {% when 'video' %}
+        <div class="brick__block" data-overflow-frame {{ block.shopify_attributes }}>
+          <div class="brick__block__video {{ block.settings.text_color }} {{ section.settings.height }}">
+            <div class="hero__content__wrapper {{ block.settings.text_align }}">
+              <div class="hero__content" data-overflow-content>
+                {% unless block.settings.kicker == '' %}
+                  <p class="hero__kicker"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="1">
+                    {{ block.settings.kicker | escape }}
+                  </p>
+                {% endunless %}
+                {% unless block.settings.title == '' %}
+                  <h1 class="hero__title h2"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="2">
+                    {{ block.settings.title | escape }}
+                  </h1>
+                {% endunless %}
+                {% unless block.settings.richtext == '' %}
+                  <div class="hero__description h5--body"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="3">
+                    {{ block.settings.richtext }}
+                  </div>
+                {% endunless %}
+          
+                {% if block.settings.video_link != ''  or block.settings.link_text != '' %}
+                  <div class="hero__cta__wrapper">
+                    {% unless block.settings.link_text == '' %}
+                      <a class="{{ block.settings.button_style }} {{ block.settings.button_color }} hero__btn btn--long uppercase" 
+                        href="{{ block.settings.link }}"
+                        data-aos="hero"
+                        data-aos-anchor="{{ animation_anchor }}"
+                        data-aos-order="4">
+                        {{ block.settings.link_text | escape }}
+                      </a>
+                    {% endunless %}
+                    {% unless block.settings.video_link == nil %}
+                      <div class="hero__btn"
+                        data-aos="hero"
+                        data-aos-anchor="{{ animation_anchor }}"
+                        data-aos-order="5">
+                        {% render 'video-popup', video: block.settings.video_link, unique: block.id, text: block.settings.popup_text %}
+                      </div>
+                    {% endunless %}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+            <div class="image-overlay" style="--bg:{{ block.settings.overlay_color }}; opacity:{{ block.settings.overlay_opacity | times: 0.01 }};"></div>
+          
+            {%- assign video_bg_show = false -%}
+            {%- if block.settings.video_link_bg != blank -%}
+              {%- assign video_link_bg_downcase = block.settings.video_link_bg | downcase -%}
+              {%- if video_link_bg_downcase contains '.mp4' -%}
+                {%- assign video_bg_show = true -%}
+              {%- endif -%}
+            {%- endif -%}
+            {%- if video_bg_show -%}
+              <div class="video-autoplay-wrapper">
+                <video 
+                  data-video-autoplay
+                  {% if block.settings.image != blank %}poster="{{ block.settings.image.src | img_url: '1x1' }}"{% endif %}
+                  style="object-position: {{ block.settings.object_position | replace: '-', ' ' }};"
+                  playsinline
+                  autoplay
+                  loop
+                  muted>
+                  <source src="{{ block.settings.video_link_bg }}" type="video/mp4" />
+                </video>
+              </div>
+            {%- else -%}
+              {% render 'hero', img_object: block.settings.image.src, frame_height_class: section.settings.height, bg_position: block.settings.bg_position %}
+            {% endif %}
+          </div>
+        </div>
+
+      {% when 'product' %}
+        {%- liquid
+          assign kicker_line_class = ''
+          if block.settings.title == blank
+            assign kicker_line_class = 'kicker__line'
+          endif
+
+          assign ratio = block.settings.bg_color | color_desaturate: 100 | color_contrast: '#ffffff'
+          assign ratio = block.settings.bg_color | color_desaturate: 100 | color_contrast: '#ffffff'
+          assign ratio_accent = block.settings.bg_color | color_desaturate: 100 | color_contrast: '#ffffff'
+          assign dark_class = ''
+          assign dark_class_accent = ''
+          if ratio > 4
+            assign dark_class = 'palette--dark'
+          endif
+
+          if ratio_accent > 4
+            assign dark_class_accent = 'palette--dark'
+          endif
+        -%}          
+        <div class="brick__block {{ dark_class }}" data-prevent-transparent-header {{ block.shopify_attributes }}>
+          <div class="brick__block__text {{ block.settings.text_color }}" data-overflow-frame style="--bg: {{ block.settings.bg_color }};">
+            <div class="brick__block__product__inner">
+              <div class="text__standard {{ block.settings.align_text }}" data-overflow-content>
+                {% if block.settings.kicker != blank %}
+                  <p class="standard__kicker {{ kicker_line_class }}"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="1">
+                    {{ block.settings.kicker }}
+                  </p>
+                {% endif %}
+
+                <div class="brick__product {{ dark_class_accent }}" style="--bg-accent: {{ block.settings.bg_accent }};">
+                  {%- assign product = all_products[block.settings.product] -%}
+                  {% if product != blank %}
+                    {% render 'product-grid-item', product: product, text_align: block.settings.align_text, badge_string: block.settings.badge_string %}
+                  {% else %}
+                    {% render 'onboarding-product-grid-item' %}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% when 'collection' %}
+        {%- liquid
+          assign kicker_line_class = ''
+          if block.settings.title == blank
+            assign kicker_line_class = 'kicker__line'
+          endif
+
+          assign ratio = block.settings.bg_color | color_desaturate: 100 | color_contrast: '#ffffff'
+          assign ratio_accent = block.settings.bg_color | color_desaturate: 100 | color_contrast: '#ffffff'
+          assign dark_class = ''
+          assign dark_class_accent = ''
+          if ratio > 4
+            assign dark_class = 'palette--dark'
+          endif
+
+          if ratio_accent > 4
+            assign dark_class_accent = 'palette--dark'
+          endif
+
+          assign featured_collection = collections[block.settings.collection]
+        -%}          
+        <div class="brick__block {{ dark_class }}" data-prevent-transparent-header {{ block.shopify_attributes }}>
+          <div class="brick__block__text brick__block__text--slider {{ block.settings.text_color }}" data-overflow-frame style="--bg: {{ block.settings.bg_color }}; --bg-accent: {{ block.settings.bg_accent }};">
+            <div class="brick__block__product__inner">
+              <div class="text__standard {{ block.settings.align_text }}" data-overflow-content>
+                {% if block.settings.kicker != blank %}
+                  <p class="standard__kicker {{ kicker_line_class }}"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="1">
+                    {{ block.settings.kicker }}
+                  </p>
+                {% endif %}
+                <div class="brick__collection flickity-badge-dots" data-slider data-show-dots="true">
+                  {% for product in featured_collection.products limit: 8 %}
+                    <div class="brick__product {{ dark_class_accent }}" style="--bg-accent: {{ block.settings.bg_accent }};">
+                      {% render 'product-grid-item', product: product, text_align: block.settings.align_text, badge_string: block.settings.badge_string %}
+                    </div>
+                  {% else %}
+                    {% render 'onboarding-product-grid-item', limit: 3, wrap: 'brick__product' %}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% when 'article' %}          
+        <div class="brick__block" data-prevent-transparent-header {{ block.shopify_attributes }}>
+          <div class="brick__block__text brick__block__text--article {{ block.settings.text_color }} {{ block.settings.placement_text }}" data-overflow-frame style="--bg: {{ block.settings.bg_color }};">
+            <div class="brick__block__text__inner">
+              <div class="text__standard {{ block.settings.align_text }}" data-overflow-content>
+                {%- assign block_article = block.settings.article -%}
+                {%- assign elements_counter = 0 -%}
+                {%- assign show_tag = false -%}
+                {%- assign font_size_class = block.settings.text_size | plus: 1 | prepend: 'font--' -%}
+
+                {%- assign default_excerpt = 'home_page.onboarding.blog_excerpt' | t -%}
+                {%- assign default_title = 'home_page.onboarding.blog_title' | t -%}
+                {%- assign default_author = 'J. Dustice' -%}
+                {%- assign default_date = 'now' | date: '%b %d, %Y' -%}
+
+                {%- assign show_tag = false -%}
+                {%- assign font_size_class = block.settings.text_size | plus: 1 | prepend: 'font--' -%}
+
+                {%- if block.settings.show_tag and block_article.tags.size > 0 -%}
+                  {%- assign show_tag = true -%}
+                {%- endif -%}
+                
+                {%- if show_tag or block.settings.show_date -%}
+                  {%- assign elements_counter = elements_counter | plus: 1 -%}
+
+                  <div class="brick__block__meta"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="{{ elements_counter }}">
+                    <p>
+                      {%- if show_tag -%}
+                        <strong class="standard__kicker">{{ block_article.tags[0] }}</strong>
+
+                        {%- if block.settings.show_date != blank -%}
+                          <span>&#8226;</span>
+                        {%- endif -%}
+                      {%- endif -%}
+                      
+                      {%- if block.settings.show_date -%}
+                        {%- assign date = block_article.published_at | date: '%b %d, %Y' -%}
+                        <time>{{ date | default: default_date }}</time>
+                      {%- endif -%}
+                    </p>
+                  </div>
+                {%- endif -%}
+
+                {%- assign elements_counter = elements_counter | plus: 1 -%}
+                <h2 class="h2 standard__heading {{ font_size_class }}"
+                  data-aos="hero"
+                  data-aos-anchor="{{ animation_anchor }}"
+                  data-aos-order="{{ elements_counter }}">
+                  {{ block_article.title | default: default_title }}
+                </h2>
+
+                {%- if block.settings.show_author_image -%}
+                  {%- assign author_image = block.settings.author_image | default: article.user.image -%}
+                {%- endif -%}
+
+                {%- if author_image != blank or block.settings.show_author_name -%}
+                  {%- assign elements_counter = elements_counter | plus: 1 -%}
+
+                  <div class="brick__block__author standard__rte"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="{{ elements_counter }}">
+                    <p>
+                      {%- if author_image != blank -%}
+                        {%- assign author_image_alt = author_image.alt | default: block_article.author -%}
+                        <img 
+                          loading="lazy" 
+                          alt="{{ author_image_alt | strip_html | escape }}" 
+                          src="{{ author_image | img_url: '60x60', crop: 'center' }}"
+                          width="30"
+                          height="30">
+                      {%- endif -%}
+
+                      {%- if block.settings.show_author_name -%}
+                        <span>{{ 'blogs.article.by' | t }}</span>
+                        <span>{{ block_article.author | default: default_author }}</span>
+                      {%- endif -%}
+                    </p>
+                  </div>
+                {%- endif -%}
+
+                {%- if block.settings.show_excerpt -%}
+                  {%- assign elements_counter = elements_counter | plus: 1 -%}
+                  <div class="standard__rte"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="{{ elements_counter }}">
+                    {%- assign excerpt = block_article.excerpt_or_content | strip_html | truncatewords: 30 -%}
+                    <p>{{ excerpt | default: default_excerpt }}</p>
+                  </div>
+                {%- endif -%}
+
+                {% if block.settings.button_text != blank %}
+                  {%- assign elements_counter = elements_counter | plus: 1 -%}
+
+                  <a href="{{ block_article.url }}" 
+                    class="standard__cta {{ block.settings.button_style }} {{ block.settings.button_color }}"
+                    data-aos="hero"
+                    data-aos-anchor="{{ animation_anchor }}"
+                    data-aos-order="{{ elements_counter }}">
+                    {{ block.settings.button_text }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+    {% endcase %}
+  {% endfor %}
+  {% if section.blocks.size == 0 %}
+    <div class="text-center">{{ 'home_page.onboarding.no_content' | t }}</div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Image with text",
+  "max_blocks": 2,
+  "settings": [
+  {
+    "type": "select",
+    "id": "height",
+    "label": "Section height",
+    "default": "use_screen_one_half",
+    "options": [
+      { "value": "use_screen_full", "label": "Full screen height"},
+      { "value": "use_screen_three_quarters", "label": "Three quarters of screen height"},
+      { "value": "use_screen_two_thirds", "label": "Two thirds of screen height"},
+      { "value": "use_screen_one_half", "label": "One half of screen height"},
+      { "value": "use_screen_one_third", "label": "One third of screen height"},
+      { "value": "use_screen_one_fifth", "label": "One fifth of screen height"},
+      { "value": "use_pixels_800", "label": "800px" },
+      { "value": "use_pixels_650", "label": "650px" },
+      { "value": "use_pixels_500", "label": "500px" },
+      { "value": "image-height", "label": "Image height" }
+    ]
+  },
+  {
+    "type": "checkbox",
+    "id": "padding",
+    "label": "Add spacing",
+    "default": false
+  },
+  {
+    "type": "checkbox",
+    "id": "borders",
+    "label": "Add borders",
+    "default": false
+  },
+  {
+    "type": "checkbox",
+    "id": "wrapper",
+    "label": "Contain width",
+    "default": false
+  }
+],
+"blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "bg_position",
+          "label": "Position",
+          "default": "center-center",
+          "options": [
+            { "label": "Top", "value": "center-top" },
+            { "label": "Right", "value": "right-center" },
+            { "label": "Center", "value": "center-center" },
+            { "label": "Left", "value": "left-center" },
+            { "label": "Bottom", "value": "center-bottom" }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Overlay"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "Opacity",
+          "info": "Increase contrast for legible text.",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "default":15
+        },
+        {
+          "type": "color",
+          "id": "overlay_color",
+          "label": "Overlay color",
+          "default": "#000"
+        },
+        {
+          "type": "header",
+          "content": "Text"
+        },
+        {
+          "type": "text",
+          "id": "kicker",
+          "label": "Kicker"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Headline"
+        },
+        {
+          "type": "textarea",
+          "id": "richtext",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "Alignment",
+          "default": "align--middle-center",
+          "options": [
+            { "value": "align--top-left", "label": "Top left"},
+            { "value": "align--top-center", "label": "Top center"},
+            { "value": "align--top-right", "label": "Top right"},
+            { "value": "align--middle-left", "label": "Middle left"},
+            { "value": "align--middle-center", "label": "Absolute center"},
+            { "value": "align--middle-right", "label": "Middle right"},
+            { "value": "align--bottom-left", "label": "Bottom left"},
+            { "value": "align--bottom-center", "label": "Bottom center"},
+            { "value": "align--bottom-right", "label": "Bottom right"}
+          ]
+        },
+        {
+          "type": "select",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "text--white",
+          "options": [
+            { "value": "text--neutral", "label": "Normal text"},
+            { "value": "text--white", "label": "White"},
+            { "value": "text--primary", "label": "Primary accent"},
+            { "value": "text--secondary", "label": "Secondary accent"},
+            { "value": "text--black", "label": "Black"},
+            { "value": "text--invert--primary", "label": "Primary dark accent"},
+            { "value": "text--invert--secondary", "label": "Secondary dark accent"},
+            { "value": "text--invert", "label": "Inverted text color"}
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Text",
+          "default": "Shop Now",
+          "info": "Leave blank to link entire image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "button_color",
+          "label": "Color",
+          "default": "btn--white",
+          "options": [
+            { "value": "btn--primary", "label": "Bright accent" },
+            { "value": "btn--secondary", "label": "Secondary accent" },
+            { "value": "btn--neutral", "label": "Text color" },
+            { "value": "btn--black", "label": "Black" },
+            { "value": "btn--white", "label": "White" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "default": "btn uppercase",
+          "options": [
+            { "value": "caps--link", "label": "Capitalized text" },
+            { "value": "btn uppercase", "label": "Solid button" },
+            { "value": "btn--soft uppercase", "label": "Soft button" },
+            { "value": "btn--outline uppercase", "label": "Outlined button" }
+          ]
+        }
+      ]
+    },
+    {
+    "type": "text",
+    "name": "Text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker",
+        "default": "Image with text"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+      },
+      {
+        "type":  "range",
+        "id":    "text_size",
+        "label": "Text size",
+        "min":    1,
+        "max":    5,
+        "step":   1,
+        "default":2
+      },
+      {
+        "type":  "range",
+        "id":    "text_columns",
+        "label": "Columns",
+        "min":    1,
+        "max":    3,
+        "step":   1,
+        "default":1,
+        "info": "Desktop only"
+      },
+      {
+        "type": "select",
+        "id": "align_text",
+        "label": "Text alignment",
+        "default": "text-left",
+        "options": [
+          { "value": "text-left","label": "Left" },
+          { "value": "text-center","label": "Centered" },
+          { "value": "text-right","label": "Right" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type":"text",
+        "id":"button_text",
+        "label":"Text"
+      },
+      {
+        "type":"url",
+        "id":"button_url",
+        "label":"Link"
+      },
+      {
+        "type": "select",
+        "id": "button_color",
+        "label": "Color",
+        "default": "btn--neutral",
+        "options": [
+          { "value": "btn--primary", "label": "Bright accent" },
+          { "value": "btn--secondary", "label": "Secondary accent" },
+          { "value": "btn--neutral", "label": "Text color" },
+          { "value": "btn--black", "label": "Black" },
+          { "value": "btn--white", "label": "White" }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "button_style",
+        "label": "Button style",
+        "default": "caps--link",
+        "options": [
+          { "value": "caps--link", "label": "Capitalized text" },
+          { "value": "btn btn--long uppercase", "label": "Solid button" },
+          { "value": "btn--soft btn--long uppercase", "label": "Soft button" },
+          { "value": "btn--outline btn--long uppercase", "label": "Outlined button" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Style"
+      },
+      {
+        "type": "select",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "text--neutral",
+        "options": [
+          { "value": "text--neutral", "label": "Normal text"},
+          { "value": "text--white", "label": "White"},
+          { "value": "text--primary", "label": "Primary accent"},
+          { "value": "text--secondary", "label": "Secondary accent"},
+          { "value": "text--black", "label": "Black"},
+          { "value": "text--invert--primary", "label": "Primary dark accent"},
+          { "value": "text--invert--secondary", "label": "Secondary dark accent"},
+          { "value": "text--invert", "label": "Inverted text color"}
+        ]
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background",
+        "default": "#ffffff"
+      }
+    ]
+  },
+  {
+    "type": "newsletter",
+    "name": "Newsletter",
+    "limit": 1,
+    "settings": [
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker",
+        "default": "Newsletter"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Join to get special offers, free giveaways, and once-in-a-lifetime deals.</p>"
+      },
+      {
+        "type":  "range",
+        "id":    "text_size",
+        "label": "Text size",
+        "min":    1,
+        "max":    5,
+        "step":   1,
+        "default":2
+      },
+      {
+        "type": "select",
+        "id": "align_text",
+        "label": "Text alignment",
+        "default": "text-left",
+        "options": [
+          { "value": "text-left","label": "Left" },
+          { "value": "text-center","label": "Centered" },
+          { "value": "text-right","label": "Right" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type":"text",
+        "id":"button_text",
+        "label":"Text"
+      },
+      {
+        "type": "select",
+        "id": "button_color",
+        "label": "Color",
+        "default": "btn--neutral",
+        "options": [
+          { "value": "btn--primary", "label": "Bright accent" },
+          { "value": "btn--secondary", "label": "Secondary accent" },
+          { "value": "btn--neutral", "label": "Text color" },
+          { "value": "btn--black", "label": "Black" },
+          { "value": "btn--white", "label": "White" }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "button_style",
+        "label": "Button style",
+        "default": "btn--soft",
+        "options": [
+          { "value": "btn", "label": "Solid button" },
+          { "value": "btn--soft", "label": "Soft button" },
+          { "value": "btn--outline", "label": "Outlined button" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Style"
+      },
+      {
+        "type": "select",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "text--neutral",
+        "options": [
+          { "value": "text--neutral", "label": "Normal text"},
+          { "value": "text--white", "label": "White"},
+          { "value": "text--primary", "label": "Primary accent"},
+          { "value": "text--secondary", "label": "Secondary accent"},
+          { "value": "text--black", "label": "Black"},
+          { "value": "text--invert--primary", "label": "Primary dark accent"},
+          { "value": "text--invert--secondary", "label": "Secondary dark accent"},
+          { "value": "text--invert", "label": "Inverted text color"}
+        ]
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "paragraph",
+        "content": "Subscribers are under 'Accepts Marketing' in your [customer admin](/admin/customers)."
+      }
+    ]
+  },
+  {
+    "type": "video",
+    "name": "Video",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Background video"
+      },
+      {
+        "type": "text",
+        "id": "video_link_bg",
+        "label": "Video background link",
+        "info": "MP4 video link from [files](/admin/settings/files)."
+      },
+      {
+        "type": "select",
+        "id": "object_position",
+        "label": "Background video position",
+        "default": "center-center",
+        "options": [
+          { "label": "Top", "value": "center-top" },
+          { "label": "Right", "value": "right-center" },
+          { "label": "Center", "value": "center-center" },
+          { "label": "Left", "value": "left-center" },
+          { "label": "Bottom", "value": "center-bottom" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Background Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "bg_position",
+        "label": "Image position",
+        "default": "center-center",
+        "options": [
+          { "label": "Top", "value": "center-top" },
+          { "label": "Right", "value": "right-center" },
+          { "label": "Center", "value": "center-center" },
+          { "label": "Left", "value": "left-center" },
+          { "label": "Bottom", "value": "center-bottom" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Video popup"
+      },
+      {
+        "type": "video_url",
+        "id": "video_link",
+        "label": "Video popup link",
+        "accept": ["youtube", "vimeo"],
+        "info": "Streaming video source from YouTube or Vimeo.",
+        "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+      },
+      {
+        "type": "text",
+        "id": "popup_text",
+        "label": "Popup button text"
+      },
+      {
+        "type": "header",
+        "content": "Text"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker",
+        "default": "Introducing"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Featured video"
+      },
+      {
+        "type": "richtext",
+        "id": "richtext",
+        "label": "Text",
+        "default": "<p>This area is used to describe your video’s details.</p>"
+      },
+      {
+        "type": "select",
+        "id": "text_align",
+        "label": "Alignment",
+        "default": "align--middle-center",
+        "options": [
+          { "value": "align--top-left", "label": "Top left"},
+          { "value": "align--top-center", "label": "Top center"},
+          { "value": "align--top-right", "label": "Top right"},
+          { "value": "align--middle-left", "label": "Middle left"},
+          { "value": "align--middle-center", "label": "Absolute center"},
+          { "value": "align--middle-right", "label": "Middle right"},
+          { "value": "align--bottom-left", "label": "Bottom left"},
+          { "value": "align--bottom-center", "label": "Bottom center"},
+          { "value": "align--bottom-right", "label": "Bottom right"}
+        ]
+      },
+      {
+        "type": "select",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "text--white",
+        "options": [
+          { "value": "text--neutral", "label": "Normal text"},
+          { "value": "text--white", "label": "White"},
+          { "value": "text--primary", "label": "Primary accent"},
+          { "value": "text--secondary", "label": "Secondary accent"},
+          { "value": "text--black", "label": "Black"},
+          { "value": "text--invert--primary", "label": "Primary dark accent"},
+          { "value": "text--invert--secondary", "label": "Secondary dark accent"},
+          { "value": "text--invert", "label": "Inverted text color"}
+        ]
+      },
+      {
+        "type":    "range",
+        "id":      "overlay_opacity",
+        "min":     0,
+        "max":     100,
+        "step":    5,
+        "label":   "Image overlay opacity",
+        "info":    "Increase contrast for legible text.",
+        "default": 15
+      },
+      {
+        "type": "color",
+        "id": "overlay_color",
+        "label": "Overlay color",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "Text"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Link"
+      },
+      {
+        "type": "select",
+        "id": "button_color",
+        "label": "Color",
+        "default": "btn--white",
+        "options": [
+          { "value": "btn--primary", "label": "Bright accent" },
+          { "value": "btn--secondary", "label": "Secondary accent" },
+          { "value": "btn--neutral", "label": "Text color" },
+          { "value": "btn--black", "label": "Black" },
+          { "value": "btn--white", "label": "White" }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "button_style",
+        "label": "Button style",
+        "default": "btn",
+        "options": [
+          { "value": "btn", "label": "Solid button"},
+          { "value": "btn--soft", "label": "Soft button"},
+          { "value": "btn--outline", "label": "Outlined button"}
+        ]
+      }
+    ]
+  },
+  {
+    "type": "product",
+    "name": "Product",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Product"
+      },
+      {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker",
+        "default": "Shop the look"
+      },
+      {
+        "type": "text",
+        "id": "badge_string",
+        "label": "Custom badge"
+      },
+      {
+        "type": "header",
+        "content": "Style"
+      },
+      {
+        "type": "select",
+        "id": "align_text",
+        "label": "Text alignment",
+        "default": "text-center",
+        "options": [
+          { "value": "text-left","label": "Left" },
+          { "value": "text-center","label": "Centered" },
+          { "value": "text-right","label": "Right" }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "text--neutral",
+        "options": [
+          { "value": "text--neutral", "label": "Normal text"},
+          { "value": "text--white", "label": "White"},
+          { "value": "text--primary", "label": "Primary accent"},
+          { "value": "text--secondary", "label": "Secondary accent"},
+          { "value": "text--black", "label": "Black"},
+          { "value": "text--invert--primary", "label": "Primary dark accent"},
+          { "value": "text--invert--secondary", "label": "Secondary dark accent"},
+          { "value": "text--invert", "label": "Inverted text color"}
+        ]
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background",
+        "default": "#f7f7f7"
+      },
+      {
+        "type": "color",
+        "id": "bg_accent",
+        "label": "Background accent",
+        "default": "#ffffff"
+      }
+    ]
+  },
+  {
+    "type": "collection",
+    "name": "Collection",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Collection"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "text",
+        "id": "kicker",
+        "label": "Kicker",
+        "default": "Shop the look"
+      },
+      {
+        "type": "header",
+        "content": "Style"
+      },
+      {
+        "type": "select",
+        "id": "align_text",
+        "label": "Text alignment",
+        "default": "text-center",
+        "options": [
+          { "value": "text-left","label": "Left" },
+          { "value": "text-center","label": "Centered" },
+          { "value": "text-right","label": "Right" }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "text--neutral",
+        "options": [
+          { "value": "text--neutral", "label": "Normal text"},
+          { "value": "text--white", "label": "White"},
+          { "value": "text--primary", "label": "Primary accent"},
+          { "value": "text--secondary", "label": "Secondary accent"},
+          { "value": "text--black", "label": "Black"},
+          { "value": "text--invert--primary", "label": "Primary dark accent"},
+          { "value": "text--invert--secondary", "label": "Secondary dark accent"},
+          { "value": "text--invert", "label": "Inverted text color"}
+        ]
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background",
+        "default": "#f7f7f7"
+      },
+      {
+        "type": "color",
+        "id": "bg_accent",
+        "label": "Background accent",
+        "default": "#ffffff"
+      }
+    ]
+  },
+  {
+    "type": "article",
+    "name": "Article",
+    "settings": [
+      {
+        "type": "article",
+        "id": "article",
+        "label": "Article"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_tag",
+        "label": "Show tag",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_date",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "type":  "range",
+        "id":    "text_size",
+        "label": "Text size",
+        "min":    1,
+        "max":    5,
+        "step":   1,
+        "default": 2
+      },
+      {
+        "type": "checkbox",
+        "id": "show_excerpt",
+        "label": "Show excerpt",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "align_text",
+        "label": "Text alignment",
+        "default": "text-left",
+        "options": [
+          { "value": "text-left","label": "Left" },
+          { "value": "text-center","label": "Centered" },
+          { "value": "text-right","label": "Right" }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "placement_text",
+        "label": "Text placement",
+        "default": "middle",
+        "options": [
+          { "value": "top","label": "Top" },
+          { "value": "middle","label": "Middle" },
+          { "value": "bottom","label": "Bottom" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Author"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_author_name",
+        "label": "Show author name",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_author_image",
+        "label": "Show author image",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "author_image",
+        "label": "Author image"
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type":"text",
+        "id":"button_text",
+        "label":"Text",
+        "default": "Read more"
+      },
+      {
+        "type": "select",
+        "id": "button_color",
+        "label": "Color",
+        "default": "btn--neutral",
+        "options": [
+          { "value": "btn--primary", "label": "Bright accent" },
+          { "value": "btn--secondary", "label": "Secondary accent" },
+          { "value": "btn--neutral", "label": "Text color" },
+          { "value": "btn--black", "label": "Black" },
+          { "value": "btn--white", "label": "White" }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "button_style",
+        "label": "Button style",
+        "default": "caps--link",
+        "options": [
+          { "value": "caps--link", "label": "Capitalized text" },
+          { "value": "btn btn--long uppercase", "label": "Solid button" },
+          { "value": "btn--soft btn--long uppercase", "label": "Soft button" },
+          { "value": "btn--outline btn--long uppercase", "label": "Outlined button" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Style"
+      },
+      {
+        "type": "select",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "text--neutral",
+        "options": [
+          { "value": "text--neutral", "label": "Normal text"},
+          { "value": "text--white", "label": "White"},
+          { "value": "text--primary", "label": "Primary accent"},
+          { "value": "text--secondary", "label": "Secondary accent"},
+          { "value": "text--black", "label": "Black"},
+          { "value": "text--invert--primary", "label": "Primary dark accent"},
+          { "value": "text--invert--secondary", "label": "Secondary dark accent"},
+          { "value": "text--invert", "label": "Inverted text color"}
+        ]
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background",
+        "default": "#f7f7f7"
+      }
+    ]
+  }
+],
+  "presets": [
+    {
+      "name": "Image with text",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "text"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

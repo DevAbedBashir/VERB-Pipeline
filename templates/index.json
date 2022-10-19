@@ -1,0 +1,361 @@
+{
+  "sections": {
+    "16564940597db6e40c": {
+      "type": "section-hero-home",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/HP_Desktop.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/HP_mobile.jpg",
+        "bg_position": "center-center",
+        "height": "use_screen_full",
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "kicker": "",
+        "title": "if your gel could foam.",
+        "title1": "curl foaming gel",
+        "richtext": "",
+        "text_align": "align--middle-left",
+        "text_color": "text--white",
+        "link_text": "Shop Now",
+        "link": "shopify:\/\/pages\/shop-all",
+        "button_color": "btn--white",
+        "button_style": "btn--outline"
+      }
+    },
+    "16570088515ed067bb": {
+      "type": "section-html",
+      "settings": {
+        "html": "<style>\n.marquee3k {\n     background-color:  #EFEFEF;\n }\n .marquee3k-inside {\n     width: max-content;}\n .verb-attrib {\n     display: inline-block;\n     padding: 23px 47.5px;\n     margin: 0;\n }\n .verb-attrib img {\n     width: 80px;\n     margin: 0;\n }\n @media screen and (min-width: 641px) {\n     .verb-attrib {\n         padding:  23px 49.5px;\n     }\n }\n@media screen and (max-width: 641px) {\n.verb-attrib img {\n     width: 60px;\n     margin: 0;\n }\n.verb-attrib {\n         padding:  23px 29.5px;\n     }\n}\n<\/style> \n<div class=\"verb-marquee\">\n            <div class=\"marquee3k\" data-speed=\"1\">\n                <div class=\"marquee3k-inside\">\n\t            <div class=\"verb-attrib\"><img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Group-2.png?v=1657795714\" alt=\"only good stuff\" \/><\/div>\n\t            <div class=\"verb-attrib\"><img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Group.png?v=1657795714\" alt=\"no glutten\" \/><\/div>\n\t            <div class=\"verb-attrib\"><img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Group-1.png?v=1657795714\" alt=\"no parabens\" \/><\/div>\n\t            <div class=\"verb-attrib\"><img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Group-3.png?v=1657795714\" alt=\"no harmful sulfates\" \/><\/div>\n\t            <div class=\"verb-attrib\"><img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Group-4.png?v=1657795714\" alt=\"peta certified\" \/><\/div>\n\t            <div class=\"verb-attrib\"><img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Group-2.png?v=1657795714\" alt=\"only good stuff\" \/><\/div>\n\t            <div class=\"verb-attrib\"><img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Group.png?v=1657795714\" alt=\"no glutten\" \/><\/div>\n\t            <div class=\"verb-attrib\"><img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Group-1.png?v=1657795714\" alt=\"no parabens\" \/><\/div>\n\t            <div class=\"verb-attrib\"><img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Group-3.png?v=1657795714\" alt=\"no harmful sulfates\" \/><\/div>\n\t            <div class=\"verb-attrib\"><img src=\"\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Group-4.png?v=1657795714\" alt=\"peta certified\" \/><\/div>\n                <\/div>\n            <\/div>\n        <\/div>\n<script>\n Marquee3k.init({\n     selector: 'marquee3k',\n });\n window.addEventListener('load', (event) => {\n     Marquee3k.refreshAll();\n });\n\n $(document).scroll(function(){\n     $('.Header__Wrapper').toggleClass('scrolled', $(this).scrollTop() > 1);\n });\n<\/script>",
+        "full_width": true
+      }
+    },
+    "1657181108bc8030ea": {
+      "type": "section-slider-collection",
+      "disabled": true,
+      "blocks": {
+        "16571811084c53904a-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "body",
+            "image": "shopify:\/\/shop_images\/Body_fbd65139-5018-411f-88c4-ecbdfdd771c1.png",
+            "link": "shopify:\/\/collections"
+          }
+        },
+        "16571811084c53904a-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "curl",
+            "image": "shopify:\/\/shop_images\/Curl_9a01e091-ae22-48a9-862d-d5ca60747a34.png",
+            "link": ""
+          }
+        },
+        "16571811084c53904a-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "ghost",
+            "image": "shopify:\/\/shop_images\/Ghost_5d341ad0-2f1b-49f0-8b79-1789d9fd5264.png",
+            "link": ""
+          }
+        },
+        "16571811084c53904a-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "hydrate",
+            "image": "shopify:\/\/shop_images\/Hydrating_2518207a-2b04-4299-afbe-5d43def45b12.png",
+            "link": ""
+          }
+        },
+        "16571811084c53904a-4": {
+          "type": "collection",
+          "settings": {
+            "collection": "glossy",
+            "image": "shopify:\/\/shop_images\/Glossy_e66b9f3b-a19b-48f9-b7db-a85d16306d56.png",
+            "link": ""
+          }
+        },
+        "16571811084c53904a-5": {
+          "type": "collection",
+          "settings": {
+            "collection": "purple",
+            "image": "shopify:\/\/shop_images\/Purple_d0d6b38e-9b88-43f2-836c-87768ce88a8f.png",
+            "link": ""
+          }
+        },
+        "6e62308b-1738-4e93-ae55-afc7ac758a82": {
+          "type": "collection",
+          "settings": {
+            "collection": "treatments",
+            "image": "shopify:\/\/shop_images\/Treatmnt_Style.png",
+            "link": ""
+          }
+        },
+        "7c09af0e-3547-4bbf-b380-3a4f239d3b75": {
+          "type": "collection",
+          "settings": {
+            "collection": "volume",
+            "image": "shopify:\/\/shop_images\/Volume_1a9df442-5070-44f8-9295-af9f28bc9424.png",
+            "link": ""
+          }
+        },
+        "96900353-86c3-44a1-88e1-b7f439245aff": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16571811084c53904a-0",
+        "16571811084c53904a-1",
+        "16571811084c53904a-2",
+        "16571811084c53904a-3",
+        "16571811084c53904a-4",
+        "16571811084c53904a-5",
+        "6e62308b-1738-4e93-ae55-afc7ac758a82",
+        "7c09af0e-3547-4bbf-b380-3a4f239d3b75",
+        "96900353-86c3-44a1-88e1-b7f439245aff"
+      ],
+      "settings": {
+        "title": "collections",
+        "link_title": "",
+        "link": "",
+        "round_images": true,
+        "show_collection_title": true
+      }
+    },
+    "16571037420dd544bd": {
+      "type": "section-collection-tab-custom",
+      "blocks": {
+        "1657103742cbdb4646-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "dry-shampoo",
+            "title": "First collection",
+            "link_text": "View products",
+            "link": "shopify:\/\/collections\/new-arrivals",
+            "button_color": "btn--black",
+            "button_style": "btn--outline"
+          }
+        }
+      },
+      "block_order": [
+        "1657103742cbdb4646-0"
+      ],
+      "settings": {
+        "title": "arrivals",
+        "outlined_text": "new",
+        "enable_image": true,
+        "grid": 3,
+        "limit": 6
+      }
+    },
+    "165995785698df47bb": {
+      "type": "section-video-rewards",
+      "settings": {
+        "height": "use_screen_full",
+        "video_link_bg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/VERB_30_FINAL_Textless_16x9_under20mb.mp4?v=1651251594",
+        "object_position": "center-center",
+        "bg_position": "center-center",
+        "video_link": "",
+        "popup_text": "",
+        "kicker": "",
+        "title": "",
+        "outlined_text": "",
+        "richtext": "",
+        "text_align": "align--bottom-center",
+        "text_color": "text--white",
+        "overlay_opacity": 15,
+        "overlay_color": "#000000",
+        "link_text": "hair quiz",
+        "link": "shopify:\/\/pages\/hair-quiz-00",
+        "button_color": "btn--white",
+        "button_style": "btn"
+      }
+    },
+    "1661764085b8ce46fc": {
+      "type": "section-double-kit",
+      "blocks": {
+        "16617640858cfe40a5-0": {
+          "type": "text",
+          "settings": {
+            "kicker": "",
+            "title": "kits",
+            "outlined_text": "custom",
+            "overflow_image": "shopify:\/\/shop_images\/20_off_64d6f628-e947-4d6c-9a45-0705cf452962.png",
+            "text": "<p>design your own kit!<\/p><p>you choose- only at verbproducts.com<\/p>",
+            "text_size": 2,
+            "text_columns": 1,
+            "align_text": "text-center",
+            "button_text": "shop now",
+            "button_url": "shopify:\/\/pages\/shop-all",
+            "button_color": "btn--white",
+            "button_style": "caps--link",
+            "text_color": "text--white",
+            "bg_color": "#d66486"
+          }
+        },
+        "16617640858cfe40a5-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/custom-kits_HP_desktop_2.gif",
+            "bg_position": "center-center",
+            "overlay_opacity": 15,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        }
+      },
+      "block_order": [
+        "16617640858cfe40a5-0",
+        "16617640858cfe40a5-1"
+      ],
+      "settings": {
+        "height": "image-height",
+        "padding": false,
+        "borders": false,
+        "wrapper": false
+      }
+    },
+    "165780912274a6fc6b": {
+      "type": "section-double-rewards",
+      "blocks": {
+        "16578091223034606e-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Verb-rewards_Desktop__1.gif",
+            "bg_position": "center-center",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        },
+        "16578091223034606e-0": {
+          "type": "text",
+          "settings": {
+            "kicker": "",
+            "title": "rewards",
+            "outlined_text": "verb",
+            "text": "<p>you shop, we reward. <\/p><p>join for all the perks, points and free stuff<\/p>",
+            "text_size": 2,
+            "text_columns": 1,
+            "align_text": "text-center",
+            "button_text": "Sign Up",
+            "button_url": "\/account\/register",
+            "button_color": "btn--white",
+            "button_style": "caps--link",
+            "button_text1": "Sign in",
+            "button_url1": "\/account\/login",
+            "button_color1": "btn--neutral",
+            "button_style1": "caps--link",
+            "text_color": "text--white",
+            "bg_color": "#d66486"
+          }
+        }
+      },
+      "block_order": [
+        "16578091223034606e-1",
+        "16578091223034606e-0"
+      ],
+      "settings": {
+        "height": "image-height",
+        "padding": false,
+        "borders": false,
+        "wrapper": false
+      }
+    },
+    "165710486684acda87": {
+      "type": "section-double-about",
+      "blocks": {
+        "165710486681043ed7-0": {
+          "type": "text",
+          "settings": {
+            "kicker": "",
+            "title": "about",
+            "outlined_text": "us",
+            "text": "<p>born in Austin, raised in New York.<\/p><p>making great hair happen simce 2011.<\/p>",
+            "text_size": 2,
+            "text_columns": 1,
+            "align_text": "text-center",
+            "button_text": "Learn more",
+            "button_url": "shopify:\/\/pages\/about-us",
+            "button_color": "btn--neutral",
+            "button_style": "caps--link",
+            "text_color": "text--white",
+            "bg_color": "rgba(0,0,0,0)"
+          }
+        },
+        "165710486681043ed7-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/New_Project_1.png",
+            "bg_position": "center-center",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        }
+      },
+      "block_order": [
+        "165710486681043ed7-0",
+        "165710486681043ed7-1"
+      ],
+      "settings": {
+        "height": "image-height",
+        "padding": false,
+        "borders": false,
+        "wrapper": false
+      }
+    },
+    "1658226518f097779c": {
+      "type": "section-html",
+      "disabled": true,
+      "settings": {
+        "html": "<div class=\"yotpo-widget-instance\" data-yotpo-instance-id=\"197975\"><\/div>",
+        "full_width": true
+      }
+    },
+    "1660735531d2cdf4bb": {
+      "type": "section-html",
+      "settings": {
+        "html": "<div class='twentytwenty-container'>\n\n    <img class=\"lazy2\" data-src='https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/1-before_2d4c1e91-602b-4e5a-acb2-ba4273349a6e.png?v=1660567058' \/>\n\n    <img class=\"lazy2\" data-src='https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/3-after_bc82e2b7-16eb-43e0-93bc-a0f2d7ad9702.png?v=1660567058' \/>\n\n<\/div>",
+        "full_width": true
+      }
+    }
+  },
+  "order": [
+    "16564940597db6e40c",
+    "16570088515ed067bb",
+    "1657181108bc8030ea",
+    "16571037420dd544bd",
+    "165995785698df47bb",
+    "1661764085b8ce46fc",
+    "165780912274a6fc6b",
+    "165710486684acda87",
+    "1658226518f097779c",
+    "1660735531d2cdf4bb"
+  ]
+}

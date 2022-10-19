@@ -1,0 +1,422 @@
+<style>
+	.vh {
+		border: 1px solid;
+		width: 100%;
+		align-items: center;
+		margin-left: 20px;
+	}
+
+	.Collection__Header {
+		margin-bottom: 0.5rem;
+	}
+
+	.containerVH {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+  .custom__tabs{
+    width: 20%;
+    padding: 52px;
+  }
+
+  .collection__content.custom__content > .collection__products {
+    padding: 0 100px 0 0;
+}
+h1.hero__title.h2.custom_header-for-title {
+    color: transparent;
+    font-size: 100px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+}
+
+
+  @media only screen and (max-width: 600px) {
+   .custom__content{
+    display: flex;
+    flex-direction: column;
+  }
+
+    .tabs--center {
+    text-align: center;
+    flex-direction: row !important;
+}
+
+    .side-collection-links {
+    margin-left: 20px;
+}
+
+    .custom__tabs {
+    width: auto;
+    padding: unset;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+    .collection__content.custom__content > .collection__products {
+    padding: 10px;
+}
+    
+}
+
+  .side-collection-links {
+    border: 1.5px solid white;
+    border-radius: 50px;
+        margin: 0 0 15px 0;
+    text-align: center;
+        color: white;
+}
+
+
+  a.sidebar__filter__group.side-collection-links{
+        background-position: right bottom !important;
+        height: 49px;
+    text-align: center;
+    line-height: 47px;
+
+  }
+  a.sidebar__filter__group.side-collection-links:hover {
+    background-size: 200% 100% !important;
+    background-position: left bottom !important;
+/*     border: 1.5px solid black; */
+    transition: all .5s ease-out;
+}
+
+    a.collection-title__side:hover {
+    margin: 15px;
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+   .side-collection-links {
+    padding: 20px;
+    margin: 0 20px 0 15px;
+    line-height: 7px !important;
+}
+}
+
+
+  .sidebar__filter__group.side-collection-links.shop-all{
+    background: transparent !important;
+    border: 1.5px solid #9bc2d2;
+    color: #9bc2d2;
+  }
+
+    .sidebar__filter__group.side-collection-links.ghost:hover{
+    background: linear-gradient(to left, #e782a9 50%, transparent 50%) !important;
+    background-size: 200% 100% !important;
+    border: 1.5px solid #e782a9;
+    color: #e782a9;
+  }
+
+
+      .sidebar__filter__group.side-collection-links.hydrate:hover{
+    background: linear-gradient(to left, #65a5b8 50%, transparent 50%) !important;
+    background-size: 200% 100% !important;
+    border: 1.5px solid #65a5b8;
+    color: #65a5b8;
+  }
+
+
+      .sidebar__filter__group.side-collection-links.curl:hover{
+    background: linear-gradient(to left, #d78000 50%, transparent 50%) !important;
+    background-size: 200% 100% !important;
+    border: 1.5px solid #d78000;
+    color: #d78000;
+  }
+
+
+      .sidebar__filter__group.side-collection-links.volume:hover{
+    background: linear-gradient(to left, #da8080 50%, transparent 50%) !important;
+    background-size: 200% 100% !important;
+    border: 1.5px solid #da8080;
+    color: #da8080;
+  }
+
+
+
+
+       .sidebar__filter__group.side-collection-links.glossy:hover{
+    background: linear-gradient(to left, #00a0cd 50%, transparent 50%) !important;
+    background-size: 200% 100% !important;
+    border: 1.5px solid #00a0cd;
+    color: #00a0cd;
+  }
+
+
+      .sidebar__filter__group.side-collection-links.sea:hover{
+    background: linear-gradient(to left, #80bdd0 50%, transparent 50%) !important;
+    background-size: 200% 100% !important;
+    border: 1.5px solid #80bdd0;
+    color: #80bdd0;
+  }
+
+
+ 
+      .sidebar__filter__group.side-collection-links.purple:hover{
+    background: linear-gradient(to left, #bcabda 50%, transparent 50%) !important;
+    background-size: 200% 100% !important;
+    border: 1.5px solid #bcabda;
+    color: #bcabda;
+  }
+
+        .sidebar__filter__group.side-collection-links.treatments:hover{
+    background: linear-gradient(to left, #828586 50%, transparent 50%) !important;
+    background-size: 200% 100% !important;
+    border: 1.5px solid #828586;
+    color: #828586;
+  }
+          .sidebar__filter__group.side-collection-links.dry-shampoo:hover{
+    background: linear-gradient(to left, #fa6378 50%, transparent 50%) !important;
+    background-size: 200% 100% !important;
+    border: 1.5px solid #fa6378;
+    color: #fa6378;
+  }
+  
+</style>
+<!-- /sections/collection.liquid -->
+
+{% capture default_show_filters %}{%- unless section.settings.hide_sidebar -%}filters--default-visible{%- endunless
+-%}{% endcapture %}
+
+<section data-section-id="{{ section.id }}" data-section-type="hero">
+  
+    <div class="section--image fade-in-child js-overflow-container text--white has-overlay" data-overlay-header="" style="--full-screen:929px; min-height: calc(253px + var(--menu-height));">
+      
+      
+<div class="image__hero__frame fade-in-child use_screen_one_third " data-overflow-background="" style="min-height: calc(253px + var(--menu-height));">
+
+  <div class="image__hero__pane">
+    <div class="image__hero__scale">
+      <div class="background-size-cover lazyloaded" style="
+        background-position: center center; 
+        background-image: url({{ 'Shop-All.png' | asset_url }});" 
+        role="img" aria-label="ghost">
+      </div>
+    </div>
+  </div>
+</div>
+  
+    </div>
+  
+
+</section>
+
+<div data-section-id="{{ section.id }}" data-section-type="collection" data-sort="true">
+
+	<div class="collection" data-sidebar-toggle>
+		<div class="wrappers">
+
+			<div class="collection__content custom__content">
+<div class="custom__tabs tab__scroll">
+  <div class="tabs tabs--center tabs--pill" data-scrollbar="" data-scrollbar-slider="" style="
+    display: flex;
+    flex-direction: column;
+">
+  
+<!-- /snippets/collection-filters-sidebar.liquid -->
+
+          <a style="background:#9bc2d2"
+             href="/pages/shop-all" 
+             class="sidebar__filter__group side-collection-links shop-all">
+          Shop all
+      </a>
+    
+    
+<!--End of Links-->
+
+      <a style="background:#e782a9"
+             href="/collections/ghost" 
+             class="sidebar__filter__group side-collection-links ghost">
+          ghost
+      </a>
+
+
+          <a style="background:#65a5b8"
+             href="/collections/hydrate" 
+             class="sidebar__filter__group side-collection-links hydrate">
+          hydrate
+      </a>
+
+    
+          <a style="background:#d78000"
+             href="/collections/curl" 
+             class="sidebar__filter__group side-collection-links curl">
+          curl
+      </a>
+
+
+              <a style="background:#da8080"
+             href="/collections/volume" 
+             class="sidebar__filter__group side-collection-links volume">
+          volume
+      </a>
+    
+    
+
+      <a style="background:#00a0cd"
+             href="/collections/glossy" 
+             class="sidebar__filter__group side-collection-links glossy">
+          glossy
+      </a>
+    
+    <a style="background:#80bdd0"
+             href="/collections/sea" 
+             class="sidebar__filter__group side-collection-links sea">
+          sea
+      </a>
+    
+
+    <a style="background:#bcabda"
+             href="/collections/purple" 
+             class="sidebar__filter__group side-collection-links purple">
+          purple
+      </a>
+
+
+    <a style="background:#828586"
+             href="/collections/hair-treatment-products" 
+             class="sidebar__filter__group side-collection-links treatments">
+         treatments 
+      </a>
+
+
+    <a style="background:#fa6378"
+             href="/collections/dry-shampoo" 
+             class="sidebar__filter__group side-collection-links dry-shampoo">
+          dry shampoo
+      </a>
+
+  </div>
+</div>
+				
+
+				<div class="collection__products" data-products-grid>
+                  
+					{% assign collection_ghost = 'ghost' %}
+					<div class="containerVH" style="color:#e782a9;">
+						<div class="Collection__Header">
+							<h3>Ghost</h3>
+						</div>
+						<div class="vh"></div>
+					</div>
+					<div class="js-grid" data-grid-large="3" data-grid-small="2">
+						{% for product in collections[collection_ghost].products %}
+						{% render 'product-grid-item', product: product %}
+						{% endfor %}
+					</div>
+
+					{% assign collection_hydrate = 'hydrate' %}
+					<div class="containerVH" style="margin-top:100px;color:#65a5b8;">
+						<div class="Collection__Header">
+							<h3>Hydrate</h3>
+						</div>
+						<div class="vh"></div>
+					</div>
+					<div class="js-grid" data-grid-large="3" data-grid-small="2">
+						{% for product in collections[collection_hydrate].products %}
+						{% render 'product-grid-item', product: product %}
+						{% endfor %}
+					</div>
+
+					{% assign collection_curl = 'curl' %}
+					<div class="containerVH" style="margin-top:100px;color:#d78000;">
+						<div class="Collection__Header">
+							<h3>Curl</h3>
+						</div>
+						<div class="vh"></div>
+					</div>
+					<div class="js-grid" data-grid-large="3" data-grid-small="2">
+						{% for product in collections[collection_curl].products %}
+						{% render 'product-grid-item', product: product %}
+						{% endfor %}
+					</div>
+
+                  {% assign collection_volume = 'volume' %}
+					<div class="containerVH" style="margin-top:100px;color:#da8080;">
+						<div class="Collection__Header">
+							<h3>Volume</h3>
+						</div>
+						<div class="vh"></div>
+					</div>
+					<div class="js-grid" data-grid-large="3" data-grid-small="2">
+						{% for product in collections[collection_volume].products %}
+						{% render 'product-grid-item', product: product %}
+						{% endfor %}
+					</div>
+
+                  {% assign collection_glossy = 'glossy' %}
+					<div class="containerVH" style="margin-top:100px;color:#00a0cd;">
+						<div class="Collection__Header">
+							<h3>Glossy</h3>
+						</div>
+						<div class="vh"></div>
+					</div>
+					<div class="js-grid" data-grid-large="3" data-grid-small="2">
+						{% for product in collections[collection_glossy].products %}
+						{% render 'product-grid-item', product: product %}
+						{% endfor %}
+					</div>
+
+                  {% assign collection_sea = 'sea' %}
+					<div class="containerVH" style="margin-top:100px;color:#80bdd0;">
+						<div class="Collection__Header">
+							<h3>Sea</h3>
+						</div>
+						<div class="vh"></div>
+					</div>
+					<div class="js-grid" data-grid-large="3" data-grid-small="2">
+						{% for product in collections[collection_sea].products %}
+						{% render 'product-grid-item', product: product %}
+						{% endfor %}
+					</div>
+
+                  {% assign collection_purple = 'purple' %}
+					<div class="containerVH" style="margin-top:100px;color:#bcabda;">
+						<div class="Collection__Header">
+							<h3>Purple</h3>
+						</div>
+						<div class="vh"></div>
+					</div>
+					<div class="js-grid" data-grid-large="3" data-grid-small="2">
+						{% for product in collections[collection_purple].products %}
+						{% render 'product-grid-item', product: product %}
+						{% endfor %}
+					</div>
+
+
+                  {% assign collection_treatment = 'hair-treatment-products' %}
+					<div class="containerVH" style="margin-top:100px;color:#828586;">
+						<div class="Collection__Header">
+							<h3>Treatments</h3>
+						</div>
+						<div class="vh"></div>
+					</div>
+					<div class="js-grid" data-grid-large="3" data-grid-small="2">
+						{% for product in collections[collection_treatment].products %}
+						{% render 'product-grid-item', product: product %}
+						{% endfor %}
+					</div>
+
+                    {% assign collection_dryShampoo = 'dry-shampoo' %}
+					<div class="containerVH" style="margin-top:100px;color:#fa6378;">
+						<div class="Collection__Header">
+							<h3>Dry Shampoo</h3>
+						</div>
+						<div class="vh"></div>
+					</div>
+					<div class="js-grid" data-grid-large="3" data-grid-small="2">
+						{% for product in collections[collection_dryShampoo].products %}
+						{% render 'product-grid-item', product: product %}
+						{% endfor %}
+					</div>
+
+
+                  
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

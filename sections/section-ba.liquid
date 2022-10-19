@@ -1,0 +1,94 @@
+ <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>twentytwenty</title>
+  <link rel="preload" href="{{ 'foundation.css' | asset_url }}" as="style">
+  <link rel="preload" href="{{ 'twentytwenty.css' | asset_url }}" as="style">
+  <style>
+    .columns-ba{
+      column-gap: 20px;
+      columns: 3 240px;
+      background-color:{{ section.settings.bg_color }};
+      padding: 2em 1em;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      }
+    .twentytwenty-container{
+      width: 325px; 
+      border-radius: 16%; 
+      border: 3px solid #ffffff;
+    }
+     @media screen and (max-width: 767px) {
+       .columns-ba{
+         display: flex;
+         justify-content: space-between;
+         flex-direction: column;
+         align-items: center;
+       }
+       .twentytwenty-container{
+         margin-bottom: 20px;
+       }
+     }
+
+  </style>
+{% if product.metafields.custom.before_image_1 != blank or product.metafields.custom.before_image_2_ != blank or product.metafields.custom.before_image_3 != blank %}
+ <div class="row">  
+      <div class="large-8 columns-ba">
+         {% for block in section.blocks %}
+           <div class="twentytwenty-container">
+             {{ block.settings.image-before | img_url: '325x' | img_tag }}
+             {{ block.settings.image-after | img_url: '325x' | img_tag }}
+           </div>
+         {% endfor %}
+      </div>
+    </div>
+{% endif %}
+{% schema %}
+  {
+  "name": "Before and After Section",
+  "max_blocks": 3,
+  "settings": [
+    {
+        "type": "header",
+        "content": "Background Color"
+      },
+    {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background",
+        "default": "#ffffff"
+       }
+    ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Before$After Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image-before",
+          "label": "Before Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image-after",
+          "label": "After Image"
+        }
+      ]
+    }
+  ],
+    "presets": [
+    {
+      "name": "Image with text",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+    
+  
+{% endschema %}

@@ -1,0 +1,235 @@
+{
+  "sections": {
+    "16638327883736da4a": {
+      "type": "section-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Web_Revamp_Collection_Pages_1408x160_The-Verb-Word.png",
+        "mobile_image": "shopify:\/\/shop_images\/Web_Revamp_Collection_Pages_1408x160_The-Verb-Word.png",
+        "bg_position": "center-center",
+        "height": "use_screen_two_thirds",
+        "overlay_opacity": 0,
+        "overlay_color": "#000",
+        "kicker": "",
+        "title": "The Verb Word",
+        "richtext": "",
+        "text_align": "align--middle-center",
+        "text_color": "text--white",
+        "link_text": "",
+        "link": "",
+        "button_color": "btn--white",
+        "button_style": "btn"
+      }
+    },
+    "feature": {
+      "type": "section-custom-content",
+      "disabled": true,
+      "blocks": {
+        "image": {
+          "type": "image",
+          "settings": {
+            "bg_position": "center-center",
+            "overlay_opacity": 15,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        },
+        "article": {
+          "type": "article",
+          "settings": {
+            "article": "",
+            "show_tag": true,
+            "show_date": true,
+            "text_size": 2,
+            "show_excerpt": true,
+            "align_text": "text-left",
+            "placement_text": "middle",
+            "show_author_name": true,
+            "show_author_image": true,
+            "button_text": "Read more",
+            "button_color": "btn--neutral",
+            "button_style": "caps--link",
+            "text_color": "text--neutral",
+            "bg_color": "#f7f7f7"
+          }
+        }
+      },
+      "block_order": [
+        "image",
+        "article"
+      ],
+      "settings": {
+        "height": "use_screen_one_half",
+        "padding": true,
+        "borders": false,
+        "wrapper": true
+      }
+    },
+    "main": {
+      "type": "blog",
+      "settings": {
+        "layout": "grid",
+        "blog_show_meta": true,
+        "bg_position": "center-center",
+        "overlay_opacity": 30,
+        "overlay_color": "#000000",
+        "image_height": "use_screen_one_third",
+        "text_color": "text--white",
+        "tags": false
+      }
+    },
+    "16583384884206fcac": {
+      "type": "image-row-3",
+      "disabled": true,
+      "blocks": {
+        "16583384884252623c-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/02.png",
+            "bg_position": "center-center",
+            "overlay_opacity": 15,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "Shop Now",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        },
+        "11ab1989-653a-40a8-84f6-ffb4521cfbe4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/02.png",
+            "bg_position": "center-center",
+            "overlay_opacity": 15,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "Shop Now",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        },
+        "f7042d54-e471-4bc3-a5b3-50b164e9721f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/02.png",
+            "bg_position": "center-center",
+            "overlay_opacity": 15,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "Shop Now",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        }
+      },
+      "block_order": [
+        "16583384884252623c-0",
+        "11ab1989-653a-40a8-84f6-ffb4521cfbe4",
+        "f7042d54-e471-4bc3-a5b3-50b164e9721f"
+      ],
+      "settings": {
+        "height": "use_screen_one_third",
+        "padding": true,
+        "borders": false,
+        "wrapper": true
+      }
+    },
+    "1658338746099394f7": {
+      "type": "image-row-3",
+      "disabled": true,
+      "blocks": {
+        "1658338746d12313a1-0": {
+          "type": "image",
+          "settings": {
+            "bg_position": "center-center",
+            "overlay_opacity": 15,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "Shop Now",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        },
+        "b0ef5b92-2d69-46cc-b821-718a95f40ad2": {
+          "type": "image",
+          "settings": {
+            "bg_position": "center-center",
+            "overlay_opacity": 15,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "Shop Now",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        },
+        "7bf861fe-4159-4662-b6f8-3fe21b277b69": {
+          "type": "image",
+          "settings": {
+            "bg_position": "center-center",
+            "overlay_opacity": 15,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "Shop Now",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        }
+      },
+      "block_order": [
+        "1658338746d12313a1-0",
+        "b0ef5b92-2d69-46cc-b821-718a95f40ad2",
+        "7bf861fe-4159-4662-b6f8-3fe21b277b69"
+      ],
+      "settings": {
+        "height": "use_screen_one_third",
+        "padding": true,
+        "borders": false,
+        "wrapper": true
+      }
+    }
+  },
+  "order": [
+    "16638327883736da4a",
+    "feature",
+    "main",
+    "16583384884206fcac",
+    "1658338746099394f7"
+  ]
+}

@@ -1,0 +1,485 @@
+<style>
+  .tab-content22{
+    display:none;
+  }
+  .custom-taps-footer{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap: 3rem;
+    background-color: #eee;
+  }
+  .cutom-taps-footer-img{
+    width:40%;
+    max-width:15%;
+    aspact-ratio:2/1;
+    cursor:pointer
+  }
+  .cutom-taps-footer-img>a,
+  .cutom-taps-footer-img>a>img{
+    width:100%;
+    height:100%;
+  }
+  .dis{
+    
+    text-align:center;
+    padding:2%;
+    transition:.4s ease;
+  }
+  .dis p , .dis strong{
+   font-size:1.2rem;
+    text-align: left;
+  }
+  .tab-h{
+    text-align:center
+  }
+.tab-l{
+    text-align:left
+  }
+  .tab-link--alt.current:after {
+    transform: scaleX(1);
+    transform-origin: 0px 50%;
+}.tab-link--alt:after {
+    content: "";
+    width:15px;
+    left:40%;
+    background:transparent;
+    transition: transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #e9893c;
+    clear: both;
+    transform: scaleX(0) translateX(-50%);
+}
+.tab-link--alt.current:after {
+    transform: scaleX(1) translateX(40%);
+}
+   .read-more{
+    background-color: #eee;
+    color: black;
+    text-decoration: underline;
+    padding: 10px 15px;
+    bottom: 20px;
+    width: 100%;
+    text-align: left;
+    position: absolute;
+    display: none;
+  }
+@media(max-width:520px){
+  .read-more{
+    display: block; 
+    
+  }
+  .less{
+    display:none;
+  }
+  .cutom-taps-footer-img{
+    width:40%;
+    max-width:inherit;
+    aspact-ratio:2/1;
+    cursor:pointer
+  }
+  .custom-taps-footer{
+    flex-direction: column;
+  }
+.tab-content-container {
+  grid-template-columns: 1fr;
+  height:200px;
+  overflow: hidden;
+}  
+}
+ .ptab{
+   font-size:12pt !important;
+ }
+</style>
+  <script>
+    function animateTabs(btn1,btn2,btn3,col1,col2,col3){
+      const button1 = document.getElementById(btn1);
+      const button2 = document.getElementById(btn2);
+      const button3 = document.getElementById(btn3);
+      const column1 = document.getElementById(col1);
+      const column2 = document.getElementById(col2);
+      const column3 = document.getElementById(col3);
+      column2.style.display='none';
+      column3.style.display='none';
+    button1.addEventListener('click',()=>{
+      column1.style.display='block';
+      column2.style.display='none';
+      column3.style.display='none';
+    });
+    button2.addEventListener('click',()=>{
+      column2.style.display='block';
+      column1.style.display='none';
+      column3.style.display='none';
+    });
+      button3.addEventListener('click',()=>{
+      column3.style.display='block';
+      column1.style.display='none';
+      column2.style.display='none';
+    });
+    }
+    
+   function changeHeight() {
+     document.getElementById('btn-hidden').style.display = "none";
+     document.getElementById('chartdiv').style.height = "auto";
+     document.getElementById('btn-show').style.display = "block";
+     }
+    function changeHeightback() {
+     document.getElementById('btn-hidden').style.display = "block";
+     document.getElementById('chartdiv').style.height = "200px";
+     document.getElementById('btn-show').style.display = "none";
+     }
+  </script>
+<section class="section-tabs {{ section.settings.color_bg }} {{ section.settings.height }}" data-section-id="{{ section.id }}" data-section-type="tabs">
+  <div class="{{ section.settings.width }}">
+    {%- assign tab_links = '' -%}
+    {%- assign tab_contents = '' -%}
+
+    {%- for block in section.blocks -%}
+      {%- assign title = block.settings.title -%}
+      {%- assign content1 = block.settings.text_1 -%}
+      {%- assign content2 = block.settings.text_2 -%}
+      {%- assign content3 = block.settings.text_3 -%}
+      {%- assign content4 = block.settings.text_4 -%}
+      {%- assign content5 = block.settings.text_5 -%}
+      {%- assign content6 = block.settings.text_6 -%}
+      {%- assign type = block.settings.tap_type -%}
+      {%- assign ftImag1 = block.settings.ft_img_1 -%}
+      {%- assign ftImag2 = block.settings.ft_img_2 -%}
+      {%- assign ftImag3 = block.settings.ft_img_3 -%}
+      {%- assign ftImag4 = block.settings.ft_img_4 -%}
+      {%- assign ftImag5 = block.settings.ft_img_5 -%}
+      {%- assign ftImag6 = block.settings.ft_img_6 -%}
+      {%- assign raw_content = pages[block.settings.raw_content].content -%}
+      {%- assign tab_content1 = content1 | default: raw_content -%}
+      {%- assign tab_content2 = content2 | default: raw_content -%}
+      {%- assign tab_content3 = content3 | default: raw_content -%}
+      {%- assign tab_content4 = content4 | default: raw_content -%}
+      {%- assign tab_content5 = content5 | default: raw_content -%}
+      {%- assign tab_content6 = content6 | default: raw_content -%}
+
+      {%- if title != blank and title != '' and tab_content1 != blank and tab_content1 != ''  -%}
+        {%- capture tab_links -%}
+          {{ tab_links }}
+
+          <button type="button" class="tab-link tab-link--alt tab-link-{{ forloop.index0 }}" data-focus-element data-tab="{{ forloop.index0 }}" data-block-id="{{ block.id }}" tabindex="0" {{ block.shopify_attributes }} style="padding-left: 30px;padding-bottom: 15px;">
+          {{ title }}
+          </button>
+        {%- endcapture -%}
+
+        {%- capture tab_contents -%}
+          {{ tab_contents }}
+
+          <div class="tab-content tab-content-{{ forloop.index0 }}" style="padding: 0 !important;">
+          
+             {% if type == 'Columns' %}
+              <div class="tab-content-container"  id="chartdiv">
+                <div class="tab-content1" style="padding:6% 10% 6% 6%;"><h2 class="tab-h tab-l ptab" >{{ tab_content1 }}</h2> </div>
+                <div class="tab-content2" style="padding: 6% 10% 6% 6%;"><h2 class="tab-h tab-l">{{ tab_content2 }}</h2></div>
+               <button class="read-more" id="btn-hidden" type="button" onClick = "changeHeight();">Read more</button>
+               <button class="read-more less" id="btn-show" type="button" onClick = "changeHeightback();">show less</button>
+              </div>
+            {% endif %}
+
+            {% if type == 'tabs' %}
+              <div style="background-color: #eee;">
+                 {% if block.settings.text_1 != blank %}
+                  <div id="editor-col1" class="tab-content1">
+                    <div  class="dis"> {{ tab_content1 }}</div>
+                     </div>
+                 {% endif %}
+              {% if block.settings.text_2 != blank %}
+                <div id="editor-col2" class="tab-content2 tab-content22 ">
+                  <div  class="dis">{{ tab_content2 }} </div>
+                </div>
+                {% endif %}
+              {% if block.settings.text_3 != blank %}
+                <div id="editor-col3" class="tab-content2 tab-content22">
+                  <div  class="dis">{{ tab_content3 }} </div>
+                </div>
+                {% endif %}
+              {% if block.settings.text_4 != blank %}
+                <div id="editor-col4" class="tab-content2 tab-content22 ">
+                  <div  class="dis">{{ tab_content4 }} </div>
+                </div>
+                {% endif %}
+              {% if block.settings.text_5 != blank %}
+                <div id="editor-col5" class="tab-content2 ">
+                  <div  class="dis">{{ tab_content5 }} </div>
+                </div>
+                {% endif %}
+              {% if block.settings.text_6 != blank %}
+                <div id="editor-col6" class="tab-content2 ">
+                  <div  class="dis">{{ tab_content6 }} </div>
+                </div>
+                {% endif %}
+             </div>
+             <div class='custom-taps-footer'>
+
+          {% if block.settings.ft_img_1 != blank %}
+             <div class='cutom-taps-footer-img' style="padding-bottom:20px !important;padding-top:20px !important;background-color: #eee;"> 
+                <div  id ="editor-img-1">
+                {%- render 'hero1', img_object: block.settings.ft_img_1 -%}
+             </div>
+             </div>
+          {% endif %}
+          {% if block.settings.ft_img_2 != blank %}
+            <div class='cutom-taps-footer-img' style="padding-bottom:20px !important;">
+              <div  id ="editor-img-2">
+             {%- render 'hero1', img_object: block.settings.ft_img_2 -%}
+              </div>
+            </div>
+          {% endif %}
+          {% if block.settings.ft_img_3 != blank %}
+            <div class='cutom-taps-footer-img' style="padding-bottom:20px !important;">
+              <div  id ="editor-img-3">
+             {%- render 'hero1', img_object: block.settings.ft_img_3 -%}
+              </div>
+            </div>
+          {% endif %}
+          {% if block.settings.ft_img_4 != blank %}
+            <div class='cutom-taps-footer-img' style="padding-bottom:20px !important;">
+              <div  id ="editor-img-4">
+             {%- render 'hero1', img_object: block.settings.ft_img_4 -%}
+              </div>
+            </div>
+          {% endif %}
+          {% if block.settings.ft_img_5 != blank %}
+            <div class='cutom-taps-footer-img' style="padding-bottom:20px !important;">
+              <div  id ="editor-img-5">
+             {%- render 'hero1', img_object: block.settings.ft_img_5 -%}
+              </div>
+            </div>
+          {% endif %}
+          {% if block.settings.ft_img_6 != blank %}
+            <div class='cutom-taps-footer-img' style="padding-bottom:20px !important;">
+              <div  id ="editor-img-6">
+             {%- render 'hero1', img_object: block.settings.ft_img_6 -%}
+              </div>
+            </div>
+          {% endif %}
+      
+      </div>
+             <script>
+       animateTabs('editor-img-1','editor-img-2','editor-img-3','editor-col1','editor-col2','editor-col3');
+     </script>
+            {% endif %}
+
+          </div>
+        {%- endcapture -%}
+      {%- endif -%}
+    
+     
+    {%- endfor -%}
+  
+    
+    {%- if tab_links != '' -%}
+      <div class="tabs-wrapper">
+        <div class="tabs__holder" data-tabs-holder style="margin-bottom:20px">
+          <div class="tabs__head tabs__head--line">
+            <div class="tabs" data-scrollbar data-scrollbar-slider style="background-color:#fff">
+              {{ tab_links }}
+            </div>
+  
+            <button type="button" class="tabs__arrow tabs__arrow--alt tabs__arrow--prev is-hidden is-not-relative" data-scrollbar-arrow-prev>
+              <span class="visually-hidden">{{ 'general.accessibility.see_all' | t }}</span>
+            </button>
+  
+            <button type="button" class="tabs__arrow tabs__arrow--alt tabs__arrow--next is-hidden is-not-relative" data-scrollbar-arrow-next>
+              <span class="visually-hidden">{{ 'general.accessibility.see_all' | t }}</span>
+            </button>
+          </div>
+          
+          {{ tab_contents }}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Custom_Tabs",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "Height",
+      "default": "margin--small",
+      "options": [
+        { "value": "margin--large", "label": "Large" },
+        { "value": "margin--medium", "label": "Medium" },
+        { "value": "margin--small", "label": "Small" },
+        { "value": "margin--zero", "label": "Natural" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "wrapper",
+      "options": [
+        {"value": "wrapper--narrow", "label": "Narrow"},
+        {"value": "wrapper", "label": "Wide"},
+        {"value": "wrapper--full", "label": "Full width"}
+      ]
+    },
+    {
+      "type": "select",
+      "id": "color_bg",
+      "label": "Background color",
+      "default": "palette--light bg--neutral",
+      "options": [
+        { "value": "palette--light bg--neutral", "label": "Default"},
+        { "value": "palette--light bg--accent", "label": "Light"},
+        { "value": "palette--dark bg--invert", "label": "Dark"},
+        { "value": "palette--dark bg--invert--accent", "label": "Dark accent"}
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Text",
+      "type": "text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Tab heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text_1",
+          "label": "column 1",
+          "default": "<p>This content type will accept <strong>rich text</strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.</p>" 
+        },
+        {
+          "type": "richtext",
+          "id": "text_2",
+          "label": "column 2",
+          "default": "<p>This content type will accept <strong>rich text</strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.</p>" 
+        },
+        {
+          "type": "richtext",
+          "id": "text_3",
+          "label": "column 3",
+          "default": "<p>This content type will accept <strong>rich text</strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.</p>" 
+        },
+        {
+          "type": "richtext",
+          "id": "text_4",
+          "label": "column 4",
+          "default": "<p>This content type will accept <strong>rich text</strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.</p>" 
+        },
+        {
+          "type": "richtext",
+          "id": "text_5",
+          "label": "column 5",
+          "default": "<p>This content type will accept <strong>rich text</strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.</p>" 
+        },
+        {
+          "type": "richtext",
+          "id": "text_6",
+          "label": "column 6",
+          "default": "<p>This content type will accept <strong>rich text</strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.</p>" 
+        },
+        {
+          "type": "select",
+          "id": "tap_type",
+          "label": "Type",
+          "default": "Columns",
+          "options": [
+            { "label": "Columns", "value": "Columns" },
+            { "label": "tabs", "value": "tabs" }
+            
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "ft_img_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "ft_img_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "ft_img_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "ft_img_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "ft_img_5",
+          "label": "Image 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "ft_img_6",
+          "label": "Image 6"
+        }
+      ]
+    },
+    {
+      "name": "Page",
+      "type": "page",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Page tab",
+          "info": "Example: Size chart"
+        },
+        {
+          "type": "page",
+          "id": "raw_content",
+          "label": "Tab content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tabs",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "title": "Returns",
+            "text_1": "<p>Free returns within 30 days, no questions asked.  We believe in our products and we stand behind them.  We will return any of our items within 30 days just mail them back with your purchase receipt.</p>"
+            
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "title": "Security",
+            "text_1": "<p>We accept all major credit cards.  All of our transactions are handled on a secure server using bank-grade encryption.  Payments can be handled through trusted third parties like Shopify Pay, Apple Pay, and PayPal.</p>"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "title": "Support",
+            "text_1": "<p>Let us know what you think of your items.  If you are not satisfied your purchase can be replaced at any time or returned after 30 days. All of our products come with a 30 day free return and one year manufacturers guarantee against defects.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

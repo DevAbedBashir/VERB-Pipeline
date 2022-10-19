@@ -1,0 +1,73 @@
+{
+  "sections": {
+    "main": {
+      "type": "list-collections",
+      "disabled": true,
+      "blocks": {
+        "58ca0b7f-e4fe-4751-8470-5825ccfff123": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "all"
+          }
+        }
+      },
+      "block_order": [
+        "58ca0b7f-e4fe-4751-8470-5825ccfff123"
+      ],
+      "settings": {
+        "style": "product",
+        "aspect_ratio": 1,
+        "grid_collection": 3,
+        "grid": 2,
+        "rows": 8
+      }
+    },
+    "1651019223156c76b5": {
+      "type": "section-collection-tabs",
+      "disabled": true,
+      "blocks": {
+        "1651019223ca9f4ad7-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "First collection"
+          }
+        },
+        "1651019223ca9f4ad7-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "Second collection"
+          }
+        }
+      },
+      "block_order": [
+        "1651019223ca9f4ad7-0",
+        "1651019223ca9f4ad7-1"
+      ],
+      "settings": {
+        "title": "Tab collections",
+        "grid": 3,
+        "limit": 6,
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "1651019276de49757c": {
+      "type": "section-collection",
+      "settings": {
+        "title": "Featured Products",
+        "collection": "",
+        "grid": 3,
+        "rows": 1,
+        "bg": "palette--light bg--neutral",
+        "show_view_all": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1651019223156c76b5",
+    "1651019276de49757c"
+  ]
+}

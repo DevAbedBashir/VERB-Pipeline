@@ -1,0 +1,522 @@
+{
+  "sections": {
+    "shogun-helper": {
+      "type": "shogun-helper",
+      "settings": {
+      }
+    },
+    "shogun-above": {
+      "type": "shogun-above",
+      "settings": {
+      }
+    },
+    "1656969662d5c2286c": {
+      "type": "section-html",
+      "settings": {
+        "html": "<style>\n\n @font-face {\nfont-family: \"eames\";\nsrc: url(\"\/\/cdn.shopify.com\/s\/files\/1\/0045\/9790\/7545\/t\/9\/assets\/EamesCenturyModernBold.woff2\"),\n\n}\n.product-page {\npadding-top: 0;\npadding-bottom: 0;\n}\n.product__media__wrapper { margin-bottom:0;\n}\n.flickity-slider{\nwidth: 100%;\nposition: absolute;\nbottom: 0rem;\n}\n.btn--outline{\nbackground-color:currentColor;\nborder-radius: 3em;\nfont-weight: bold;\n}\n.btn--outline>span{\ncolor:white;\n}\n .product-single{\n  display: flex;\n  align-items: center;\n  width:100vw;\n  margin-inline-start:50%;\n  transform:translateX(-50%);\n}\n@media(max-width:475px){\nbody{\noverflow-x:hidden;\n}\n.product-single{\n  display: block;\n}\n.product__media__wrapper ~.grid__item {\n padding:1rem;\n    \n}\n}\n.product__media__wrapper{\n padding-left:0; \n\n}\nsection[data-section-id=\"template--14808346787874__1655893936ceda3ef1\"] > .brick__block:first-of-type >.brick__block__text{\n background-image: url(https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/pablo-merchan-montes-O-sNTavXbmE-unsplash_2_256x256_crop_center.png?v=1656577239);\n    background-size: contain;\n    background-position: 85%;\n    background-color: #008cbb;\n    background-repeat: no-repeat;\n}\n.product-hr{\n    width: 95%;\n  \tmax-width:70rem;\n    border-top: 1px solid #333;\n      margin: auto;\n}\n\n.media__thumb__wrapper{\nposition: absolute;\nwidth: 30rem;\nheight: 100%;\nleft: -9rem;\nbottom: 2rem;\n}\n.media__thumb__wrapper>.flickity-viewport{\n height: 100% !important;\n}\n.flickity-slider{\ndisplay: flex;\nflex-direction: column;\njustify-content: flex-end;\n\n}\n.media__thumb{\nposition: relative !important;\ntransform: translate(290%,-200%)\n!important;\n}\n.media__thumb>img\n{border-radius: 50%;}\n@media(max-width:475px){\n.media__thumb__wrapper{\nwidth: auto;\nheight: 75%;\nleft: 2rem;\nbottom: 0rem;\n}\n.media__thumb {\ntransform: translateX(0%) !important;\n}\n}\n\n<\/style>",
+        "full_width": true
+      }
+    },
+    "main": {
+      "type": "product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "product_show_vendor": false,
+            "show_rating": true,
+            "show_rating_count": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "read_more": false,
+            "enable_description": true,
+            "icon_description": "",
+            "style": "none",
+            "title_1": "",
+            "icon_name_1": "",
+            "raw_content_1": "",
+            "title_2": "",
+            "icon_name_2": "",
+            "raw_content_2": "",
+            "title_3": "",
+            "icon_name_3": "",
+            "raw_content_3": "",
+            "title_4": "",
+            "icon_name_4": "",
+            "raw_content_4": "",
+            "title_5": "",
+            "icon_name_5": "",
+            "raw_content_5": ""
+          }
+        },
+        "77a6da3a-772e-437c-9e0c-1118a631b164": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icons_916e41c8-a7b5-4b4f-80b4-72f2608ce96b.png",
+            "image_max_limit": 325,
+            "alignment": "product__image--left"
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "variant_form": "auto",
+            "show_quantity": false,
+            "enable_payment_button": false,
+            "subscriptions_enable_selectors": false,
+            "show_remaining": false,
+            "show_remaining_style": "low",
+            "countdown": 10,
+            "info_page": ""
+          }
+        },
+        "pickup": {
+          "type": "pickup",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "sharing": {
+          "type": "sharing",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "df546664-43b5-4411-993b-9cc2cfb98b96": {
+          "type": "upsell",
+          "disabled": true,
+          "settings": {
+            "product": "ghost-duo"
+          }
+        },
+        "15b10a3e-a100-42f4-85f6-d1515a3d9dee": {
+          "type": "shopify:\/\/apps\/ordergroove-subscriptions\/blocks\/pdp-offer-block\/cf69fc68-e893-4d33-87e3-4e71e2f5822f",
+          "settings": {
+            "location": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "description",
+        "77a6da3a-772e-437c-9e0c-1118a631b164",
+        "form",
+        "pickup",
+        "sharing",
+        "df546664-43b5-4411-993b-9cc2cfb98b96",
+        "15b10a3e-a100-42f4-85f6-d1515a3d9dee"
+      ],
+      "settings": {
+        "image_width": "half",
+        "align": "left",
+        "product_breadcrumbs": false,
+        "enable_video_looping": true,
+        "zoom_enable": true,
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "1651245027aeea7f40": {
+      "type": "section-hero",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Product_Description_gif.png",
+        "bg_position": "center-center",
+        "height": "use_image",
+        "overlay_opacity": 0,
+        "overlay_color": "#000000",
+        "kicker": "",
+        "title": "",
+        "richtext": "",
+        "text_align": "align--middle-center",
+        "text_color": "text--white",
+        "link_text": "",
+        "link": "",
+        "button_color": "btn--white",
+        "button_style": "btn"
+      }
+    },
+    "1656999735fdea1b2b": {
+      "type": "section-announcement",
+      "blocks": {
+        "1656999735d6ba392b-0": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sulfate free<\/p>"
+          }
+        },
+        "5eabc410-3cd0-42b1-a898-7707eae33680": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Color Safe<\/p>"
+          }
+        },
+        "bc42cd7a-4bce-4149-8c94-39b33068ed2b": {
+          "type": "text",
+          "settings": {
+            "text": "<p>VEGAN<\/p>"
+          }
+        },
+        "bacc884c-32cd-4a8b-8c01-cf7538c05ab2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cruelty Free<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1656999735d6ba392b-0",
+        "5eabc410-3cd0-42b1-a898-7707eae33680",
+        "bc42cd7a-4bce-4149-8c94-39b33068ed2b",
+        "bacc884c-32cd-4a8b-8c01-cf7538c05ab2"
+      ],
+      "settings": {
+        "bg_color": "#eeeeee",
+        "color": "#64b4d9",
+        "text_size": 7
+      }
+    },
+    "image-with-text": {
+      "type": "section-double",
+      "disabled": true,
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "kicker": "",
+            "title": "100%",
+            "text": "<p>Saw smoother hair with less frizz*<\/p><p><\/p><p>cariad<\/p>",
+            "text_size": 4,
+            "text_columns": 1,
+            "align_text": "text-center",
+            "button_text": "",
+            "button_url": "",
+            "button_color": "btn--neutral",
+            "button_style": "caps--link",
+            "text_color": "text--white",
+            "bg_color": "#64b4d9"
+          }
+        },
+        "image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Verb_Glossy_Collection_Lifestyle_2.jpg",
+            "bg_position": "center-center",
+            "overlay_opacity": 15,
+            "overlay_color": "#000000",
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn uppercase"
+          }
+        }
+      },
+      "block_order": [
+        "text",
+        "image"
+      ],
+      "settings": {
+        "height": "use_screen_one_half",
+        "padding": false,
+        "borders": false,
+        "wrapper": false
+      }
+    },
+    "16577820544447f38a": {
+      "type": "section-html",
+      "settings": {
+        "html": "<section class=\"VT-container\">\n        <div class=\"VT-text\" \nstyle=\"background-color:#008cbb\"\n>\n<h1\nstyle=\"margin-top: auto;\"\n><strong>100%<\/strong> <\/h1>\n<p style=\"font-size:30px;\"> Saw smoother hair with less frizz* <\/p>\n\n<small\nstyle=\"margin-top: auto;\"\n>Carried out by third party lab over 28 dayes with 21 participants, using all 3 products.<\/small>\n<\/div>\n<div class=\"VT-Vid\"\nstyle=\"background-image:url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/e524a709564b40a88282762c11f20290_720x.jpg?v=1656131329');\n background-size: cover;\n background-position: center;\"\n\n>\n\n        <\/div>\n    <\/section>",
+        "full_width": true
+      }
+    },
+    "custom-tabs": {
+      "type": "Custom_Tabs",
+      "blocks": {
+        "e224bf50-aeb4-4235-a91b-f83fa84d6914": {
+          "type": "text",
+          "settings": {
+            "title": "Product Info\/How to use",
+            "text_1": "<p><strong>Who’s It For<br\/>✓<\/strong>Thick<br\/><strong>✓<\/strong>Coarse<\/p><p><\/p><p><strong>How to Use<br\/><\/strong>Massage a small amount into wet hair, lather well and rinse.<\/p><p><strong>Tips & Tricks<\/strong><br\/>Low lathering shampoo just means afiner bubble but may require an extrarinse. Give some attention to thoroughlyrinsing before conditioning.<\/p><p><\/p><p><\/p>",
+            "text_2": "<p><strong>What It Does<br\/><\/strong>Cleanse + Glossy Shine + Extra Moisture<\/p><p><strong>Only Good Stuf<br\/><\/strong>Paraben Free<br\/>Gluten Free<br\/>No Harmful Sulfates<br\/>Vegan<br\/>PETA Certified Cruelty-Free<\/p>",
+            "tap_type": "Columns"
+          }
+        },
+        "42852e5b-7348-485c-8ee6-8c3d9dafaf56": {
+          "type": "text",
+          "settings": {
+            "title": "Ingredients",
+            "text_1": "<p><strong>Key Ingredients<\/strong><\/p><p><strong><br\/>Peach oil<\/strong><br\/>rich in omega oils that help to hydrate hair and increase shine<br\/><strong>Rosehip oil<\/strong><br\/>contains vitamins A, C and E plus antioxidantsto help nourish, lock in hydration and maximize shine.<br\/><strong>Squalane<br\/><\/strong>an olive oil<strong> <\/strong>based hydrator to replenishmoisture, seal and help protect future damage.<\/p>",
+            "text_2": "<p><strong>Ingredients<\/strong><br\/>GLYCERIN, AQUA\/WATER\/EAU, DISODIUM LAURETH SULFOSUCCINATE,SORBITOL, SODIUM C14-16 OLEFIN SULFONATE, COCAMIDOPROPYLBETAINE, COCAMIDE MEA, LAURETH-3, PEG-7 GLYCERYL COCOATE,PRUNUS PERSICA (PEACH) KERNEL OIL, PRUNUS AMYGDALUS DULCIS(SWEET ALMOND) OIL, ROSA CAN<\/p>",
+            "tap_type": "Columns"
+          }
+        },
+        "356b2d7d-6fa0-4321-8eae-2319def6b434": {
+          "type": "text",
+          "settings": {
+            "title": "Editor's note",
+            "text_1": "<p><strong>How to Use<br\/><\/strong>Massage a small amount into wethair, lather well and rinse.<\/p><p><\/p><p><\/p>",
+            "text_2": "",
+            "tap_type": "Columns"
+          }
+        },
+        "a9a06a3d-94d0-4b63-a463-214f8a16ccc3": {
+          "type": "text",
+          "settings": {
+            "title": "FAQ",
+            "text_1": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "text_2": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "tap_type": "Columns"
+          }
+        },
+        "45a7fde5-1f15-42b4-8111-eaf6ead6e984": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "Beauty Editors Highlights",
+            "text_1": "<p><strong>“2018 NYLON Beauty Award -  Best Damage Shampoo”<\/strong><\/p>",
+            "text_2": "<p><strong>“...formulated with algae extract, vitamin B, biotin, and rosehip oil to restore hydration..”<\/strong><\/p>",
+            "tap_type": "tabs",
+            "ft_img_1": "shopify:\/\/shop_images\/download.png",
+            "ft_img_2": "shopify:\/\/shop_images\/download.png"
+          }
+        }
+      },
+      "block_order": [
+        "e224bf50-aeb4-4235-a91b-f83fa84d6914",
+        "42852e5b-7348-485c-8ee6-8c3d9dafaf56",
+        "356b2d7d-6fa0-4321-8eae-2319def6b434",
+        "a9a06a3d-94d0-4b63-a463-214f8a16ccc3",
+        "45a7fde5-1f15-42b4-8111-eaf6ead6e984"
+      ],
+      "settings": {
+        "height": "margin--zero",
+        "width": "wrapper--full",
+        "color_bg": "palette--light bg--accent"
+      }
+    },
+    "1659376185bb59a691": {
+      "type": "section-html",
+      "settings": {
+        "html": "<style>\n.container {\nposition: relative;\nwidth: 17.5rem;\naspect-ratio: 1;\nborder: 2px solid white;\n}\n.container .img {\nposition: absolute;\ntop: 0;\nleft: 0;\nwidth: 100%;\nheight: 100%;\nbackground-size: 17.5rem 100%;\nbackground-repeat: no-repeat;\n}\n.container .img::after {\nposition: absolute;\nbackground-color: #64b4d9;\ncolor: white;\ndisplay: inline-block;\nbottom: 2rem;\npadding: 0.5rem;\n}\n.container .background-img {\nbackground-image: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_BA_2000x2000_Glossy_Model4.jpg?v=1658427295\");\n}\n.container .background-img::after {\ncontent: \"After\";\nright: 10%;\n}\n.container .foreground-img {\nbackground-image: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_BA_2000x2000_Glossy_Model4_1.jpg?v=1658427295\");\nbackground-position-y: 0px;\nwidth: 50%;\n}\n.container .foreground-img::after {\ncontent: \"Befor\";\nleft: 10%;\n}\n\n.slider {\nposition: absolute;\n-webkit-appearance: none;\n-moz-appearance: none;\n      appearance: none;\nwidth: 100%;\nheight: 100%;\nbackground: rgba(242, 242, 242, 0.3);\noutline: none;\nmargin: 0;\ntransition: all 0;\ndisplay: flex;\njustify-content: center;\nalign-items: center;\n}\n.slider:hover {\nbackground: rgba(242, 242, 242, 0.1);\n}\n.slider::-webkit-slider-thumb {\n-webkit-appearance: none;\nappearance: none;\nwidth: 2px;\nheight: 17.5rem;\nbackground: white;\ncursor: pointer;\n}\n\n.media-images {\ndisplay: flex;\njustify-content: space-around;\nbackground-color:#00A0CD;\npadding: 30px;\n}\n@media(max-width:470px){\n.media-images {\npadding:2em 0;\ngap:2em;\nflex-direction: column;\njustify-content: center; align-items: center;\n}\n}\n<\/style>\n\n<div class=\"media-images\">\n<div class='container'>\n\n<!-- image 1 -->\n<div class='img background-img'\nstyle=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/0004_Model_After_096_copy.jpg?v=1659499929');\nbackground-position-y: 0px;\"\n><\/div>\n<div class='img foreground-img'\nstyle=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/0005_Model_Before_115_copy.jpg?v=1659499929');\nbackground-position-y: 2px;\"\n><\/div>\n\n<input type=\"range\" min=\"1\" max=\"100\" value=\"50\" class=\"slider\" name='slider' id=\"slider\">\n<\/div>\n\n<!-- image 2 -->\n<div class='container'>\n<div class='img background-img'\nstyle=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/0002_Model_After_136_copy.jpg?v=1659499929');\nbackground-position-y: 0px;\"\n><\/div>\n<div class='img foreground-img'\nstyle=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/0003_Model_Before_089_copy.jpg?v=1659499929');\nbackground-position-y: 5px;\"\n><\/div>\n\n<input type=\"range\" min=\"1\" max=\"100\" value=\"50\" class=\"slider\" name='slider' id=\"slider\">\n<\/div>\n\n\n<!-- image 3 -->\n<div class='container'>\n<div class='img background-img'\nstyle=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/0000_Model_After_169_copy.jpg?v=1659499929');\nbackground-position-y: 0px;\"\n><\/div>\n<div class='img foreground-img'\nstyle=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_BA_2000x2000_Glossy_Model3.jpg?v=1658427295');\nbackground-position-y: -10px;\"\n><\/div>\n\n<input type=\"range\" min=\"1\" max=\"100\" value=\"50\" class=\"slider\" name='slider' id=\"slider\">\n<\/div>\n<\/div>\n\n\n<script>\ndocument.querySelectorAll('.slider')\n.forEach((slider) => {\nslider.addEventListener('change', (e) => {\nconst sliderPos = e.target.value;\n\/\/ Update the width of the foreground image\nslider.previousElementSibling.style.width = `${sliderPos}%`;\n})\n})\n<\/script>",
+        "full_width": true
+      }
+    },
+    "16562275959c6c0d0a": {
+      "type": "section-html",
+      "disabled": true,
+      "settings": {
+        "html": "<section class=\"BA-container\">\n<div class=\"BA-img content-b4\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/ecd39cdb640edbba27ed33cf3eedf7d9_540x.jpg?v=1656190059\" alt=\"\">\n<\/div>\n<div class=\"BA-img content-b4\">\n    <img \nstyle=\"object-position: center 25%;\"\nsrc=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_BA_2000x2000_Glossy_Model3_720x.jpg?v=1658427295\" alt=\"\">\n<\/div>\n<div class=\"BA-img content-b4\">\n    <img \nstyle=\"object-position: center 10%;\"\nsrc=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_BA_2000x2000_Glossy_Model4_1_720x.jpg?v=1658427295\" alt=\"\">\n<\/div>\n<\/section>",
+        "full_width": true
+      }
+    },
+    "1656580170900bc8d8": {
+      "type": "section-html",
+      "settings": {
+        "html": "<section class=\"VT-container\"\n\n>\n<div class=\"VT-text\"\nstyle=\"background-color:#72c5ec\"\n>\n            <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/BG_a5f9162d-dfce-442f-9e46-32d521345f14.png?v=1658842823\" alt=\"\"><h3><strong>KEY INGREDIENTS<\/strong><\/h3>\n            <p> Peach oil <\/p>\n            <p>Rosehip oil<\/p>\n            <p>Squalane<\/p>\n        <\/div>\n        <div class=\"VT-Vid\">\n            <iframe width=\"100%\" height=\"100%\" src=\"https:\/\/www.youtube.com\/embed\/t9bQ82CosNY\"\n                title=\"YouTube video player\" frameborder=\"0\"\n                allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\"\n                allowfullscreen><\/iframe>\n        <\/div>\n    <\/section>",
+        "full_width": true
+      }
+    },
+    "16579602720f5ca014": {
+      "type": "section-html",
+      "settings": {
+        "html": "<section class=\"VT-container\">\n<div class=\"VT-text\" \n\n>\n<h2 style=\"font-family: 'Eames Century Modern Thin';\"><i>how to use<\/i> <\/h2>\n<ul>\n<li>Massage small amount into wet hair<\/li>\n<li>Lather well and rinse<\/li>\n<\/ul>\n<\/div>\n<div class=\"VT-Vid\"\nstyle=\"background-image:url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_Glossy_Collection_Lifestyle_3_720x.jpg?v=1658416119');\nbackground-size: cover;\nbackground-position: center;\"\n\n>\n\n<\/div>\n<\/section>",
+        "full_width": true
+      }
+    },
+    "1657960951c53e21fd": {
+      "type": "section-html",
+      "settings": {
+        "html": "<section class=\"VT-container\">\n<div class=\"VT-Vid\"\nstyle=\"background-image:url('https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_Glossy_Collection_Lifestyle_2_720x.jpg?v=1658416365');\nbackground-size: cover;\nbackground-position: center;\"\n\n>\n\n<\/div>\n<div class=\"VT-text\" \n\n>\n<h2\nstyle=\"font-family: 'Eames Century Modern Thin';\n\"\n><i>stylist tip<\/i> <\/h2>\n<p>\nTo realy turn up the shine,  use <br> \n\nGlossy Shampoo, Conditioner,\n<br>\nand Shine Spray togther.\n\n<\/p>\n<\/div>\n<\/section>",
+        "full_width": true
+      }
+    },
+    "1657963663f1a93474": {
+      "type": "section-html",
+      "disabled": true,
+      "settings": {
+        "html": "<section class=\"BA-container\">\n<div class=\"BA-img content-after\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/35db4a0609998ed86238938927475ef7_540x.jpg?v=1656190059\" alt=\"\">\n<\/div>\n<div class=\"BA-img content-after\">\n    <img \nstyle=\"object-position: center 30%;\"\nsrc=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_BA_2000x2000_Glossy_Model3_1_720x.jpg?v=16584272957\" alt=\"\">\n<\/div>\n<div class=\"BA-img content-after\">\n    <img \nstyle=\"object-position: center 10%;\"\nsrc=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0573\/0061\/5202\/files\/Verb_BA_2000x2000_Glossy_Model4_720x.jpg?v=1658427295\" alt=\"\">\n<\/div>\n<\/section>",
+        "full_width": true
+      }
+    },
+    "1656229146c80e9e19": {
+      "type": "section-html",
+      "settings": {
+        "html": "<hr class=\"product-hr\">",
+        "full_width": true
+      }
+    },
+    "165619042431d5e7e8": {
+      "type": "section-richtext",
+      "disabled": true,
+      "blocks": {
+        "1656190424e09a3f6e-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "text_size": 8
+          }
+        },
+        "1656190424e09a3f6e-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>It smells so natural and organic Tina Graves on Oct 05, 2021<\/p><p><\/p><p> My skin just soaks it up feeling moisturized, soft and supple.Typography<\/p><p><\/p>",
+            "text_size": 4,
+            "text_columns": 1
+          }
+        }
+      },
+      "block_order": [
+        "1656190424e09a3f6e-1",
+        "1656190424e09a3f6e-2"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "height": "margin--small",
+        "width": "wrapper",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "1656228463078a0a16": {
+      "type": "section-html",
+      "disabled": true,
+      "settings": {
+        "html": "<hr class=\"product-hr\">",
+        "full_width": true
+      }
+    },
+    "16561907372e2b9561": {
+      "type": "section-richtext",
+      "disabled": true,
+      "blocks": {
+        "1656190737cd462210-1": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "text_size": 8
+          }
+        },
+        "1656190737cd462210-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Great product and packaging Venus Fountain on Oct 03, 2021 This moisturizer works for me like no other: my skin stays supple and I know longer feel the need to splash my face just to feel moist!Typography<\/p>",
+            "text_size": 4,
+            "text_columns": 1
+          }
+        }
+      },
+      "block_order": [
+        "1656190737cd462210-1",
+        "1656190737cd462210-2"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "height": "margin--small",
+        "width": "wrapper",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "16561907542cd9c427": {
+      "type": "section-richtext",
+      "disabled": true,
+      "blocks": {
+        "1656190754fe5a9762-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "text_size": 8
+          }
+        },
+        "1656190754fe5a9762-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Darma is excellence Annie James on Oct 02, 2021 I have lived with dry, parched skin since the menopause which struck me young, but despite trying more brands, cheap and extremely expensive. This is the best product I’ve used. Thank you!Typography<\/p>",
+            "text_size": 4,
+            "text_columns": 1
+          }
+        }
+      },
+      "block_order": [
+        "1656190754fe5a9762-1",
+        "1656190754fe5a9762-2"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "height": "margin--small",
+        "width": "wrapper",
+        "bg": "palette--light bg--neutral"
+      }
+    },
+    "16562291886446dd07": {
+      "type": "section-html",
+      "disabled": true,
+      "settings": {
+        "html": "<hr class=\"product-hr\">\n<br>\n<br>\n<br>",
+        "full_width": true
+      }
+    },
+    "reviews": {
+      "type": "reviews",
+      "disabled": true,
+      "settings": {
+        "product_reviews_enable": false,
+        "bg": "palette--light bg--accent"
+      }
+    },
+    "related": {
+      "type": "related",
+      "disabled": true,
+      "settings": {
+        "heading": "You might also like",
+        "bg": "palette--light bg--neutral",
+        "grid": 3,
+        "related_products_enable": true,
+        "limit": 6,
+        "product_recommendations_heading": "Related products",
+        "show_recently_viewed": true,
+        "product_recently_limit": 6,
+        "product_recently_minimum": 4,
+        "product_recently_heading": "Recently viewed"
+      }
+    },
+    "shogun-below": {
+      "type": "shogun-below",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "shogun-helper",
+    "shogun-above",
+    "1656969662d5c2286c",
+    "main",
+    "1651245027aeea7f40",
+    "1656999735fdea1b2b",
+    "image-with-text",
+    "16577820544447f38a",
+    "custom-tabs",
+    "1659376185bb59a691",
+    "16562275959c6c0d0a",
+    "1656580170900bc8d8",
+    "16579602720f5ca014",
+    "1657960951c53e21fd",
+    "1657963663f1a93474",
+    "1656229146c80e9e19",
+    "165619042431d5e7e8",
+    "1656228463078a0a16",
+    "16561907372e2b9561",
+    "16561907542cd9c427",
+    "16562291886446dd07",
+    "reviews",
+    "related",
+    "shogun-below"
+  ]
+}
